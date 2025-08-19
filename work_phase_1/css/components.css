@@ -1,0 +1,78 @@
+/* Apply Flexbox to the Card Container */
+.card-container {
+    display: flex; /* Enables Flexbox */
+    flex-direction: column; /* Stack cards vertically on mobile */
+    align-items: center; /* Center cards */
+    gap: 1rem; /* Add space between cards */
+    padding: 1rem; /* Adds space around the entire container */
+}
+
+/* Style Individual Cards */
+.simple-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+}
+
+/* button styles */
+.button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none; /* new:remove underline for <a> buttons */
+}
+/* button color variants */
+.button-primary {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.button-secondary {
+    background-color: var(--color-secondary);
+    color: white;
+}
+
+.button-dark {
+    background-color: var(--color-dark);
+    color: white;
+}
+
+.button-bright {
+    background-color: var(--color-bright);
+    color: black;
+}
+
+/* Temperature Widget Styles */
+.temperature-widget {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: var(--color-dark);
+    padding: 10px 15px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+}
+
+@media (min-width: 768px) {
+    .card-container {
+        flex-direction: row; /* Align cards in a row */
+        flex-wrap: wrap; /* Allow wrapping if space is limited */
+        justify-content: center; /* Center cards in the container */
+    }
+    .simple-card {
+        width: auto; /* Allow cards to size dynamically */
+        flex: 1 1 280px; /* Flexible sizing for desktop */
+    }
+}

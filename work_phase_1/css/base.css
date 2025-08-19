@@ -1,6 +1,69 @@
+/* Primary colors */
+:root {
+    --color-primary: #999ac6;
+    /* Primary color for highlights and Heading 1 */
+    --color-secondary: #0b3954;
+    /* Secondary highlight for Headings 4 & 5 */
+
+    /* Supporting colors */
+    --color-light: #fff9ec;
+    /* Light color for card backgrounds */
+    --color-dark: #798071;
+    /* Dark color for subdued elements */
+    --color-bright: #ff545f;
+    /* Bright color for buttons and warning text */
+    --color-background: #fcfafa;
+    /* Background color for the page */
+}
+
 /* Global styles */
 body {
     background-color: var(--color-background);
     color: var(--color-dark);
     font-family: "Urbanist", sans-serif;
+}
+
+/* === Typography ===*/
+
+/* Paragraphs: default browser size (1rem = ~16px) */
+p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Headings use rem for scalable sizing */
+h1 {
+    font-size: 4rem;
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+h4 {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+h5 {
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+/* Typography: Line Spacing */
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+    line-height: 1.5;
 }

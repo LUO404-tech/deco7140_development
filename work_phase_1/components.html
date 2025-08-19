@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="css/base.css" />
         <link rel="stylesheet" href="css/layout.css" />
         <link rel="stylesheet" href="css/components.css" />
+
         <title>Style Guide - Components</title>
     </head>
     <body>
@@ -16,7 +17,46 @@
             <h1>Style Guide</h1>
             <section>
                 <h2>Components</h2>
+                <h3>Buttons</h3>
+                <p>
+                    This is a showcase of the different button styles available
+                    for this page.
+                </p>
+                <div class="card-container">
+                    <div class="simple-card">
+                        <h4>Primary Button</h4>
+                        <button class="button button-primary">Primary</button>
+                    </div>
+                    <div class="simple-card">
+                        <h4>Secondary Button</h4>
+                        <button class="button button-secondary">
+                            Secondary
+                        </button>
+                    </div>
+                    <div class="simple-card">
+                        <h4>Dark Button</h4>
+                        <button class="button button-dark">Dark</button>
+                    </div>
+                    <div class="simple-card">
+                        <h4>Bright Button</h4>
+                        <button class="button button-bright">Bright</button>
+                    </div>
+                </div>
+            </section>
+            <!-- Add a link styled as a button -->
+            <section>
+                <h2>Links</h2>
+                <a class="button button-primary" href="index.html">WP1 Home</a>
+                <!-- prettier-ignore -->
+                <a class="button button-secondary" href="typography.html">Style Guide Typography</a>
             </section>
         </div>
+        <!-- Temperature Widget Container -->
+        <div id="temperature-widget" class="temperature-widget">
+            <!-- prettier-ignore -->
+            <p>Current Temperature: <span id="temperature-value">-- </span>°C</p>
+        </div>
+        <!-- Linking to External JavaScript -->
+        <script type="module" src="js/components.js"></script>
     </body>
 </html>
