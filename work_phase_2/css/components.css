@@ -1,0 +1,224 @@
+/* INTERACTIVE HIGHLIGHTING */
+/* Base Highlight Style */
+.interactive-highlight {
+    position: relative; /* Allows positioning of extra elements (e.g., tooltip numbers) */
+    background-color: rgba(
+        255,
+        215,
+        0,
+        0.3
+    ); /* Light yellow highlight with 30% transparency */
+    cursor: pointer; /* Changes cursor to indicate interactivity */
+    padding: 2px 5px; /* Adds small space inside the highlight for better readability */
+    border-radius: 5px; /* Rounds the corners slightly for a softer look */
+    transition: background 0.3s ease; /* Smooth transition effect when background changes */
+}
+
+/* Tooltip Styling for Highlighted Text */
+.interactive-highlight::after {
+    content: attr(data-card); /* See the explanation */
+    position: absolute; /* Positions the tooltip relative to the highlighted text */
+    top: -5px; /* Moves the tooltip slightly above the highlighted text */
+    right: -15px; /* Moves the tooltip slightly to the right of the highlighted text */
+    background: var(--accent-color);
+    color: white;
+    font-size: 0.8rem;
+    font-weight: bold;
+    width: 120px; /* Sets a fixed width for the tooltip */
+    height: 30px; /* Sets a fixed height, making the tooltip a perfect circle */
+    display: flex; /* Uses Flexbox to center the text inside the circle */
+    align-items: center; /* Vertically centers the text inside the tooltip */
+    justify-content: center; /* Horizontally centers the text inside the tooltip */
+    border-radius: 10%; /* Creates rounded corners */
+    opacity: 0; /* Initially hides the tooltip */
+    transition: opacity 0.3s ease; /* Smoothly fades in the tooltip by changing the opacity */
+}
+/* Show Number on Hover (Desktop) */
+@media (hover: hover) {
+    .interactive-highlight:hover::after {
+        opacity: 1;
+    }
+}
+/* Show Number on Tap (Mobile) */
+.interactive-highlight:focus::after,
+.interactive-highlight:active::after {
+    opacity: 1;
+}
+
+/* ===========================
+   INTERACTIVE HIGHLIGHTING – USER STORIES
+   =========================== */
+.interactive-highlight-stories {
+    position: relative;
+    background-color: rgba(255, 215, 0, 0.25);
+    cursor: pointer;
+    padding: 2px 6px;
+    border-radius: 6px;
+    transition: background 0.25s ease;
+}
+
+/* Tooltip Styling for Highlighted User Stories Text */
+.interactive-highlight-stories::after {
+    content: attr(data-userstory); /* get the correct information */
+    position: absolute;
+    top: -5px; /* position above text */
+    right: -15px; /* move slightly right */
+    background: var(--secondary-color);
+    color: white;
+    font-size: 0.8rem;
+    font-weight: bold;
+    width: 300px; /* wider tooltip */
+    height: 100px; /* taller tooltip */
+    padding: 0 10px; /* space around text */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px; /* smoother corners */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Desktop: show tooltip on hover */
+@media (hover: hover) {
+    .interactive-highlight-stories:hover::after {
+        opacity: 1;
+    }
+}
+
+/* Mobile/Keyboard: show tooltip on focus or active */
+.interactive-highlight-stories:focus::after,
+.interactive-highlight-stories:active::after {
+    opacity: 1;
+}
+
+/* Flip Cards - Client Needs Analysis  */
+/* Mobile-First Grid (Default: 1 Column) */
+.flip-card-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* 3 columns on larger screens */
+@media (min-width: 768px) {
+    .flip-card-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Flip Card Base Styles */
+.flip-card {
+    width: 100%;
+    height: 180px;
+    perspective: 1000px; /* Adds depth to make the flip look 3D */
+    cursor: pointer; /* Adds indication of interactivity */
+    outline: none; /* Removes default focus outline */
+}
+/* Flip Card Inner - the rotating part of the card */
+.flip-card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d; /* creates a 3D space */
+    transition: transform 0.5s ease-in-out;
+}
+/* Front & Back Common Styles */
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex; /* we are using flex inside our cards */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 1rem;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+/* set the colour for the front */
+.flip-card-front {
+    background: var(--primary-color);
+    color: white;
+}
+/* set the colour for the back */
+.flip-card-back {
+    background: var(--secondary-color);
+    color: white;
+    transform: rotateY(180deg);
+}
+
+/* Flip Animation (Desktop Hover) */
+@media (hover: hover) {
+    .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+    }
+}
+
+/* Mobile-Friendly Flip (Focus & Tap) */
+.flip-card:focus .flip-card-inner,
+.flip-card:active .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Interview Section Styles */
+.interview {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border-bottom: 1px solid #ccc;
+}
+
+.user-name {
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.initial-prompt {
+    font-style: italic;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.question {
+    font-weight: bold;
+    margin-top: 1rem;
+    margin-bottom: 0.25rem;
+}
+
+.response {
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* using an emoji for a bullet point (marker) */
+.response p {
+    position: relative;
+    padding-left: 1.5rem;
+    margin: 0.5rem 0;
+}
+
+.response p::before {
+    content: "🥕";
+    position: absolute;
+    left: 0;
+    top: 0.15em;
+    font-size: 1.1em;
+    line-height: 1;
+}
+
+/* using a colour variable but changing the opacity/transparency */
+.response {
+    border-left: 2px solid var(--secondary-color);
+    font-style: italic;
+    background-color: color-mix(
+        in srgb,
+        var(--secondary-color) 10%,
+        transparent
+    ); /* color
+variable transparency */
+}

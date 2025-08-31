@@ -1,0 +1,21 @@
+/* Reset margins and paddings for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Reset heading and paragraph styles */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    font-size: 100%;
+    font-weight: normal;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+}
