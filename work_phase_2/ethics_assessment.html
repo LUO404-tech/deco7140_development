@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- CSS Linking -->
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/base.css" />
+        <link rel="stylesheet" href="css/layout.css" />
+        <link rel="stylesheet" href="css/components.css" />
+        <title>Work Phase 2</title>
+    </head>
+    <body>
+        <nav class="navbar">
+            <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="client_needs_analysis.html">Client Needs</a></li>
+                <li><a href="user_stories.html">User Stories</a></li>
+                <li><a href="accessibility_assessment.html">Accessibility</a></li>
+                <li><a href="ethics_assessment.html">Ethics</a></li>
+                <li><a href="genai_mt_acknowledgement.html">GenAI Acknowledgement</a></li>
+            </ul>
+        </nav>
+        <div class="container">
+            <header>
+                <h1>Ethics Assessment</h1>
+            </header>
+
+            <section>
+                <section class="assessment" aria-labelledby="ethics-title">
+                    <!-- 1) Values · Principles · Purpose -->
+                    <section aria-labelledby="ethics-intro">
+                        <h2 id="ethics-intro">Values, Principles, and Purpose</h2>
+                        <div class="principles-grid">
+                            <div class="principle-card">
+                                <h3>✨ Values</h3>
+                                <p>
+                                    Tell us <strong>what’s good</strong> — the things we strive
+                                    for, desire, and seek to protect.
+                                </p>
+                            </div>
+                            <div class="principle-card">
+                                <h3>⚖️ Principles</h3>
+                                <p>
+                                    Tell us <strong>what’s right</strong> — outlining how we
+                                    may or may not achieve our values.
+                                </p>
+                            </div>
+                            <div class="principle-card">
+                                <h3>🎯 Purpose</h3>
+                                <p>
+                                    <strong>Your reason for being</strong> — gives life to your
+                                    values and principles.
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 2) Relevant ethical issues (linked to your client needs & user stories) -->
+                    <section aria-labelledby="issues">
+                        <h3 id="issues">Relevant Ethical Issues for Our Project</h3>
+                        <ul>
+                            <li>
+                                <strong>Privacy & Data Protection:</strong> student-ID /
+                                real-name vs. safety and data minimisation.
+                            </li>
+                            <li>
+                                <strong>Accessibility & Inclusivity:</strong> mobile-first,
+                                visual clarity, keyboard and screen-reader support.
+                            </li>
+                            <li>
+                                <strong>Fairness & Equity:</strong> welcoming to beginners and
+                                international students; no exclusion or harassment.
+                            </li>
+                            <li>
+                                <strong>Trust & Transparency:</strong> clear rules, no scams,
+                                accurate information and visible moderation.
+                            </li>
+                        </ul>
+                    </section>
+
+                    <!-- 3) How we address them (concise, actionable) -->
+                    <section aria-labelledby="actions">
+                        <h3 id="actions">How We Address These Issues</h3>
+                        <!-- Reuse the same card style for a tidy two-column layout on desktop -->
+                        <div class="principles-grid">
+                            <div class="principle-card">
+                                <h4>🔐 Privacy & Data</h4>
+                                <ul>
+                                    <li>Collect minimum data; explain why we need it.</li>
+                                    <li>Use clear privacy notice at sign-up.</li>
+                                    <li>Allow pseudonyms in public areas where possible.</li>
+                                    <li>
+                                        Protect data at rest/in transit; limited admin access.
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="principle-card">
+                                <h4>♿ Accessibility</h4>
+                                <ul>
+                                    <li>
+                                        Mobile-first layout; reflow without horizontal scroll.
+                                    </li>
+                                    <li>
+                                        Alt text, sufficient colour contrast, focus visible.
+                                    </li>
+                                    <li>All actions operable by keyboard.</li>
+                                    <li>Use plain language in headings and labels.</li>
+                                </ul>
+                            </div>
+
+                            <div class="principle-card">
+                                <h4>⚖️ Fairness & Inclusion</h4>
+                                <ul>
+                                    <li>Community guidelines against harassment/exclusion.</li>
+                                    <li>Beginner-friendly tips and “ask anything” areas.</li>
+                                    <li>Localised examples and inclusive imagery/copy.</li>
+                                    <li>Report/appeal flow that is clear and respectful.</li>
+                                </ul>
+                            </div>
+
+                            <div class="principle-card">
+                                <h4>🤝 Trust & Transparency</h4>
+                                <ul>
+                                    <li>Show moderation rules and decision criteria.</li>
+                                    <li>Flag sponsored/AI-assisted content clearly.</li>
+                                    <li>Simple report buttons; response time targets.</li>
+                                    <li>Changelogs for important policy updates.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Optional: small ACS alignment note -->
+                    <section class="callout" aria-label="ACS Code alignment">
+                        <p>
+                            <strong>ACS code alignment:</strong> honesty, respect, quality of
+                            life, public interest, and minimising harm inform our design
+                            choices above.
+                        </p>
+                    </section>
+                </section>
+            </section>
+        </div>
+        <!-- Linking External JavaScript -->
+        <script type="module" src="js/ethics.js"></script>
+    </body>
+</html>

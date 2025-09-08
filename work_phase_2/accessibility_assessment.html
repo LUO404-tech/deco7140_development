@@ -11,16 +11,110 @@
         <title>Work Phase 2</title>
     </head>
     <body>
-        <header>
-            <h1>Pete's Work Phase 2</h1>
-        </header>
-        <section>
-            <h2>What's in this website?</h2>
-            <p>
-                This is the second phase of my work. I will be completing A2
-                Design Research during this page. But all of that assessment
-                will be created as pages in this website.
-            </p>
-        </section>
+        <nav class="navbar">
+            <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="client_needs_analysis.html">Client Needs</a></li>
+                <li><a href="user_stories.html">User Stories</a></li>
+                <li><a href="accessibility_assessment.html">Accessibility</a></li>
+                <li><a href="ethics_assessment.html">Ethics</a></li>
+                <li><a href="genai_mt_acknowledgement.html">GenAI Acknowledgement</a></li>
+            </ul>
+        </nav>
+        <div class="container">
+            <header>
+                <h1>Accessibility Assessment</h1>
+            </header>
+            <section>
+                <section aria-labelledby="wcag-intro" class="wcag-principles">
+                    <h2 id="wcag-intro">WCAG Principles (POUR)</h2>
+                    <div class="principles-grid">
+                        <div class="principle-card">
+                            <h3>👀 Perceivable</h3>
+                            <p>
+                                Information and UI must be presented in ways users can
+                                perceive.
+                            </p>
+                        </div>
+                        <div class="principle-card">
+                            <h3>🖱️ Operable</h3>
+                            <p>User interface components and navigation must be operable.</p>
+                        </div>
+                        <div class="principle-card">
+                            <h3>🧠 Understandable</h3>
+                            <p>Information and operation must be understandable.</p>
+                        </div>
+                        <div class="principle-card">
+                            <h3>💻 Robust</h3>
+                            <p>
+                                Content must be robust enough to be interpreted by assistive
+                                technologies.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- WCAG structure -->
+                <section aria-labelledby="wcag-structure">
+                    <h2 id="wcag-structure">WCAG Structure</h2>
+                    <p>The WCAG is organized into three levels:</p>
+                    <ul>
+                        <li>
+                            4 <strong>Principles</strong> (POUR)
+                            <ul>
+                                <li>13 <strong> Guidelines </strong></li>
+                                <li>
+                                    Dozens of <strong>Success Criteria</strong> (Level A, AA,
+                                    AAA)
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+
+                <h2>Selected WCAG 2.2 Success Criteria</h2>
+                <p>
+                    We highlight 5 criteria that directly support our client needs and user
+                    stories:
+                </p>
+
+                <ul class="wcag-list">
+                    <li>
+                        <strong>1.1.1 Text Alternatives (Level A)</strong> – Ensures images and
+                        visual content have text equivalents.<br />
+                        <em>Why relevant:</em> Our site relies on artworks, cosplay, and
+                        crafts. Alt text makes them accessible for screen reader users.
+                    </li>
+                    <li>
+                        <strong>1.4.3 Contrast (Minimum) (Level AA)</strong> – Maintains
+                        readable colour contrast.<br />
+                        <em>Why relevant:</em> Many users browse on mobile in dim light. Good
+                        contrast improves readability.
+                    </li>
+                    <li>
+                        <strong>1.4.10 Reflow (Level AA)</strong> – Content reflows without
+                        horizontal scrolling.<br />
+                        <em>Why relevant:</em> Mobile-first users need layouts that adapt to
+                        small screens.
+                    </li>
+                    <li>
+                        <strong>2.1.1 Keyboard (Level A)</strong> – All functions must be
+                        operable by keyboard.<br />
+                        <em>Why relevant:</em> Menu toggle, highlights, and flip cards must
+                        work for keyboard-only users.
+                    </li>
+                    <li>
+                        <strong>2.4.7 Focus Visible (Level AA)</strong> – Ensures clear focus
+                        indicators.<br />
+                        <em>Why relevant:</em> Keyboard and screen reader users should always
+                        know their navigation point.
+                    </li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- Linking External JavaScript -->
+        <script type="module" src="js/accessibility.js"></script>
     </body>
 </html>

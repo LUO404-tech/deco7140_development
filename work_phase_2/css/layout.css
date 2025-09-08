@@ -21,21 +21,22 @@ body {
 }
 
 /* Layout */
-
+/* Container: mobile-first */
 .container {
-    height: 100vh;
-    /* Full viewport height */
-    width: 80vw;
-    /* 80% of the viewport width */
-    margin: 0 auto;
-    /* Centers the container horizontally */
+    box-sizing: border-box;
+    width: 92%; /* Fluid width for small screens */
+    max-width: 980px; /* Max width for large desktops */
+    min-height: 100vh; /* Ensure it fills the viewport height */
+    margin: 0 auto; /* Center horizontally */
+    padding: 1rem; /* Add inner spacing */
 }
 
 /* Larger screens (e.g., tablets or desktops) */
 @media (min-width: 768px) {
     .container {
-        width: 60vw;
-        /* 60% of the viewport width */
+        width: 60vw; /* 60% of the viewport width */
+        max-width: 980px; /* Keep the max cap */
+        padding: 1.25rem; /* Slightly larger inner spacing */
     }
 }
 
@@ -107,4 +108,74 @@ body {
 .py-5 {
     padding-top: var(--spacing-5);
     padding-bottom: var(--spacing-5);
+}
+
+/* === Navigation (mobile-first) === */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--primary-color);
+    color: #fff;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.25rem;
+}
+
+/* Hamburger button */
+.menu-toggle {
+    background: transparent;
+    border: 0;
+    color: #fff;
+    font-size: 1.25rem;
+    line-height: 1;
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
+}
+
+/* Menu: hidden by default, shown when .open is toggled */
+.menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: none; /* Hidden initially */
+    flex-direction: column; /* Vertical layout on mobile */
+    gap: 0.5rem;
+    background: var(--primary-color);
+    border-radius: 0.25rem;
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+.menu.open {
+    display: flex; /* Show menu when .open is added */
+}
+
+.menu a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.25rem;
+}
+.menu a:hover,
+.menu a:focus {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+/* Desktop layout: horizontal menu, hide hamburger button */
+@media (min-width: 768px) {
+    .menu-toggle {
+        display: none; /* Hide hamburger on desktop */
+    }
+    .menu {
+        display: flex !important; /* Always visible on desktop */
+        flex-direction: row;
+        gap: 1rem;
+        background: transparent;
+        width: auto;
+        margin: 0;
+    }
+    .menu a {
+        padding: 0.25rem 0.5rem;
+    }
 }
