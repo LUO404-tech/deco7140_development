@@ -39,3 +39,8 @@ p {
     line-height: 1.6;
     margin: 0 0 1rem;
 }
+
+html {
+    -webkit-text-size-adjust: 100%; /* iOS Safari: prevent text inflation */
+    text-size-adjust: 100%;
+}
