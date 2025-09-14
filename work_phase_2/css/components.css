@@ -1,4 +1,8 @@
-/* INTERACTIVE HIGHLIGHTING */
+/* ==================================================
+   SECTION 1: INTERACTIVE HIGHLIGHTING
+   Used for highlighting and interactive tooltips 
+   (e.g., Client Needs and Values pages)
+   ================================================== */
 /* Base Highlight Style */
 .interactive-highlight {
     position: relative; /* Allows positioning of extra elements (e.g., tooltip numbers) */
@@ -35,7 +39,9 @@
 }
 
 /* ===========================
-   INTERACTIVE HIGHLIGHTING – USER STORIES
+    INTERACTIVE HIGHLIGHTING – USER STORIES
+    Special highlight for user stories 
+    with larger tooltip area
    =========================== */
 .interactive-highlight-stories {
     position: relative;
@@ -84,6 +90,7 @@
 }
 
 /* Flip Cards - Client Needs Analysis  */
+
 /* Mobile-First Grid (Default: 1 Column) */
 .flip-card-container {
     display: grid;
@@ -157,7 +164,8 @@
     transform: rotateY(180deg);
 }
 
-/* Interview Section Styles */
+/* SECTION 3: INTERVIEW STYLES
+   Styles for presenting interview transcripts */
 .interview {
     margin-bottom: 2rem;
     padding: 1rem;
@@ -216,7 +224,9 @@ variable transparency */
 }
 
 /* ================================
-   ACCESSIBILITY / ETHICS Assessment
+   SECTION 4: ACCESSIBILITY & ETHICS ASSESSMENT
+   Includes headings, note boxes, details, WCAG lists
+   and principle cards
    ================================ */
 
 .assessment {
@@ -410,6 +420,10 @@ h3 .emoji {
     top: 1px;
 }
 
+/* ==================================================
+   SECTION 6: VALUE BOX (Grouped Flip Cards)
+   White wrapper box + internal card grid
+   ================================================== */
 /* Value group card (wraps a set of flip-cards) */
 .value-box {
     margin: 1.25rem 0 2rem;
