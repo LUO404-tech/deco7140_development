@@ -82,3 +82,7 @@
     padding-top: var(--spacing-5);
     padding-bottom: var(--spacing-5);
 }
+
+.with-top-padding {
+    padding-top: 4rem;
+}
