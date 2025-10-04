@@ -1,61 +1,159 @@
-/* MENUS */
-/* Base styles */
-nav ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-/* Mobile menu styles */
-#nav-mobile {
-    position: fixed;
-    bottom: 0;
-    width: 100vw;
-    background-color: var(--secondary-color);
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-}
-
-#nav-mobile ul li a {
-    display: block;
-    padding: 1rem 0;
-    font-size: 1.5rem;
-    text-decoration: none;
-}
+/* ================================
+   MENUS (Global Navigation)
+   ================================ */
 
 /* Desktop menu styles */
 #nav-desktop {
     position: fixed;
     top: 0;
-    width: 100vw;
+    width: 100%;
     background-color: var(--secondary-color);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    display: none;
+    display: none; /* hidden on mobile */
+}
+
+#nav-desktop ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0.5rem 0;
 }
 
 #nav-desktop ul li a {
     display: block;
-    padding: 1rem 0;
-    font-size: 1.25rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
     text-decoration: none;
-    color: var(--text-color);
+    color: white;
 }
 
-/* Optional: Hover effect for desktop menu */
 #nav-desktop ul li a:hover {
     background-color: var(--accent-color);
     color: white;
 }
 
-/* Responsive control */
+/* ================================
+   Mobile menu (hamburger)
+   ================================ */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: var(--secondary-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.menu-toggle {
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* ================================
+   Mobile menu (hamburger as left drawer)
+   ================================ */
+.menu {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+
+    /* Fixed to the left side of the screen */
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px; /* drawer width */
+
+    padding: 2rem 1rem;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15);
+    z-index: 999;
+
+    /* Hide menu by default (slide off screen) */
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out; /* smooth animation */
+}
+
+/* When "open" class is added, slide into view */
+.menu.open {
+    transform: translateX(0);
+}
+
+/* Menu items */
+.menu li {
+    list-style: none;
+    margin-bottom: 1rem;
+}
+
+.menu li a {
+    display: block;
+    padding: 0.75rem 1.25rem;
+    text-decoration: none;
+    font-size: 1rem;
+    color: var(--primary-color);
+}
+
+/* Hover effect for menu links */
+.menu li a:hover {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.menu li {
+    list-style: none;
+}
+
+.menu li a {
+    display: block;
+    padding: 0.75rem 1.25rem;
+    text-decoration: none;
+    font-size: 1rem;
+    color: var(--primary-color);
+}
+
+.menu li a:hover {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+/* Show menu when "open" class is added */
+.menu.open {
+    display: flex;
+}
+
+/* ================================
+   Responsive Control
+   ================================ */
 @media screen and (min-width: 768px) {
-    #nav-desktop {
-        display: block;
+    .navbar {
+        display: none; /* hide mobile nav */
     }
 
-    #nav-mobile {
-        display: none;
+    #nav-desktop {
+        display: block; /* show desktop nav */
     }
+}
+
+/* ================================
+   Global Buttons
+   ================================ */
+.button {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--secondary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.95rem;
+}
+
+.button:hover {
+    background-color: var(--accent-color);
 }

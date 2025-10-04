@@ -1,0 +1,73 @@
+/* ================================
+   Card Component Skeleton
+   ================================ */
+
+/* Container: vertical on mobile, horizontal on desktop */
+.card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 2rem auto;
+    width: 90%;
+    max-width: 1200px;
+}
+
+@media screen and (min-width: 768px) {
+    .card-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+/* Card element */
+.card {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Card heading */
+.card h3 {
+    margin-top: 0;
+    font-size: 1.4rem;
+    color: var(--primary-color);
+}
+
+/* Card text */
+.card p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+/* Button inside card */
+.card .button {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--secondary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.card .button:hover {
+    background-color: var(--accent-color);
+}
+
+/* Desktop layout: 3 cards in a row */
+@media screen and (min-width: 768px) {
+    .card {
+        max-width: 32%;
+    }
+}

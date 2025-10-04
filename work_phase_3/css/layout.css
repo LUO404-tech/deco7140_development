@@ -86,3 +86,61 @@
 .with-top-padding {
     padding-top: 4rem;
 }
+
+/* ===========================
+   Hamburger Menu Styles
+   =========================== */
+
+#hamburger {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    color: var(--primary-color);
+    z-index: 1001;
+}
+
+@media (max-width: 768px) {
+    #hamburger {
+        display: block;
+    }
+
+    #nav-mobile {
+        display: none;
+        background-color: white;
+        position: absolute;
+        top: 3.5rem;
+        right: 1rem;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+
+    #nav-mobile.active {
+        display: block;
+    }
+
+    #nav-mobile ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 1rem;
+        margin: 0;
+        list-style: none;
+    }
+
+    #nav-mobile li a {
+        text-decoration: none;
+        font-size: 1rem;
+        color: var(--primary-color);
+    }
+
+    #nav-mobile li a:hover {
+        color: var(--accent-color);
+    }
+}

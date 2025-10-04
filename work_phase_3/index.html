@@ -17,22 +17,29 @@
     </head>
     <body>
         <!-- Mobile Navigation -->
-        <nav id="nav-mobile" aria-label="Main Navigation">
-            <ul>
+        <nav class="navbar">
+            <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                ☰
+            </button>
+            <ul class="menu">
                 <li>
-                    <a href="index.html"><span class="icon">🏠</span></a>
+                    <a href="index.html"><span class="icon">🏠</span> Home</a>
                 </li>
                 <li>
-                    <a href="site_map.html"><span class="icon">🧭</span></a>
+                    <a href="site_map.html"><span class="icon">🧭</span> Site Map</a>
                 </li>
                 <li>
-                    <a href="style_guide.html"><span class="icon">🎨</span></a>
+                    <a href="style_guide.html"><span class="icon">🎨</span> Style Guide</a>
                 </li>
                 <li>
-                    <a href="ethical_response.html"><span class="icon">⚖️</span></a>
+                    <a href="ethical_response.html"
+                        ><span class="icon">⚖️</span> Ethical Response</a
+                    >
                 </li>
                 <li>
-                    <a href="genai_mt_acknowledgement.html"><span class="icon">🤖</span></a>
+                    <a href="genai_mt_acknowledgement.html"
+                        ><span class="icon">🤖</span> GenAI Acknowledgement</a
+                    >
                 </li>
             </ul>
         </nav>
@@ -80,5 +87,7 @@
                 </section>
             </div>
         </main>
+        <!-- JS -->
+        <script type="module" src="js/index.js"></script>
     </body>
 </html>

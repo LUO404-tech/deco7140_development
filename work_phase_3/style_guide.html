@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Style Guide</title>
+
+        <!-- Global CSS -->
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/base.css" />
+        <link rel="stylesheet" href="css/layout.css" />
+        <link rel="stylesheet" href="css/components.css" />
+
+        <!-- Page-specific CSS -->
+        <link rel="stylesheet" href="css/component_skeleton/card.css" />
+        <link rel="stylesheet" href="css/page_css/style_guide.css" />
+    </head>
+    <body>
+        <!-- Mobile Navigation (same structure as index.html) -->
+        <nav class="navbar">
+            <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+            <ul class="menu">
+                <li>
+                    <a href="index.html"><span class="icon">🏠</span> Home</a>
+                </li>
+                <li>
+                    <a href="site_map.html"><span class="icon">🧭</span> Site Map</a>
+                </li>
+                <li>
+                    <a href="style_guide.html" aria-current="page"
+                        ><span class="icon">🎨</span> Style Guide</a
+                    >
+                </li>
+                <li>
+                    <a href="ethical_response.html"
+                        ><span class="icon">⚖️</span> Ethical Response</a
+                    >
+                </li>
+                <li>
+                    <a href="genai_mt_acknowledgement.html"
+                        ><span class="icon">🤖</span> GenAI Acknowledgement</a
+                    >
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Desktop Navigation -->
+        <nav id="nav-desktop" aria-label="Main Navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="site_map.html">Site Map</a></li>
+                <li><a href="style_guide.html" aria-current="page">Style Guide</a></li>
+                <li><a href="ethical_response.html">Ethical Response</a></li>
+                <li><a href="genai_mt_acknowledgement.html">GenAI Acknowledgement</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <section class="intro" aria-labelledby="sg-overview">
+                <h1 id="sg-overview">Style Guide Overview</h1>
+                <p>
+                    This style guide defines the core design standards for the Hobby &
+                    Subculture Community website. It ensures consistency across typography,
+                    colour use, and UI components, supporting both accessibility and responsive
+                    design.
+                </p>
+            </section>
+
+            <section class="card-container" aria-labelledby="sg-links" role="region">
+                <h2 id="sg-links" class="visually-hidden">Style Guide Sections</h2>
+
+                <article class="card">
+                    <h3>Typography</h3>
+                    <p>
+                        Explore heading styles, body text, and paragraph formatting to maintain
+                        readability and hierarchy.
+                    </p>
+                    <a class="button" href="typography.html">View Typography</a>
+                </article>
+
+                <article class="card">
+                    <h3>Colour</h3>
+                    <p>
+                        Review the selected colour palette, including primary, secondary, and
+                        neutral tones that create a cohesive brand.
+                    </p>
+                    <a class="button" href="color.html">View Colour</a>
+                </article>
+
+                <article class="card">
+                    <h3>Components</h3>
+                    <p>
+                        Browse reusable UI components such as buttons, forms, cards, and
+                        navigation bars designed for consistency.
+                    </p>
+                    <a class="button" href="components.html">View Components</a>
+                </article>
+
+                <!-- New card for Visceral Design -->
+                <article class="card">
+                    <h3>Visceral Design</h3>
+                    <p>
+                        Explore the first impressions and aesthetic appeal of the website’s
+                        design.
+                    </p>
+                    <a class="button" href="visceral_design.html">View Visceral Design</a>
+                </article>
+            </section>
+        </main>
+
+        <!-- JS -->
+        <script type="module" src="js/style_guide.js"></script>
+    </body>
+</html>

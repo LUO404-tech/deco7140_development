@@ -1,0 +1,92 @@
+/* ================================
+   Visceral Design Page-specific Styles
+   ================================ */
+
+body {
+    background-color: var(--bg-light);
+}
+
+/* Breadcrumb styles */
+.breadcrumb {
+    display: block;
+    max-width: 1100px;
+    margin: 5rem auto 2rem; /* 下移，避免和 fixed nav 重叠 */
+    font-size: 0.95rem;
+    color: var(--text-color);
+    background: #f9f9f9; /* 浅灰背景让它更明显 */
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+}
+
+.breadcrumb a {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+    color: var(--accent-color);
+}
+
+.breadcrumb span {
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+/* Intro section */
+.intro {
+    margin: 2rem auto 3rem; /* reduce top margin, breadcrumb is above */
+    max-width: 800px;
+    text-align: center;
+}
+
+.intro h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Gallery styles */
+.gallery {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.gallery h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* Grid layout */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* mobile: 1 column */
+    gap: 1.5rem;
+}
+
+.gallery-grid figure {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    text-align: center;
+}
+
+.gallery-grid img {
+    max-width: 100%;
+    border-radius: 6px;
+}
+
+.gallery-grid figcaption {
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+    color: var(--text-color);
+}
+
+/* Desktop: 3 columns */
+@media screen and (min-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Visceral Design</title>
+
+        <!-- Global CSS -->
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/base.css" />
+        <link rel="stylesheet" href="css/layout.css" />
+        <link rel="stylesheet" href="css/components.css" />
+
+        <!-- Page-specific CSS -->
+        <link rel="stylesheet" href="css/page_css/visceral_design.css" />
+    </head>
+    <body>
+        <!-- Desktop Navigation -->
+        <nav id="nav-desktop" aria-label="Main Navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="site_map.html">Site Map</a></li>
+                <li><a href="style_guide.html">Style Guide</a></li>
+                <li><a href="ethical_response.html">Ethical Response</a></li>
+                <li><a href="genai_mt_acknowledgement.html">GenAI Acknowledgement</a></li>
+            </ul>
+        </nav>
+
+        <!-- Mobile Navigation (same structure as index.html) -->
+        <nav class="navbar">
+            <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+            <ul class="menu">
+                <li>
+                    <a href="index.html"><span class="icon">🏠</span> Home</a>
+                </li>
+                <li>
+                    <a href="site_map.html"><span class="icon">🧭</span> Site Map</a>
+                </li>
+                <li>
+                    <a href="style_guide.html" aria-current="page"
+                        ><span class="icon">🎨</span> Style Guide</a
+                    >
+                </li>
+                <li>
+                    <a href="ethical_response.html"
+                        ><span class="icon">⚖️</span> Ethical Response</a
+                    >
+                </li>
+                <li>
+                    <a href="genai_mt_acknowledgement.html"
+                        ><span class="icon">🤖</span> GenAI Acknowledgement</a
+                    >
+                </li>
+            </ul>
+        </nav>
+
+        <main>
+            <!-- Breadcrumb -->
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="index.html">Home</a> &gt;
+                <a href="style_guide.html">Style Guide</a> &gt;
+                <span>Visceral Design</span>
+            </nav>
+
+            <!-- Intro -->
+            <section class="intro" aria-labelledby="vd-overview">
+                <h1 id="vd-overview">Visceral Design</h1>
+                <p>
+                    The focus of this section of the Style Guide is ensuring the user has a
+                    positive first impression of the site.
+                </p>
+            </section>
+
+            <!-- Layout Gallery -->
+            <section class="gallery" aria-labelledby="layout-gallery">
+                <h2 id="layout-gallery">Layout Gallery</h2>
+                <div class="gallery-grid">
+                    <figure>
+                        <img
+                            src="images/homepage_wireframe.png"
+                            alt="Homepage layout wireframe"
+                        />
+                        <figcaption>Homepage Wireframe</figcaption>
+                    </figure>
+                    <figure>
+                        <img
+                            src="images/community_hub_wireframe.png"
+                            alt="Community Hub layout wireframe"
+                        />
+                        <figcaption>Community Hub Wireframe</figcaption>
+                    </figure>
+                    <figure>
+                        <img
+                            src="images/style_guide_wireframe.png"
+                            alt="Style Guide layout wireframe"
+                        />
+                        <figcaption>Style Guide Wireframe</figcaption>
+                    </figure>
+                </div>
+            </section>
+        </main>
+
+        <!-- JS -->
+        <script type="module" src="js/visceral_design.js"></script>
+    </body>
+</html>
