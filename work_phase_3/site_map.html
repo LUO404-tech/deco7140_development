@@ -3,14 +3,19 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Site Map</title>
+
+        <!-- Global CSS -->
         <link rel="stylesheet" href="css/reset.css" />
         <link rel="stylesheet" href="css/base.css" />
         <link rel="stylesheet" href="css/layout.css" />
         <link rel="stylesheet" href="css/components.css" />
-        <title>Site Map</title>
+
+        <!-- Page-specific CSS (Accordion + Responsive Image) -->
+        <link rel="stylesheet" href="css/component_skeleton/accordion.css" />
     </head>
     <body>
-        <!-- Mobile Navigation (same as index.html) -->
+        <!-- Mobile Navigation -->
         <nav class="navbar">
             <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
             <ul class="menu">
@@ -43,18 +48,31 @@
                 </p>
             </header>
 
-            <section>
-                <ul>
-                    <li>
-                        <strong>Home</strong>
+            <!-- Visual Site Map Image -->
+            <section class="sitemap-image">
+                <h2>Visual Site Map</h2>
+                <img
+                    src="assets/images/site_map.jpg"
+                    alt="Visual site map of the Hobby & Subculture community website"
+                    class="responsive-img"
+                />
+            </section>
+
+            <!-- Accordion Structure -->
+            <section class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-header">Home</button>
+                    <div class="accordion-content">
                         <ul>
                             <li>Welcome Overview</li>
                             <li>Community Focus Introduction</li>
                         </ul>
-                    </li>
+                    </div>
+                </div>
 
-                    <li>
-                        <strong>Community Hubs</strong>
+                <div class="accordion-item">
+                    <button class="accordion-header">Community Hubs</button>
+                    <div class="accordion-content">
                         <ul>
                             <li>Gaming & Cosplay (Alex)</li>
                             <li>Anime & Collecting (Kenji)</li>
@@ -62,54 +80,73 @@
                             <li>Knitting & Craft (Fatima)</li>
                             <li>Street Dance & Urban (Diego)</li>
                         </ul>
-                    </li>
+                    </div>
+                </div>
 
-                    <li>
-                        <strong>Tutorials & Resources</strong>
+                <div class="accordion-item">
+                    <button class="accordion-header">Tutorials & Resources</button>
+                    <div class="accordion-content">
                         <ul>
                             <li>Beginner Guides</li>
                             <li>Video Tutorials</li>
                             <li>Tag-based Navigation</li>
                         </ul>
-                    </li>
+                    </div>
+                </div>
 
-                    <li>
-                        <strong>Events & Calendar</strong>
+                <div class="accordion-item">
+                    <button class="accordion-header">Events & Calendar</button>
+                    <div class="accordion-content">
                         <ul>
                             <li>Event Listings</li>
                             <li>Calendar View</li>
                             <li>Local Clubs & Competitions</li>
                         </ul>
-                    </li>
+                    </div>
+                </div>
 
-                    <li>
-                        <strong>Collaboration</strong>
+                <div class="accordion-item">
+                    <button class="accordion-header">Collaboration</button>
+                    <div class="accordion-content">
                         <ul>
                             <li>Pattern & Project Exchange</li>
                             <li>Zine & Playlist Sharing</li>
                             <li>Group Project Board</li>
                         </ul>
-                    </li>
+                    </div>
+                </div>
 
-                    <li>
-                        <strong>Community Support</strong>
+                <div class="accordion-item">
+                    <button class="accordion-header">Community Support</button>
+                    <div class="accordion-content">
                         <ul>
                             <li>Code of Conduct</li>
                             <li>Report & Safety Tools</li>
                             <li>Accessibility Settings</li>
                             <li>Language Toggle</li>
                         </ul>
-                    </li>
+                    </div>
+                </div>
 
-                    <li><strong>GenAI Acknowledgement</strong></li>
-                    <li>
-                        <strong>About / Mission</strong>
+                <div class="accordion-item">
+                    <button class="accordion-header">GenAI Acknowledgement</button>
+                    <div class="accordion-content">
+                        <p>
+                            This section acknowledges the role of AI in supporting the design
+                            process.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">About / Mission</button>
+                    <div class="accordion-content">
                         <ul>
                             <li>Client Values</li>
                             <li>Design Goals</li>
                         </ul>
-                    </li>
-                </ul>
+                    </div>
+                </div>
             </section>
         </main>
 

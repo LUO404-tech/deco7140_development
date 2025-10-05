@@ -1,0 +1,16 @@
+/* Behavioural Design page styles */
+
+.intro {
+    margin: 2rem auto;
+    text-align: center;
+}
+
+.gallery {
+    margin: 2rem auto;
+    text-align: center;
+}
+
+.gallery h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}

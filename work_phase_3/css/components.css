@@ -157,3 +157,75 @@
 .button:hover {
     background-color: var(--accent-color);
 }
+
+/* ================================
+   Accordion Styles
+   ================================ */
+.accordion {
+    margin: 2rem 0;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.accordion-item {
+    border-bottom: 1px solid #ddd;
+}
+
+.accordion-header {
+    width: 100%;
+    background: var(--secondary-color);
+    color: white;
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-weight: bold;
+}
+
+.accordion-header:hover {
+    background: var(--accent-color);
+}
+
+.accordion-content {
+    display: none; /* hidden by default, toggled via JS */
+    padding: 0.75rem 1rem;
+    background: #f9f9f9;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.accordion-content ul {
+    margin-left: 1.25rem;
+    list-style: disc;
+    padding-left: 0.5rem;
+}
+
+.accordion-content p {
+    margin: 0.5rem 0;
+}
+
+/* ================================
+   Responsive Images
+   ================================ */
+.responsive-img {
+    max-width: 80%; /* Limit image width to 80% of the container */
+    height: auto; /* Keep aspect ratio */
+    display: block; /* Display as block element */
+    margin: 1rem auto; /* Center image with margin */
+    border: 2px solid #ddd; /* Optional: subtle border for clarity */
+    border-radius: 6px; /* Optional: rounded corners */
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem; /* spacing between items */
+    margin: 2rem 0;
+}
+
+.gallery-grid img {
+    max-width: 100%;
+    height: auto;
+}
