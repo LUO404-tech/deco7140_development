@@ -1,0 +1,171 @@
+/* ================================
+   Reflective Design Page-specific Styles
+   ================================ */
+
+/* Page background */
+body {
+    background-color: var(--bg-light);
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    display: block;
+    max-width: 1100px;
+    margin: 5rem auto 2rem;
+    font-size: 0.95rem;
+    color: var(--text-color);
+    background: #f9f9f9;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+}
+
+.breadcrumb a {
+    color: var(--primary-color);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+    color: var(--accent-color);
+}
+
+.breadcrumb span {
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+/* Intro */
+.intro {
+    margin: 2rem auto 3rem auto;
+    max-width: 1100px;
+    text-align: left;
+    padding: 0 2rem;
+}
+
+.intro h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Section base */
+.component-section {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+.component-section h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 0.3rem;
+    color: var(--primary-color);
+}
+
+.component-section p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.caption {
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+    margin-top: 0.5rem;
+}
+
+/* ================================
+   Values Mapping Table
+   ================================ */
+.values-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.95rem;
+}
+
+.values-table th,
+.values-table td {
+    border: 1px solid #ddd;
+    padding: 0.75rem;
+    text-align: left;
+}
+
+.values-table th {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+.values-table tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+/* ================================
+   Imagery & Tone Gallery
+   ================================ */
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: flex-start;
+}
+
+.image-gallery figure {
+    max-width: 250px;
+    text-align: center;
+}
+
+.image-gallery img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.image-gallery figcaption {
+    font-size: 0.85rem;
+    color: #444;
+    margin-top: 0.5rem;
+}
+
+/* Blockquote styling */
+blockquote {
+    margin: 1.5rem 0;
+    padding: 1rem 1.5rem;
+    border-left: 4px solid var(--secondary-color);
+    background: #f9f9f9;
+    font-style: italic;
+    color: #333;
+}
+
+/* ================================
+   Language Comparison
+   ================================ */
+.language-comparison {
+    background: #fafafa;
+    padding: 1rem 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin: 1rem 0;
+}
+
+.language-comparison p {
+    margin: 0.5rem 0;
+}
+
+.language-comparison strong {
+    color: var(--accent-color);
+}
+
+/* ================================
+   Dynamic Content (API Example)
+   ================================ */
+.api-demo {
+    background: #f9f9f9;
+    padding: 1rem 1.5rem;
+    border: 1px dashed var(--secondary-color);
+    border-radius: 6px;
+    min-height: 80px;
+    font-size: 0.95rem;
+    color: #333;
+}

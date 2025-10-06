@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Reflective Design</title>
+
+        <!-- Global CSS -->
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/base.css" />
+        <link rel="stylesheet" href="css/layout.css" />
+        <link rel="stylesheet" href="css/components.css" />
+
+        <!-- Page-specific CSS -->
+        <link rel="stylesheet" href="css/page_css/reflective_design.css" />
+    </head>
+    <body>
+        <!-- Desktop Navigation -->
+        <nav id="nav-desktop" aria-label="Main Navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="site_map.html">Site Map</a></li>
+                <li><a href="style_guide.html">Style Guide</a></li>
+                <li><a href="behavioural_design.html">Behavioural Design</a></li>
+                <li>
+                    <a href="reflective_design.html" aria-current="page">Reflective Design</a>
+                </li>
+                <li><a href="ethical_response.html">Ethical Response</a></li>
+                <li><a href="genai_mt_acknowledgement.html">GenAI Acknowledgement</a></li>
+            </ul>
+        </nav>
+
+        <!-- Mobile Navigation -->
+        <nav class="navbar">
+            <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+            <ul class="menu">
+                <li><a href="index.html">🏠 Home</a></li>
+                <li><a href="site_map.html">🧭 Site Map</a></li>
+                <li><a href="style_guide.html">🎨 Style Guide</a></li>
+                <li><a href="behavioural_design.html">✨ Behavioural Design</a></li>
+                <li>
+                    <a href="reflective_design.html" aria-current="page"
+                        >💡 Reflective Design</a
+                    >
+                </li>
+                <li><a href="ethical_response.html">⚖️ Ethical Response</a></li>
+                <li><a href="genai_mt_acknowledgement.html">🤖 GenAI Acknowledgement</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <!-- Breadcrumb -->
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="index.html">Home</a> &gt;
+                <a href="style_guide.html">Style Guide</a> &gt;
+                <span>Reflective Design</span>
+            </nav>
+
+            <!-- Intro -->
+            <section class="intro">
+                <h1>Reflective Design</h1>
+                <p>
+                    This section of the Style Guide demonstrates how the website supports
+                    <strong>Reflective Level design</strong>. It highlights values, identity,
+                    inclusive language, and dynamic content to help users “see themselves” in
+                    the community.
+                </p>
+            </section>
+
+            <!-- Values Mapping -->
+            <section class="component-section" id="values">
+                <h2>Values Mapping</h2>
+                <p>Mapping values to design goals and WCAG guidelines.</p>
+                <table class="values-table">
+                    <thead>
+                        <tr>
+                            <th>Value</th>
+                            <th>Design Implementation</th>
+                            <th>Why It Matters</th>
+                            <th>WCAG Guideline</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Inclusivity</td>
+                            <td>Use diverse imagery and translation options</td>
+                            <td>Supports global audience</td>
+                            <td>1.1 Text Alternatives</td>
+                        </tr>
+                        <!-- Add more rows here -->
+                    </tbody>
+                </table>
+                <p class="caption">Example values mapping with notes on design decisions.</p>
+            </section>
+
+            <!-- Imagery & Tone -->
+            <section class="component-section" id="imagery">
+                <h2>Meaning through Imagery and Tone</h2>
+                <p>
+                    The site communicates identity and emotional tone through images and
+                    welcoming text.
+                </p>
+                <div class="image-gallery">
+                    <figure>
+                        <img
+                            src="assets/images/reflective/example1.jpg"
+                            alt="Community group photo"
+                        />
+                        <figcaption>Supports inclusivity and belonging</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="assets/images/reflective/example2.jpg" alt="Music event" />
+                        <figcaption>Conveys energy and creativity</figcaption>
+                    </figure>
+                    <!-- Add 1–2 more -->
+                </div>
+                <blockquote>
+                    "Welcome to a space where your passions and identity are celebrated."
+                </blockquote>
+                <p class="caption">Imagery and tone combined to reflect values.</p>
+            </section>
+
+            <!-- Language and Expression -->
+            <section class="component-section" id="language">
+                <h2>Reflective Language and Expression</h2>
+                <p>
+                    The language is checked for inclusivity, clarity, and value alignment.
+                    Below is an example revision.
+                </p>
+                <div class="language-comparison">
+                    <p><strong>Before:</strong> "Users must register to join."</p>
+                    <p>
+                        <strong>After:</strong> "Join our community by creating your account –
+                        it’s simple and open to everyone."
+                    </p>
+                </div>
+                <p class="caption">Language revised for inclusivity and reflective values.</p>
+            </section>
+
+            <!-- Dynamic Content -->
+            <section class="component-section" id="dynamic">
+                <h2>Dynamic Content Example</h2>
+                <p>
+                    This section uses the <strong>Community API</strong> to dynamically display
+                    a list of communities a user has subscribed to, reinforcing personal
+                    identity and belonging.
+                </p>
+                <div id="api-content" class="api-demo">
+                    <!-- JS will inject community list here -->
+                </div>
+                <p class="caption">Example of dynamic reflective content via API.</p>
+            </section>
+        </main>
+
+        <!-- JS -->
+        <script type="module" src="js/reflective_design.js"></script>
+    </body>
+</html>

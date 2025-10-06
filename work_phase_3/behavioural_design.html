@@ -58,6 +58,54 @@
                 </p>
             </section>
 
+            <!-- Figma Mockups -->
+            <section class="component-section" id="mockups">
+                <h2>Figma Mockups</h2>
+                <p>
+                    These mockups were created in <strong>Figma</strong> as part of the design
+                    process. They illustrate button states (default, hover, disabled) and form
+                    layouts before being implemented in code.
+                </p>
+                <div class="mockup-gallery">
+                    <figure>
+                        <img
+                            src="assets/images/behavioural_design/Primary Button.png"
+                            alt="Primary button mockup"
+                            class="responsive-img"
+                        />
+                        <figcaption>Primary Button (Default)</figcaption>
+                    </figure>
+                    <figure>
+                        <img
+                            src="assets/images/behavioural_design/Hover Button.png"
+                            alt="Hover button mockup"
+                            class="responsive-img"
+                        />
+                        <figcaption>Primary Button (Hover)</figcaption>
+                    </figure>
+                    <figure>
+                        <img
+                            src="assets/images/behavioural_design/Disable Button.png"
+                            alt="Disabled button mockup"
+                            class="responsive-img"
+                        />
+                        <figcaption>Primary Button (Disabled)</figcaption>
+                    </figure>
+                    <figure>
+                        <img
+                            src="assets/images/behavioural_design/Forms.png"
+                            alt="Form mockup"
+                            class="responsive-img"
+                        />
+                        <figcaption>Form Layout Example</figcaption>
+                    </figure>
+                </div>
+                <p class="caption">
+                    Figma mockups served as conceptual design references, then guided the
+                    HTML/CSS implementation below.
+                </p>
+            </section>
+
             <!-- Link Styles -->
             <section class="component-section" id="links">
                 <h2>Link Styles</h2>
@@ -93,28 +141,58 @@
             <section class="component-section" id="buttons">
                 <h2>Buttons</h2>
                 <p>
-                    Buttons allow users to take action, such as submitting a form or navigating
-                    to another page.
+                    Buttons provide <strong>affordance</strong> (clickable shape),
+                    <strong>signifiers</strong> (labels/icons), and
+                    <strong>feedback</strong> (state changes). These implementations correspond
+                    directly to the Figma mockups.
                 </p>
                 <div class="component-demo">
-                    <button class="button primary">Primary Button</button>
-                    <button class="button secondary">Secondary Button</button>
+                    <button class="button primary">Primary (Default)</button>
+                    <button class="button primary hover">Primary (Hover)</button>
+                    <button class="button primary" disabled>Primary (Disabled)</button>
                 </div>
-                <p class="caption">Different button styles for user actions.</p>
+                <p class="caption">
+                    Primary button states implemented in code based on the Figma mockups.
+                </p>
             </section>
 
             <!-- Forms -->
             <section class="component-section" id="forms">
                 <h2>Forms</h2>
-                <p>Forms allow users to input and submit information.</p>
-                <form class="form-demo">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" placeholder="Enter your email" />
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" placeholder="Enter your password" />
-                    <button type="submit" class="button primary">Submit</button>
+                <p>
+                    Forms allow users to input and submit information with validation and
+                    feedback. This form implementation corresponds to the Figma mockup.
+                </p>
+                <form id="demo-form" class="form-demo">
+                    <fieldset>
+                        <legend>User Login</legend>
+
+                        <label for="email">Email:</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Enter your email"
+                            required
+                        />
+
+                        <label for="password">Password:</label>
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Enter your password"
+                            required
+                        />
+
+                        <button type="submit" class="button primary">Submit</button>
+                    </fieldset>
+                    <p id="form-feedback" aria-live="polite"></p>
                 </form>
-                <p class="caption">Example form with labels and fields.</p>
+                <p class="caption">
+                    Example form with accessible labels, required fields, and feedback, adapted
+                    from the Figma mockup.
+                </p>
             </section>
 
             <!-- Cards -->

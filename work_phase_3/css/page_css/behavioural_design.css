@@ -74,6 +74,25 @@ body {
     font-style: italic;
 }
 
+/* Mockup Gallery */
+.mockup-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: flex-start;
+}
+
+.mockup-gallery figure {
+    text-align: center;
+    max-width: 220px;
+}
+
+.mockup-gallery img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
 /* Link states */
 .component-demo a {
     color: var(--primary-color);
@@ -109,34 +128,36 @@ body {
     text-decoration: underline;
 }
 
-/* Buttons */
+/* ================================
+   Buttons (aligned with Figma mockups)
+   ================================ */
 .button {
     padding: 0.6rem 1.2rem;
-    border-radius: 4px;
+    border-radius: 6px;
     font-size: 1rem;
     cursor: pointer;
-    transition: background-color 0.3s ease;
     border: none;
+    min-width: 150px; /* consistent button width */
+    text-align: center;
+    transition: background-color 0.3s ease;
 }
 
+/* Default (Primary) */
 .button.primary {
-    background-color: var(--secondary-color);
+    background-color: var(--secondary-color); /* same as Figma blue */
     color: white;
 }
 
-.button.primary:hover {
-    background-color: var(--accent-color);
+/* Hover */
+.button.primary:hover,
+.button.primary.hover {
+    background-color: var(--accent-color); /* same as Figma red */
 }
 
-.button.secondary {
-    background: none;
-    border: 2px solid var(--secondary-color);
-    color: var(--secondary-color);
-}
-
-.button.secondary:hover {
-    background-color: var(--secondary-color);
-    color: white;
+/* Disabled */
+.button.primary:disabled {
+    background-color: #ccc; /* same as Figma grey */
+    cursor: not-allowed;
 }
 
 /* Forms */
