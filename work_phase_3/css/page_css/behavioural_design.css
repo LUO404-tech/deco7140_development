@@ -1,5 +1,6 @@
-/* Behavioural Design page styles */
-
+/* ================================
+   Behavioural Design page styles
+   ================================ */
 .intro {
     margin: 2rem auto;
     text-align: center;
@@ -13,4 +14,136 @@
 .gallery h2 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
+}
+
+/* ================================
+   Behavioural Design Page Styles
+   ================================ */
+
+/* Page layout */
+main {
+    max-width: 1200px;
+    margin: 6rem auto 3rem auto; /* add top space because of fixed nav */
+    padding: 0 1.5rem;
+}
+
+/* Section spacing */
+section {
+    margin-bottom: 3rem;
+}
+
+section h2 {
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 0.3rem;
+}
+
+/* ================================
+   Buttons
+   ================================ */
+.demo-button {
+    display: inline-block;
+    padding: 0.75rem 1.25rem;
+    margin: 0.5rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.demo-button.primary {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.demo-button.primary:hover {
+    background-color: var(--accent-color);
+}
+
+.demo-button.outline {
+    background: none;
+    border: 2px solid var(--secondary-color);
+    color: var(--secondary-color);
+}
+
+.demo-button.outline:hover {
+    background: var(--secondary-color);
+    color: white;
+}
+
+/* ================================
+   Forms
+   ================================ */
+.demo-form {
+    max-width: 500px;
+    background: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.demo-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.demo-form input,
+.demo-form textarea,
+.demo-form select {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.demo-form input:focus,
+.demo-form textarea:focus,
+.demo-form select:focus {
+    border-color: var(--secondary-color);
+    outline: none;
+}
+
+/* ================================
+   Cards
+   ================================ */
+.demo-card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.25rem;
+    margin: 1rem 0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease-in-out;
+}
+
+.demo-card:hover {
+    transform: translateY(-5px);
+}
+
+.demo-card h3 {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+.demo-card p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* ================================
+   Notes / Annotations
+   ================================ */
+.annotation {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 0.25rem;
+    font-style: italic;
 }

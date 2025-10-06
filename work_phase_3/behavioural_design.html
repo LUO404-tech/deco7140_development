@@ -23,6 +23,7 @@
                 <li><a href="style_guide.html">Style Guide</a></li>
                 <li><a href="ethical_response.html">Ethical Response</a></li>
                 <li><a href="genai_mt_acknowledgement.html">GenAI Acknowledgement</a></li>
+                <li><a href="visceral_design.html">Visceral Design</a></li>
                 <li>
                     <a href="behavioural_design.html" aria-current="page"
                         >Behavioural Design</a
@@ -35,28 +36,15 @@
         <nav class="navbar">
             <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
             <ul class="menu">
-                <li>
-                    <a href="index.html"><span class="icon">🏠</span> Home</a>
-                </li>
-                <li>
-                    <a href="site_map.html"><span class="icon">🧭</span> Site Map</a>
-                </li>
-                <li>
-                    <a href="style_guide.html"><span class="icon">🎨</span> Style Guide</a>
-                </li>
-                <li>
-                    <a href="ethical_response.html"
-                        ><span class="icon">⚖️</span> Ethical Response</a
-                    >
-                </li>
-                <li>
-                    <a href="genai_mt_acknowledgement.html"
-                        ><span class="icon">🤖</span> GenAI Acknowledgement</a
-                    >
-                </li>
+                <li><a href="index.html">🏠 Home</a></li>
+                <li><a href="site_map.html">🧭 Site Map</a></li>
+                <li><a href="style_guide.html">🎨 Style Guide</a></li>
+                <li><a href="ethical_response.html">⚖️ Ethical Response</a></li>
+                <li><a href="genai_mt_acknowledgement.html">🤖 GenAI Acknowledgement</a></li>
+                <li><a href="visceral_design.html">✨ Visceral Design</a></li>
                 <li>
                     <a href="behavioural_design.html" aria-current="page"
-                        ><span class="icon">✨</span> Behavioural Design</a
+                        >⚙️ Behavioural Design</a
                     >
                 </li>
             </ul>
@@ -70,20 +58,61 @@
                 <span>Behavioural Design</span>
             </nav>
 
-            <!-- Intro -->
-            <section class="intro" aria-labelledby="bd-overview">
-                <h1 id="bd-overview">Behavioural Design</h1>
+            <!-- Intro Section -->
+            <section class="intro">
+                <h1>Behavioural Design</h1>
                 <p>
-                    This page presents the Behavioural Level of the Style Guide. Here we will
-                    include high fidelity mock-ups and interactive components that demonstrate
-                    how users will interact with the site.
+                    This page demonstrates the design components at the
+                    <strong>Behavioural Level</strong>, showing how users will interact with
+                    buttons, forms, and navigation. Each component includes an example and a
+                    short explanation of its purpose.
                 </p>
             </section>
 
-            <!-- Placeholder for future mock-ups -->
-            <section class="gallery" aria-labelledby="mockup-gallery">
-                <h2 id="mockup-gallery">Mock-up Gallery</h2>
-                <p>🚧 Coming soon: Figma mock-ups and interactive components 🚧</p>
+            <!-- Section 1: Buttons -->
+            <section class="component-section" id="buttons">
+                <h2>Buttons</h2>
+                <p>
+                    Buttons guide user actions such as submitting a form or navigating to a new
+                    page.
+                </p>
+                <div class="component-demo">
+                    <!-- Example Button -->
+                    <button class="button">Click Me</button>
+                </div>
+                <p class="caption">Primary button for main actions.</p>
+            </section>
+
+            <!-- Section 2: Forms -->
+            <section class="component-section" id="forms">
+                <h2>Forms</h2>
+                <p>
+                    Forms allow users to input data. Example below shows a simple login form.
+                </p>
+                <form class="form-demo">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" placeholder="Enter your email" />
+
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" placeholder="Enter your password" />
+
+                    <button type="submit" class="button">Login</button>
+                </form>
+                <p class="caption">Form fields with labels and a submit button.</p>
+            </section>
+
+            <!-- Section 3: Navigation -->
+            <section class="component-section" id="navigation">
+                <h2>Navigation</h2>
+                <p>Navigation menus help users move between sections of the website.</p>
+                <nav class="demo-nav">
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+                <p class="caption">Example of a simple horizontal navigation bar.</p>
             </section>
         </main>
 
