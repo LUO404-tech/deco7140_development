@@ -10,10 +10,10 @@ body {
 .breadcrumb {
     display: block;
     max-width: 1100px;
-    margin: 5rem auto 2rem; /* 下移，避免和 fixed nav 重叠 */
+    margin: 5rem auto 2rem; /* add margin to avoid overlap with fixed nav */
     font-size: 0.95rem;
     color: var(--text-color);
-    background: #f9f9f9; /* 浅灰背景让它更明显 */
+    background: #f9f9f9; /* light gray background for visibility */
     padding: 0.5rem 1rem;
     border-radius: 4px;
 }
@@ -30,14 +30,15 @@ body {
 
 .breadcrumb span {
     font-weight: bold;
-    color: var(--accent-color);
+    color: var(--accent-color); /* highlight the current page */
 }
 
 /* Intro section */
 .intro {
-    margin: 2rem auto 3rem; /* reduce top margin, breadcrumb is above */
-    max-width: 800px;
-    text-align: center;
+    margin: 2rem auto 3rem auto; /* center horizontally */
+    max-width: 1100px; /* match gallery width */
+    text-align: left; /* left align text inside */
+    padding: 0 2rem; /* inner padding for consistent spacing */
 }
 
 .intro h1 {
@@ -58,7 +59,7 @@ body {
     text-align: center;
 }
 
-/* Grid layout */
+/* Grid layout for gallery items */
 .gallery-grid {
     display: grid;
     grid-template-columns: 1fr; /* mobile: 1 column */
@@ -82,6 +83,64 @@ body {
     margin-top: 0.5rem;
     font-size: 0.95rem;
     color: var(--text-color);
+}
+
+/* Typography Section */
+.typography {
+    margin: 2rem auto;
+    padding: 1.5rem;
+    max-width: 1100px;
+    background: #f9f9f9;
+    border-radius: 8px;
+}
+
+.typography ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.typography ul li {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.typography-example {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+/* Colour Scheme Section */
+.colours {
+    margin: 2rem auto;
+    max-width: 1100px;
+    padding: 1.5rem;
+}
+
+.colour-palette {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.colour-swatch {
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 600;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Highlight text style */
+.highlight {
+    background-color: #fff3cd; /* soft yellow */
+    padding: 0 0.2rem;
+    border-radius: 3px;
 }
 
 /* Desktop: 3 columns */

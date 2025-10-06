@@ -23,12 +23,6 @@
                 <li><a href="style_guide.html">Style Guide</a></li>
                 <li><a href="ethical_response.html">Ethical Response</a></li>
                 <li><a href="genai_mt_acknowledgement.html">GenAI Acknowledgement</a></li>
-                <li><a href="visceral_design.html">Visceral Design</a></li>
-                <li>
-                    <a href="behavioural_design.html" aria-current="page"
-                        >Behavioural Design</a
-                    >
-                </li>
             </ul>
         </nav>
 
@@ -41,12 +35,6 @@
                 <li><a href="style_guide.html">🎨 Style Guide</a></li>
                 <li><a href="ethical_response.html">⚖️ Ethical Response</a></li>
                 <li><a href="genai_mt_acknowledgement.html">🤖 GenAI Acknowledgement</a></li>
-                <li><a href="visceral_design.html">✨ Visceral Design</a></li>
-                <li>
-                    <a href="behavioural_design.html" aria-current="page"
-                        >⚙️ Behavioural Design</a
-                    >
-                </li>
             </ul>
         </nav>
 
@@ -58,53 +46,39 @@
                 <span>Behavioural Design</span>
             </nav>
 
-            <!-- Intro Section -->
+            <!-- Intro -->
             <section class="intro">
                 <h1>Behavioural Design</h1>
                 <p>
-                    This page demonstrates the design components at the
-                    <strong>Behavioural Level</strong>, showing how users will interact with
-                    buttons, forms, and navigation. Each component includes an example and a
-                    short explanation of its purpose.
+                    This section of the Style Guide focuses on
+                    <strong>Behavioural Design</strong>. It demonstrates how interactive
+                    components such as <em>links</em>, <em>menus</em>, <em>buttons</em>,
+                    <em>forms</em>, and <em>cards</em> are styled and structured to support
+                    usability and function.
                 </p>
             </section>
 
-            <!-- Section 1: Buttons -->
-            <section class="component-section" id="buttons">
-                <h2>Buttons</h2>
+            <!-- Link Styles -->
+            <section class="component-section" id="links">
+                <h2>Link Styles</h2>
                 <p>
-                    Buttons guide user actions such as submitting a form or navigating to a new
-                    page.
+                    Links show different states (normal, hover, visited) to ensure
+                    accessibility and clarity.
                 </p>
                 <div class="component-demo">
-                    <!-- Example Button -->
-                    <button class="button">Click Me</button>
+                    <a href="#">Normal Link</a> | <a href="#" class="hover">Hover Link</a> |
+                    <a href="#" class="visited">Visited Link</a>
                 </div>
-                <p class="caption">Primary button for main actions.</p>
+                <p class="caption">Example of styled links with states.</p>
             </section>
 
-            <!-- Section 2: Forms -->
-            <section class="component-section" id="forms">
-                <h2>Forms</h2>
+            <!-- Menus -->
+            <section class="component-section" id="menus">
+                <h2>Menus and Navigation</h2>
                 <p>
-                    Forms allow users to input data. Example below shows a simple login form.
+                    Menus organise site navigation and support usability through clear labels
+                    and grouping.
                 </p>
-                <form class="form-demo">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" placeholder="Enter your email" />
-
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" placeholder="Enter your password" />
-
-                    <button type="submit" class="button">Login</button>
-                </form>
-                <p class="caption">Form fields with labels and a submit button.</p>
-            </section>
-
-            <!-- Section 3: Navigation -->
-            <section class="component-section" id="navigation">
-                <h2>Navigation</h2>
-                <p>Navigation menus help users move between sections of the website.</p>
                 <nav class="demo-nav">
                     <ul>
                         <li><a href="#">Home</a></li>
@@ -112,7 +86,52 @@
                         <li><a href="#">Contact</a></li>
                     </ul>
                 </nav>
-                <p class="caption">Example of a simple horizontal navigation bar.</p>
+                <p class="caption">Mock-up of a simple navigation menu.</p>
+            </section>
+
+            <!-- Buttons -->
+            <section class="component-section" id="buttons">
+                <h2>Buttons</h2>
+                <p>
+                    Buttons allow users to take action, such as submitting a form or navigating
+                    to another page.
+                </p>
+                <div class="component-demo">
+                    <button class="button primary">Primary Button</button>
+                    <button class="button secondary">Secondary Button</button>
+                </div>
+                <p class="caption">Different button styles for user actions.</p>
+            </section>
+
+            <!-- Forms -->
+            <section class="component-section" id="forms">
+                <h2>Forms</h2>
+                <p>Forms allow users to input and submit information.</p>
+                <form class="form-demo">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" placeholder="Enter your email" />
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" placeholder="Enter your password" />
+                    <button type="submit" class="button primary">Submit</button>
+                </form>
+                <p class="caption">Example form with labels and fields.</p>
+            </section>
+
+            <!-- Cards -->
+            <section class="component-section" id="cards">
+                <h2>Card Components</h2>
+                <p>
+                    Cards group related content in a compact visual container, often used for
+                    summaries or navigation.
+                </p>
+                <div class="card-demo">
+                    <div class="card">
+                        <h3>Card Title</h3>
+                        <p>This is a simple card with text content and a button.</p>
+                        <a href="#" class="button primary">Read More</a>
+                    </div>
+                </div>
+                <p class="caption">Example of a styled card component.</p>
             </section>
         </main>
 

@@ -11,7 +11,7 @@ body {
 .intro {
     margin: 5rem auto 3rem;
     max-width: 800px;
-    text-align: left; /* align text instead of center */
+    text-align: left;
 }
 
 .intro h1 {
@@ -47,22 +47,31 @@ main {
 }
 
 /* ================================
-   Card Styles
+   Card Customization for Style Guide
    ================================ */
 .card {
     background-color: #e6f0fa; /* light blue */
-    border-left: 6px solid #4a90e2;
-    padding: 1.5rem;
+    border-left: 6px solid #4a90e2; /* blue accent on left */
     border-radius: 8px;
+    padding: 1.5rem;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    text-align: left;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-    /* fixed card size */
-    width: 300px;
-    min-height: 250px;
+/* Hover effect */
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Card heading */
+.card h3 {
+    margin-top: 0;
+    font-size: 1.4rem;
+    color: var(--primary-color);
 }
 
 /* Buttons inside cards */
@@ -85,22 +94,15 @@ main {
    Card Container Layout
    ================================ */
 .card-container {
-    display: flex;
-    flex-wrap: wrap; /* allow wrapping */
-    gap: 1.5rem; /* spacing between cards */
-    justify-content: flex-start; /* align left */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    justify-content: center;
     margin: 2rem auto;
-    max-width: 1100px;
+    max-width: 1200px;
 }
 
-/* Responsive adjustments */
-@media screen and (max-width: 1100px) {
-    .card {
-        width: 45%; /* 2 per row on tablets */
-    }
-}
-
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 767px) {
     .card {
         width: 100%; /* 1 per row on mobile */
     }

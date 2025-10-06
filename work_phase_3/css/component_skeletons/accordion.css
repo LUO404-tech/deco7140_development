@@ -1,0 +1,121 @@
+/* ================================
+   Accordion Component
+   ================================ */
+
+/* Base accordion styles */
+.accordion {
+    width: 100%;
+    max-width: 900px;
+    margin: 2rem auto;
+    border-radius: 6px;
+    overflow: hidden;
+    font-family: inherit;
+}
+
+.accordion-item {
+    border-bottom: 1px solid #ddd;
+}
+
+/* Header button */
+.accordion-header {
+    width: 100%;
+    text-align: left;
+    background: var(--neutral-color); /* Default fallback */
+    border: none;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.accordion-header:hover {
+    background: #e9e9e9; /* Slightly darker on hover */
+    transform: scale(1.01); /* Small hover feedback */
+}
+
+/* Content area */
+.accordion-content {
+    display: none;
+    padding: 1rem;
+    background: #fff;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.accordion-content ul {
+    padding-left: 1.5rem;
+    list-style: disc;
+}
+
+.accordion-content p {
+    margin-bottom: 0.5rem;
+}
+
+/* Expanded state */
+.accordion-item.active > .accordion-content {
+    display: block;
+}
+
+/* ================================
+   Hierarchical Colors (Match Style Guide)
+   ================================ */
+
+/* Level 1: Primary color (top-level categories like Home, Community Hubs) */
+.accordion-item.level-1 > .accordion-header {
+    background: var(--primary-color);
+    color: #fff;
+    font-size: 1.1rem;
+}
+.accordion-item.level-1 > .accordion-header:hover {
+    background: #1f2a36; /* Darker shade of primary */
+}
+
+/* Level 2: Secondary color (subcategories like Introduction, Browse Communities) */
+.accordion-item.level-2 > .accordion-header {
+    background: var(--secondary-color);
+    color: #fff;
+    font-size: 1rem;
+}
+.accordion-item.level-2 > .accordion-header:hover {
+    background: #2a80b9; /* Darker shade of secondary */
+}
+
+/* Level 3: Accent color (detailed subpages like Event Listings, Anime & Collecting) */
+.accordion-item.level-3 > .accordion-header {
+    background: var(--accent-color);
+    color: #fff;
+    font-size: 0.95rem;
+}
+.accordion-item.level-3 > .accordion-header:hover {
+    background: #c0392b; /* Darker shade of accent */
+}
+
+/* Level 4: Neutral/light (deepest content items, e.g. Community Types children) */
+.accordion-item.level-4 > .accordion-header {
+    background: #f4f4f4; /* Light neutral */
+    color: var(--text-color);
+    font-size: 0.9rem;
+    font-weight: normal;
+}
+.accordion-item.level-4 > .accordion-header:hover {
+    background: #ddd; /* Slightly darker */
+}
+
+/* ================================
+   Extra Styling for Visual Consistency
+   ================================ */
+
+/* Add spacing between accordion groups */
+.accordion > .accordion-item {
+    margin-bottom: 0.5rem;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+/* Nested accordion indentation */
+.accordion .accordion .accordion-item {
+    margin-left: 1rem;
+    border-left: 3px solid #eee;
+    border-radius: 3px;
+}

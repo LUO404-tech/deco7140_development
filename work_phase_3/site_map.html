@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="css/layout.css" />
         <link rel="stylesheet" href="css/components.css" />
 
-        <!-- Page-specific CSS (Accordion + Responsive Image) -->
+        <!-- Page-specific CSS -->
         <link rel="stylesheet" href="css/component_skeleton/accordion.css" />
     </head>
     <body>
@@ -42,15 +42,20 @@
             <header>
                 <h1>Website Sitemap</h1>
                 <p>
-                    This sitemap outlines the core structure of the website based on the client
-                    needs and user story analysis from WP2. The layout is designed to support a
-                    hobby-focused, inclusive, and collaborative digital community.
+                    This sitemap outlines the <strong>core structure</strong> of the website
+                    based on client needs and user story analysis from WP2. The layout is
+                    designed to support a hobby-focused, <strong>inclusive</strong>, and
+                    <strong>collaborative</strong> digital community.
                 </p>
             </header>
 
             <!-- Visual Site Map Image -->
             <section class="sitemap-image">
                 <h2>Visual Site Map</h2>
+                <p>
+                    The diagram below shows how different sections connect, ensuring a
+                    <strong>clear navigation flow</strong> for users across devices.
+                </p>
                 <img
                     src="assets/images/site_map.jpg"
                     alt="Visual site map of the Hobby & Subculture community website"
@@ -60,91 +65,148 @@
 
             <!-- Accordion Structure -->
             <section class="accordion">
-                <div class="accordion-item">
+                <!-- Home -->
+                <div class="accordion-item level-1">
                     <button class="accordion-header">Home</button>
                     <div class="accordion-content">
-                        <ul>
-                            <li>Welcome Overview</li>
-                            <li>Community Focus Introduction</li>
-                        </ul>
+                        <p>Landing page introducing the platform and expectations.</p>
                     </div>
                 </div>
 
-                <div class="accordion-item">
+                <!-- Introduction -->
+                <div class="accordion-item level-1">
+                    <button class="accordion-header">Introduction</button>
+                    <div class="accordion-content">
+                        <div class="accordion-item level-2">
+                            <button class="accordion-header">Community Types</button>
+                            <div class="accordion-content">
+                                <ul>
+                                    <li>
+                                        Gaming & Cosplay – Cosplay and shared gaming culture.
+                                    </li>
+                                    <li>Knitting & Craft – DIY crafts and creative making.</li>
+                                    <li>
+                                        Anime & Collecting – Anime, manga, and figure
+                                        collecting.
+                                    </li>
+                                    <li>
+                                        Street Dance & Urban – Dance battles and urban
+                                        performance.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- News -->
+                <div class="accordion-item level-1">
+                    <button class="accordion-header">News</button>
+                    <div class="accordion-content">
+                        <div class="accordion-item level-2">
+                            <button class="accordion-header">Event Listings</button>
+                            <div class="accordion-content">
+                                <p>Upcoming events overview.</p>
+                            </div>
+                        </div>
+                        <div class="accordion-item level-2">
+                            <button class="accordion-header">Calendar View</button>
+                            <div class="accordion-content">
+                                <p>Monthly and weekly schedules.</p>
+                            </div>
+                        </div>
+                        <div class="accordion-item level-2">
+                            <button class="accordion-header">
+                                Local Clubs & Competitions
+                            </button>
+                            <div class="accordion-content">
+                                <p>Details of local activities and competitions.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Community Hubs -->
+                <div class="accordion-item level-1">
                     <button class="accordion-header">Community Hubs</button>
                     <div class="accordion-content">
-                        <ul>
-                            <li>Gaming & Cosplay (Alex)</li>
-                            <li>Anime & Collecting (Kenji)</li>
-                            <li>Music & Gigs (Lila)</li>
-                            <li>Knitting & Craft (Fatima)</li>
-                            <li>Street Dance & Urban (Diego)</li>
-                        </ul>
+                        <div class="accordion-item level-2">
+                            <button class="accordion-header">Browse Communities</button>
+                            <div class="accordion-content">
+                                <div class="accordion-item level-3">
+                                    <button class="accordion-header">Hub Feed</button>
+                                    <div class="accordion-content">
+                                        <p>Latest community posts.</p>
+                                    </div>
+                                </div>
+                                <div class="accordion-item level-3">
+                                    <button class="accordion-header">Share Experience</button>
+                                    <div class="accordion-content">
+                                        <p>Stories and projects shared by members.</p>
+                                    </div>
+                                </div>
+                                <div class="accordion-item level-3">
+                                    <button class="accordion-header">
+                                        Useful Resource Sharing
+                                    </button>
+                                    <div class="accordion-content">
+                                        <p>Guides, links, and peer-contributed tools.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="accordion-item">
-                    <button class="accordion-header">Tutorials & Resources</button>
+                <!-- Learning Studio -->
+                <div class="accordion-item level-1">
+                    <button class="accordion-header">Learning Studio</button>
                     <div class="accordion-content">
-                        <ul>
-                            <li>Beginner Guides</li>
-                            <li>Video Tutorials</li>
-                            <li>Tag-based Navigation</li>
-                        </ul>
+                        <div class="accordion-item level-2">
+                            <button class="accordion-header">Beginner Guides</button>
+                            <div class="accordion-content">
+                                <p>Step-by-step tutorials for newcomers.</p>
+                            </div>
+                        </div>
+                        <div class="accordion-item level-2">
+                            <button class="accordion-header">Video Tutorials</button>
+                            <div class="accordion-content">
+                                <p>Practical learning via videos.</p>
+                            </div>
+                        </div>
+                        <div class="accordion-item level-2">
+                            <button class="accordion-header">Peer Mentorship</button>
+                            <div class="accordion-content">
+                                <p>Connect with experienced peers for guidance.</p>
+                            </div>
+                        </div>
+                        <div class="accordion-item level-2">
+                            <button class="accordion-header">Q & A</button>
+                            <div class="accordion-content">
+                                <p>Ask questions and receive community answers.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="accordion-item">
-                    <button class="accordion-header">Events & Calendar</button>
-                    <div class="accordion-content">
-                        <ul>
-                            <li>Event Listings</li>
-                            <li>Calendar View</li>
-                            <li>Local Clubs & Competitions</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="accordion-item">
-                    <button class="accordion-header">Collaboration</button>
-                    <div class="accordion-content">
-                        <ul>
-                            <li>Pattern & Project Exchange</li>
-                            <li>Zine & Playlist Sharing</li>
-                            <li>Group Project Board</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="accordion-item">
+                <!-- Community Support -->
+                <div class="accordion-item level-1">
                     <button class="accordion-header">Community Support</button>
                     <div class="accordion-content">
-                        <ul>
-                            <li>Code of Conduct</li>
-                            <li>Report & Safety Tools</li>
-                            <li>Accessibility Settings</li>
-                            <li>Language Toggle</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="accordion-item">
-                    <button class="accordion-header">GenAI Acknowledgement</button>
-                    <div class="accordion-content">
-                        <p>
-                            This section acknowledges the role of AI in supporting the design
-                            process.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="accordion-item">
-                    <button class="accordion-header">About / Mission</button>
-                    <div class="accordion-content">
-                        <ul>
-                            <li>Client Values</li>
-                            <li>Design Goals</li>
-                        </ul>
+                        <div class="accordion-item level-2">
+                            <button class="accordion-header">
+                                Community Guidelines & Rules
+                            </button>
+                            <div class="accordion-content">
+                                <p>Code of conduct and participation rules.</p>
+                            </div>
+                        </div>
+                        <div class="accordion-item level-2">
+                            <button class="accordion-header">Report a Problem</button>
+                            <div class="accordion-content">
+                                <p>Safety tools and issue reporting.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>

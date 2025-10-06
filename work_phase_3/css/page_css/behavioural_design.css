@@ -1,83 +1,146 @@
 /* ================================
-   Behavioural Design page styles
+   Behavioural Design Page-specific Styles
    ================================ */
+
+body {
+    background-color: var(--bg-light);
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    display: block;
+    max-width: 1100px;
+    margin: 5rem auto 2rem;
+    font-size: 0.95rem;
+    color: var(--text-color);
+    background: #f9f9f9;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+}
+
+.breadcrumb a {
+    color: var(--primary-color);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+    color: var(--accent-color);
+}
+
+.breadcrumb span {
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+/* Intro */
 .intro {
-    margin: 2rem auto;
-    text-align: center;
+    margin: 2rem auto 3rem auto;
+    max-width: 1100px;
+    text-align: left;
+    padding: 0 2rem;
 }
 
-.gallery {
-    margin: 2rem auto;
-    text-align: center;
-}
-
-.gallery h2 {
-    font-size: 1.5rem;
+.intro h1 {
+    font-size: 2rem;
     margin-bottom: 1rem;
 }
 
-/* ================================
-   Behavioural Design Page Styles
-   ================================ */
-
-/* Page layout */
-main {
-    max-width: 1200px;
-    margin: 6rem auto 3rem auto; /* add top space because of fixed nav */
-    padding: 0 1.5rem;
+/* Sections */
+.component-section {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 0 2rem;
 }
 
-/* Section spacing */
-section {
-    margin-bottom: 3rem;
-}
-
-section h2 {
+.component-section h2 {
     font-size: 1.6rem;
-    color: var(--primary-color);
     margin-bottom: 1rem;
     border-bottom: 2px solid var(--secondary-color);
     padding-bottom: 0.3rem;
+    color: var(--primary-color);
 }
 
-/* ================================
-   Buttons
-   ================================ */
-.demo-button {
-    display: inline-block;
-    padding: 0.75rem 1.25rem;
-    margin: 0.5rem;
-    border: none;
-    border-radius: 6px;
+.component-section p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+/* Captions */
+.caption {
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+}
+
+/* Link states */
+.component-demo a {
+    color: var(--primary-color);
+    margin: 0 0.5rem;
+    text-decoration: none;
+}
+
+.component-demo a:hover,
+.component-demo .hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+.component-demo .visited {
+    color: purple;
+}
+
+/* Demo navigation */
+.demo-nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.demo-nav a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.demo-nav a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+/* Buttons */
+.button {
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
     font-size: 1rem;
     cursor: pointer;
-    transition: all 0.3s ease-in-out;
+    transition: background-color 0.3s ease;
+    border: none;
 }
 
-.demo-button.primary {
+.button.primary {
     background-color: var(--secondary-color);
     color: white;
 }
 
-.demo-button.primary:hover {
+.button.primary:hover {
     background-color: var(--accent-color);
 }
 
-.demo-button.outline {
+.button.secondary {
     background: none;
     border: 2px solid var(--secondary-color);
     color: var(--secondary-color);
 }
 
-.demo-button.outline:hover {
-    background: var(--secondary-color);
+.button.secondary:hover {
+    background-color: var(--secondary-color);
     color: white;
 }
 
-/* ================================
-   Forms
-   ================================ */
-.demo-form {
+/* Forms */
+.form-demo {
     max-width: 500px;
     background: #f9f9f9;
     padding: 1.5rem;
@@ -85,35 +148,28 @@ section h2 {
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-.demo-form label {
+.form-demo label {
     display: block;
     font-weight: bold;
     margin-bottom: 0.5rem;
     color: var(--primary-color);
 }
 
-.demo-form input,
-.demo-form textarea,
-.demo-form select {
+.form-demo input {
     width: 100%;
     padding: 0.75rem;
     margin-bottom: 1rem;
     border: 1px solid #ccc;
     border-radius: 4px;
-    font-size: 1rem;
 }
 
-.demo-form input:focus,
-.demo-form textarea:focus,
-.demo-form select:focus {
+.form-demo input:focus {
     border-color: var(--secondary-color);
     outline: none;
 }
 
-/* ================================
-   Cards
-   ================================ */
-.demo-card {
+/* Cards */
+.card {
     background: white;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -121,29 +177,20 @@ section h2 {
     margin: 1rem 0;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
     transition: transform 0.2s ease-in-out;
+    max-width: 300px;
 }
 
-.demo-card:hover {
+.card:hover {
     transform: translateY(-5px);
 }
 
-.demo-card h3 {
+.card h3 {
     font-size: 1.2rem;
     color: var(--secondary-color);
     margin-bottom: 0.5rem;
 }
 
-.demo-card p {
+.card p {
     font-size: 1rem;
     color: #555;
-}
-
-/* ================================
-   Notes / Annotations
-   ================================ */
-.annotation {
-    font-size: 0.9rem;
-    color: #666;
-    margin-top: 0.25rem;
-    font-style: italic;
 }

@@ -13,6 +13,10 @@
 
         <!-- Page-specific CSS -->
         <link rel="stylesheet" href="css/page_css/visceral_design.css" />
+        <link rel="stylesheet" href="css/page_css/gallery.css" />
+        <link rel="stylesheet" href="css/page_css/typography.css" />
+        <link rel="stylesheet" href="css/page_css/color.css" />
+        <link rel="stylesheet" href="css/page_css/viewer.css" />
     </head>
     <body>
         <!-- Desktop Navigation -->
@@ -26,7 +30,7 @@
             </ul>
         </nav>
 
-        <!-- Mobile Navigation (same structure as index.html) -->
+        <!-- Mobile Navigation -->
         <nav class="navbar">
             <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
             <ul class="menu">
@@ -66,59 +70,179 @@
             <section class="intro" aria-labelledby="vd-overview">
                 <h1 id="vd-overview">Visceral Design</h1>
                 <p>
-                    The focus of this section of the Style Guide is ensuring the user has a
-                    positive first impression of the site.
+                    The focus of this section is ensuring the user has a
+                    <mark>positive first impression</mark> of the site. This includes
+                    <strong>layout choices</strong>, <strong>typography</strong>, and
+                    <strong>colour scheme</strong> that communicate <mark>clarity</mark>,
+                    <mark>accessibility</mark>, and <mark>brand identity</mark>. A strong first
+                    impression helps users feel <strong>confident</strong> and encourages them
+                    to continue exploring the platform.
                 </p>
             </section>
 
             <!-- Layout Gallery -->
             <section class="gallery" aria-labelledby="layout-gallery">
                 <h2 id="layout-gallery">Layout Gallery</h2>
+                <p>
+                    These wireframes illustrate the main page layouts for desktop view, showing
+                    how a
+                    <mark>consistent structure</mark> guides users across different sections.
+                    Each page serves a distinct role: <strong>Homepage</strong> provides
+                    orientation and discovery, <strong>Community Hubs</strong> focus on
+                    interaction and sharing, <strong>Learning Studio</strong> offers structured
+                    resources, <strong>Community Support</strong> addresses help and rules, and
+                    <strong>News</strong> keeps users updated with the latest content.
+                </p>
                 <div class="gallery-grid">
                     <figure>
                         <img
                             src="assets/images/visceral_design/introduction.png"
-                            alt="Homepage wireframe"
+                            alt="Homepage wireframe (desktop)"
                         />
-                        <figcaption>Homepage Wireframe</figcaption>
+                        <figcaption>Homepage Wireframe (Desktop)</figcaption>
                     </figure>
-
                     <figure>
                         <img
                             src="assets/images/visceral_design/community_hubs.png"
-                            alt="Community Hubs wireframe"
+                            alt="Community Hubs wireframe (desktop)"
                         />
-                        <figcaption>Community Hubs Wireframe</figcaption>
+                        <figcaption>Community Hubs Wireframe (Desktop)</figcaption>
                     </figure>
-
                     <figure>
                         <img
                             src="assets/images/visceral_design/learning_studio.png"
-                            alt="Learning Studio wireframe"
+                            alt="Learning Studio wireframe (desktop)"
                         />
-                        <figcaption>Learning Studio Wireframe</figcaption>
+                        <figcaption>Learning Studio Wireframe (Desktop)</figcaption>
                     </figure>
-
                     <figure>
                         <img
                             src="assets/images/visceral_design/community_support.png"
-                            alt="Community Support wireframe"
+                            alt="Community Support wireframe (desktop)"
                         />
-                        <figcaption>Community Support Wireframe</figcaption>
+                        <figcaption>Community Support Wireframe (Desktop)</figcaption>
                     </figure>
-
                     <figure>
                         <img
                             src="assets/images/visceral_design/news.png"
-                            alt="News wireframe"
+                            alt="News wireframe (desktop)"
                         />
-                        <figcaption>News Wireframe</figcaption>
+                        <figcaption>News Wireframe (Desktop)</figcaption>
                     </figure>
+                </div>
+
+                <h3>Mobile Wireframes</h3>
+                <p>
+                    To reflect a <mark>mobile-first design</mark> approach, here are the
+                    corresponding mobile layouts. Since many students primarily access content
+                    on their <strong>phones</strong>, these layouts ensure responsive design
+                    and maintain <mark>usability</mark> and
+                    <mark>visual consistency</mark> across devices.
+                </p>
+                <div class="gallery-grid">
+                    <figure>
+                        <img
+                            src="assets/images/visceral_design/intro_mobile.png"
+                            alt="Homepage wireframe (mobile)"
+                        />
+                        <figcaption>Homepage Wireframe (Mobile)</figcaption>
+                    </figure>
+                    <figure>
+                        <img
+                            src="assets/images/visceral_design/community_hubs_mobile.png"
+                            alt="Community Hubs wireframe (mobile)"
+                        />
+                        <figcaption>Community Hubs Wireframe (Mobile)</figcaption>
+                    </figure>
+                    <figure>
+                        <img
+                            src="assets/images/visceral_design/learning_studio_mobile.png"
+                            alt="Learning Studio wireframe (mobile)"
+                        />
+                        <figcaption>Learning Studio Wireframe (Mobile)</figcaption>
+                    </figure>
+                    <figure>
+                        <img
+                            src="assets/images/visceral_design/community_support_mobile.png"
+                            alt="Community Support wireframe (mobile)"
+                        />
+                        <figcaption>Community Support Wireframe (Mobile)</figcaption>
+                    </figure>
+                    <figure>
+                        <img
+                            src="assets/images/visceral_design/news_mobile.png"
+                            alt="News wireframe (mobile)"
+                        />
+                        <figcaption>News Wireframe (Mobile)</figcaption>
+                    </figure>
+                </div>
+            </section>
+
+            <!-- Typography -->
+            <section class="typography" aria-labelledby="typography-guide">
+                <h2 id="typography-guide">Typography</h2>
+                <p>
+                    Typography establishes a clear <mark>visual hierarchy</mark> and ensures
+                    <strong>readability</strong> across different screen sizes. Larger headings
+                    guide the eye, while smaller captions provide contextual detail without
+                    distraction.
+                </p>
+                <ul>
+                    <li>
+                        <strong>H1 (32px, Bold)</strong> – Used for main page titles, giving a
+                        strong entry point
+                    </li>
+                    <li>
+                        <strong>H2 (24px, Semi-bold)</strong> – Section headers that create
+                        structure
+                    </li>
+                    <li>
+                        <strong>Body text (16px, Regular)</strong> – Ensures readability for
+                        paragraphs
+                    </li>
+                    <li>
+                        <strong>Caption (14px, Light)</strong> – Used for notes or annotations
+                    </li>
+                </ul>
+                <p>Example:</p>
+                <h1>Main Heading Example</h1>
+                <h2>Section Heading Example</h2>
+                <p>
+                    This is a sample paragraph showing body text styling for improved
+                    readability.
+                </p>
+                <small>This is a caption or footnote example.</small>
+            </section>
+
+            <!-- Colour Scheme -->
+            <section class="colours" aria-labelledby="colour-guide">
+                <h2 id="colour-guide">Colour Scheme</h2>
+                <p>
+                    The colour palette balances <mark>vibrancy</mark> with
+                    <mark>accessibility</mark>, ensuring strong contrast for readability and
+                    alignment with <strong>WCAG 2.1</strong> guidelines. Each colour is
+                    carefully selected to reinforce <mark>brand identity</mark> while
+                    supporting usability.
+                </p>
+                <div class="colour-palette">
+                    <div class="colour-swatch" style="background-color: #2c3e50; color: white">
+                        Primary: #2c3e50<br />Used for headings and navigation
+                    </div>
+                    <div class="colour-swatch" style="background-color: #3498db; color: white">
+                        Secondary: #3498db<br />Used for links and highlights
+                    </div>
+                    <div class="colour-swatch" style="background-color: #e74c3c; color: white">
+                        Accent: #e74c3c<br />Used for alerts and emphasis
+                    </div>
+                    <div class="colour-swatch" style="background-color: #f5f5f5; color: #333">
+                        Neutral: #f5f5f5<br />Used for backgrounds
+                    </div>
                 </div>
             </section>
         </main>
 
         <!-- JS -->
         <script type="module" src="js/visceral_design.js"></script>
+        <script type="module" src="js/modules/viewer.js"></script>
     </body>
 </html>

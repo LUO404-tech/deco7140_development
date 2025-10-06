@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setupMenu();
 
     // ================================
-    // Accordion Logic
+    // Accordion Logic (multi-level support)
     // ================================
     const headers = document.querySelectorAll(".accordion-header");
 
@@ -18,15 +18,14 @@ document.addEventListener("DOMContentLoaded", () => {
         header.addEventListener("click", () => {
             const content = header.nextElementSibling;
 
-            // Toggle the clicked section
-            content.style.display = content.style.display === "block" ? "none" : "block";
-
-            // Optional: Close other open sections (accordion behavior)
-            headers.forEach((other) => {
-                if (other !== header) {
-                    other.nextElementSibling.style.display = "none";
-                }
-            });
+            // Toggle the clicked section only
+            if (content.style.display === "block") {
+                content.style.display = "none";
+                header.parentElement.classList.remove("active");
+            } else {
+                content.style.display = "block";
+                header.parentElement.classList.add("active");
+            }
         });
     });
 });
