@@ -14,6 +14,7 @@
         <!-- Page-specific CSS -->
         <link rel="stylesheet" href="css/page_css/behavioural_design.css" />
     </head>
+
     <body>
         <!-- Desktop Navigation -->
         <nav id="nav-desktop" aria-label="Main Navigation">
@@ -211,6 +212,170 @@
                 </div>
                 <p class="caption">Example of a styled card component.</p>
             </section>
+
+            <!-- Values Mapping Table -->
+            <section class="component-section" id="values-mapping">
+                <h2>Values Mapping Table</h2>
+                <p>
+                    The table below connects <strong>ethical values</strong> with their
+                    <strong>design implications</strong> and <strong>specific elements</strong>
+                    in this project, reflecting WP2 ethical assessment.
+                </p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Value</th>
+                            <th>Design Implication</th>
+                            <th>Specific Element with Annotation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Privacy</strong></td>
+                            <td>
+                                Collect minimal data, explain why it’s needed, allow pseudonyms
+                                where possible.
+                            </td>
+                            <td>
+                                <strong>Login/Registration Form</strong> only asks for email +
+                                password.
+                                <span class="annotation">
+                                    Annotation: Reduces exposure of sensitive data and aligns
+                                    with ACS principle of
+                                    <em>minimising harm</em>. Keeps user trust by avoiding
+                                    unnecessary personal data collection.
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Accessibility</strong></td>
+                            <td>
+                                Ensure mobile-first design, reflow without horizontal scroll,
+                                full keyboard and screen-reader support.
+                            </td>
+                            <td>
+                                <strong>Form labels + navigation focus outlines</strong>.
+                                <span class="annotation">
+                                    Annotation: Clear labels, ARIA roles, and visible focus
+                                    indicators ensure compliance with <em>WCAG 2.2</em>,
+                                    improving access for visually impaired and keyboard-only
+                                    users.
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Fairness</strong></td>
+                            <td>
+                                Provide guidelines, use plain/inclusive language, avoid
+                                cultural or technical bias.
+                            </td>
+                            <td>
+                                <strong>Community Guidelines page</strong> with
+                                beginner-friendly tips.
+                                <span class="annotation">
+                                    Annotation: Jargon-free copy and inclusive examples support
+                                    international students and newcomers, ensuring fairness and
+                                    <em>equal opportunity</em>.
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Trust</strong></td>
+                            <td>
+                                Show transparent rules, moderation criteria, and visible system
+                                responses.
+                            </td>
+                            <td>
+                                <strong>Report button + changelog section</strong>.
+                                <span class="annotation">
+                                    Annotation: Immediate validation feedback and visible
+                                    policy updates build user trust and promote accountability,
+                                    aligning with ACS value of <em>honesty</em>.
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- Behavioural Influence Examples -->
+                <section class="component-section">
+                    <h2>Behavioural Influence Examples</h2>
+                    <p>
+                        These real-world interface examples illustrate how online platforms
+                        leverage behavioural design to shape user engagement.
+                    </p>
+                    <div class="mockup-gallery">
+                        <figure>
+                            <img
+                                src="assets/images/behavioural_design/7cups.png"
+                                alt="7 Cups screenshot"
+                                class="responsive-img"
+                            />
+                            <figcaption>
+                                <strong>Emotional Urgency & Support Cue:</strong> 7 Cups uses
+                                warm visuals, trusted ratings, and a central call-to-action to
+                                lower barriers for users to seek help immediately.
+                            </figcaption>
+                        </figure>
+                        <figure>
+                            <img
+                                src="assets/images/behavioural_design/steam_community.png"
+                                alt="Steam community screenshot"
+                                class="responsive-img"
+                            />
+                            <figcaption>
+                                <strong>Social Belonging & Game Context: </strong> Steam invites
+                                players to join themed discussions, leveraging familiarity and
+                                shared subculture to drive participation.
+                            </figcaption>
+                        </figure>
+                        <figure>
+                            <img
+                                src="assets/images/behavioural_design/reddit.png"
+                                alt="Reddit topic browser screenshot"
+                                class="responsive-img"
+                            />
+                            <figcaption>
+                                <strong>Curiosity & Exploration:</strong> Reddit displays
+                                dynamic topic prompts and simplified entry points to encourage
+                                spontaneous browsing, aligned with exploratory behaviour.
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <p class="caption">
+                        These examples show persuasive cues like emotional appeal, social
+                        connection, and curiosity triggers—useful for inspiring
+                        community-friendly behavioural design.
+                    </p>
+                </section>
+                            <!-- Homepage Welcome Message Example -->
+            <section class="component-section" id="homepage-text">
+                <h2>Homepage Text Example</h2>
+                <blockquote>
+                    <p><strong>Welcome to the space where hobbies spark friendships.</strong></p>
+                    <p>Whether you’re into gaming, anime, music, dance, food, or something uniquely your own—this platform is built for you.</p>
+                    <p>Here, you’ll find people who get your vibe, share your passions, and are open to making meaningful connections.</p>
+                    <p>Come as you are, explore what you love, and grow your community one interest at a time.</p>
+                </blockquote>
+                <p class="caption">
+                    This text creates a friendly, trustworthy, and inclusive emotional tone. It aligns with the site's identity as a vibrant space where users feel accepted and celebrated.
+                </p>
+            </section>
+
+            <!-- Annotation Section -->
+            <section class="component-section" id="annotation">
+                <h2>Annotation</h2>
+                <p>
+                    This platform fosters <strong>belonging, fun, and cultural inclusivity</strong>. Its warm, enthusiastic language welcomes users as <strong>collectors, explorers, and fans</strong>, using phrases like <em>“come as you are”</em> and <em>“grow your community”</em> to spark curiosity and connection.
+                </p>
+                <p>
+                    We aim to help enthusiasts find like-minded peers and create opportunities for both <strong>online interaction and offline events</strong>. Beginners in certain interest areas can discover friendly mentors and accessible resources tailored to their level.
+                </p>
+                <p>
+                    Imagery reinforces these values: <strong>7 Cups</strong> conveys empathy and support, <strong>Steam</strong> showcases shared subcultural spaces, and <strong>Reddit</strong> sparks spontaneous exploration. Together, these choices reflect the client’s vision of a trusted, hobby-driven community where users don’t just scroll—they <strong>belong, contribute, and grow</strong>.
+                </p>
+            </section>
+            
         </main>
 
         <!-- JS -->

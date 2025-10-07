@@ -13,6 +13,7 @@
 
         <!-- Page-specific CSS -->
         <link rel="stylesheet" href="css/page_css/reflective_design.css" />
+        <link rel="stylesheet" href="css/component_skeleton/accordion.css" />
     </head>
     <body>
         <!-- Desktop Navigation -->
@@ -46,126 +47,480 @@
                 <span>Reflective Design</span>
             </nav>
 
-            <!-- Intro -->
             <section class="intro">
                 <h1>Reflective Design</h1>
-                <p>
-                    This section reflects on how our design aligns with values, ethical
-                    principles, and intended user experience. It covers
-                    <em>Values Mapping</em>, <em>Imagery & Tone</em>,
-                    <em>Reflective Language</em>, and <em>Dynamic Content</em>.
-                </p>
             </section>
 
-            <!-- 1. Values Mapping -->
-            <section class="component-section" id="values-mapping">
-                <h2>Values Mapping</h2>
-                <p>
-                    These values extend from our WP2 Flip Cards and are mapped into actionable
-                    design features. They ensure our platform is inclusive, safe, and
-                    enjoyable.
-                </p>
-
-                <div class="values-grid">
-                    <div class="value-card">
-                        <h3>♿ Inclusivity</h3>
-                        <p>
-                            <strong>Feature:</strong> Focus indicators, high contrast, labels
-                        </p>
-                        <p><strong>Rationale:</strong> Equal participation for all users.</p>
-                    </div>
-                    <div class="value-card">
-                        <h3>🤝 Trust & Safety</h3>
-                        <p><strong>Feature:</strong> Minimal forms (Email & Password)</p>
-                        <p><strong>Rationale:</strong> Protects privacy, builds confidence.</p>
-                    </div>
-                    <div class="value-card">
-                        <h3>🌐 Belonging</h3>
-                        <p><strong>Feature:</strong> Clear navigation & friendly language</p>
-                        <p><strong>Rationale:</strong> Helps users feel connected.</p>
-                    </div>
-                    <div class="value-card">
-                        <h3>🎉 Fun & Creativity</h3>
-                        <p><strong>Feature:</strong> Playful icons and emoji for hobbies</p>
-                        <p>
-                            <strong>Rationale:</strong> Keeps site light-hearted and engaging.
-                        </p>
+            <!-- Accordion Container -->
+            <div class="accordion" id="reflective-design-accordion">
+                <!-- Values Mapping Accordion Item -->
+                <div class="accordion-item level-1">
+                    <button class="accordion-header" aria-expanded="false">
+                        Values Mapping
+                    </button>
+                    <div class="accordion-content">
+                        <section class="component-section" id="values-mapping">
+                            <h2>Values Mapping Table</h2>
+                            <p>
+                                The table below connects <strong>ethical values</strong> with
+                                their <strong>design implications</strong> and
+                                <strong>specific elements</strong>
+                                in this project, reflecting WP2 ethical assessment.
+                            </p>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Value</th>
+                                        <th>Design Implication</th>
+                                        <th>Specific Element with Annotation</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Privacy</strong></td>
+                                        <td>
+                                            Collect minimal data, explain why it's needed,
+                                            allow pseudonyms where possible.
+                                        </td>
+                                        <td>
+                                            <strong>Login/Registration Form</strong> only asks
+                                            for email + password.
+                                            <span class="annotation">
+                                                Annotation: Reduces exposure of sensitive data
+                                                and aligns with ACS principle of
+                                                <em>minimising harm</em>. Keeps user trust by
+                                                avoiding unnecessary personal data collection.
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Accessibility</strong></td>
+                                        <td>
+                                            Ensure mobile-first design, reflow without
+                                            horizontal scroll, full keyboard and screen-reader
+                                            support.
+                                        </td>
+                                        <td>
+                                            <strong
+                                                >Form labels + navigation focus
+                                                outlines</strong
+                                            >.
+                                            <span class="annotation">
+                                                Annotation: Clear labels, ARIA roles, and
+                                                visible focus indicators ensure compliance with
+                                                <em>WCAG 2.2</em>, improving access for
+                                                visually impaired and keyboard-only users.
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Fairness</strong></td>
+                                        <td>
+                                            Provide guidelines, use plain/inclusive language,
+                                            avoid cultural or technical bias.
+                                        </td>
+                                        <td>
+                                            <strong>Community Guidelines page</strong> with
+                                            beginner-friendly tips.
+                                            <span class="annotation">
+                                                Annotation: Jargon-free copy and inclusive
+                                                examples support international students and
+                                                newcomers, ensuring fairness and
+                                                <em>equal opportunity</em>.
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Trust</strong></td>
+                                        <td>
+                                            Show transparent rules, moderation criteria, and
+                                            visible system responses.
+                                        </td>
+                                        <td>
+                                            <strong>Report button + changelog section</strong>.
+                                            <span class="annotation">
+                                                Annotation: Immediate validation feedback and
+                                                visible policy updates build user trust and
+                                                promote accountability, aligning with ACS value
+                                                of <em>honesty</em>.
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </section>
                     </div>
                 </div>
-            </section>
 
-            <!-- 2. Imagery & Tone -->
-            <section class="component-section" id="imagery-tone">
-                <h2>Imagery & Tone</h2>
-                <p>
-                    The imagery uses simple icons and emojis to represent community diversity
-                    and hobbies, avoiding heavy or distracting visuals. This ensures
-                    accessibility and keeps the tone
-                    <strong>friendly, inclusive, and playful</strong>.
-                </p>
-                <div class="imagery-demo">
-                    <span role="img" aria-label="gaming">🎮</span>
-                    <span role="img" aria-label="cosplay">🎭</span>
-                    <span role="img" aria-label="anime">📚</span>
-                    <span role="img" aria-label="music">🎶</span>
+                <!-- Imagery and Tone Accordion Item -->
+                <div class="accordion-item level-1">
+                    <button class="accordion-header" aria-expanded="false">
+                        Imagery and Tone
+                    </button>
+                    <div class="accordion-content">
+                        <!-- Behavioural Influence Examples -->
+                        <section class="component-section">
+                            <h2>Behavioural Influence Examples</h2>
+                            <p>
+                                These real-world interface examples illustrate how online
+                                platforms leverage behavioural design to shape user engagement.
+                            </p>
+                            <div class="mockup-gallery">
+                                <figure>
+                                    <img
+                                        src="assets/images/behavioural_design/7cups.png"
+                                        alt="7 Cups screenshot"
+                                        class="responsive-img"
+                                    />
+                                    <figcaption>
+                                        <strong>Emotional Urgency & Support Cue:</strong> 7
+                                        Cups uses warm visuals, trusted ratings, and a central
+                                        call-to-action to lower barriers for users to seek help
+                                        immediately.
+                                    </figcaption>
+                                </figure>
+                                <figure>
+                                    <img
+                                        src="assets/images/behavioural_design/steam_community.png"
+                                        alt="Steam community screenshot"
+                                        class="responsive-img"
+                                    />
+                                    <figcaption>
+                                        <strong>Social Belonging & Game Context: </strong>
+                                        Steam invites players to join themed discussions,
+                                        leveraging familiarity and shared subculture to drive
+                                        participation.
+                                    </figcaption>
+                                </figure>
+                                <figure>
+                                    <img
+                                        src="assets/images/behavioural_design/reddit.png"
+                                        alt="Reddit topic browser screenshot"
+                                        class="responsive-img"
+                                    />
+                                    <figcaption>
+                                        <strong>Curiosity & Exploration:</strong> Reddit
+                                        displays dynamic topic prompts and simplified entry
+                                        points to encourage spontaneous browsing, aligned with
+                                        exploratory behaviour.
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <p class="caption">
+                                These examples show persuasive cues like emotional appeal,
+                                social connection, and curiosity triggers—useful for inspiring
+                                community-friendly behavioural design.
+                            </p>
+                        </section>
+
+                        <!-- Homepage Welcome Message -->
+                        <section class="component-section" id="homepage-text">
+                            <h2>Homepage Welcome Message</h2>
+                            <blockquote>
+                                <p>
+                                    <strong
+                                        >Welcome to the space where hobbies spark
+                                        friendships.</strong
+                                    >
+                                </p>
+                                <p>
+                                    Whether you're into gaming, anime, music, dance, food, or
+                                    something uniquely your own—this platform is built for you.
+                                </p>
+                                <p>
+                                    Here, you'll find people who get your vibe, share your
+                                    passions, and are open to making meaningful connections.
+                                </p>
+                                <p>
+                                    Come as you are, explore what you love, and grow your
+                                    community one interest at a time.
+                                </p>
+                            </blockquote>
+                            <p class="caption">
+                                This text creates a friendly, trustworthy, and inclusive
+                                emotional tone. It aligns with the site's identity as a vibrant
+                                space where users feel accepted and celebrated.
+                            </p>
+                        </section>
+
+                        <!-- Identity and Emotional Tone -->
+                        <section class="component-section" id="annotation-identity">
+                            <h2>Identity and Emotional Tone Annotation</h2>
+                            <p>
+                                This platform fosters
+                                <strong>belonging, fun, and cultural inclusivity</strong>. Its
+                                warm, enthusiastic language welcomes users as
+                                <strong>collectors, explorers, and fans</strong>, using phrases
+                                like <em>"come as you are"</em> and
+                                <em>"grow your community"</em> to spark curiosity and
+                                connection.
+                            </p>
+                            <p>
+                                We aim to help enthusiasts find like-minded peers and create
+                                opportunities for both
+                                <strong>online interaction and offline events</strong>.
+                                Beginners in certain interest areas can discover friendly
+                                mentors and accessible resources tailored to their level.
+                            </p>
+                            <p>
+                                Imagery reinforces these values:
+                                <strong>7 Cups</strong> conveys empathy and support,
+                                <strong>Steam</strong> showcases shared subcultural spaces, and
+                                <strong>Reddit</strong> sparks spontaneous exploration.
+                                Together, these choices reflect the client's vision of a
+                                trusted, hobby-driven community where users don't just
+                                scroll—they <strong>belong, contribute, and grow</strong>.
+                            </p>
+                        </section>
+                    </div>
                 </div>
-                <p class="caption">
-                    These icons reflect the four hobby categories from WP2 user research:
-                    <em>Gaming</em>, <em>Cosplay</em>, <em>Anime & Collecting</em>, and
-                    <em>Music & Dance</em>. They keep the design tone light-hearted,
-                    accessible, and aligned with our community’s identity.
-                </p>
-            </section>
 
-            <!-- 3. Reflective Language -->
-            <section class="component-section" id="reflective-language">
-                <h2>Reflective Language</h2>
-                <p>
-                    The wording across the site is chosen to reflect empathy, inclusivity, and
-                    trust. Instead of purely functional or technical commands, the language
-                    acknowledges the
-                    <strong>values</strong> that users care about: safety, fairness, and
-                    belonging.
-                </p>
-                <blockquote>
-                    “Welcome, let’s help you find your community.”
-                    <br />
-                    <small>(emphasises inclusivity and belonging)</small>
-                </blockquote>
-                <blockquote>
-                    “Your information is private and secure.”
-                    <br />
-                    <small>(reinforces trust and data protection)</small>
-                </blockquote>
-                <blockquote>
-                    “Everyone is encouraged to share their stories.”
-                    <br />
-                    <small>(supports fairness, equity, and expression)</small>
-                </blockquote>
-                <p class="caption">
-                    These examples show how <em>reflective language</em> strengthens the design
-                    values mapped earlier, while maintaining the friendly and inclusive tone
-                    reinforced by imagery and icons.
-                </p>
-            </section>
+                <!-- Language and Expression Accordion Item -->
+                <div class="accordion-item level-1">
+                    <button class="accordion-header" aria-expanded="false">
+                        Language and Expression
+                    </button>
+                    <div class="accordion-content">
+                        <!-- Inclusive Language Checklist -->
+                        <section class="component-section" id="inclusive-checklist">
+                            <h2>Inclusive Language Checklist</h2>
+                            <ul class="checklist">
+                                <li>
+                                    1. Use neutral and inclusive terms (e.g. "everyone",
+                                    "users", "people").
+                                </li>
+                                <li>
+                                    2. Respect diverse identities—avoid assumptions about
+                                    gender, culture, or ability.
+                                </li>
+                                <li>
+                                    3. Include varying experience levels to support both
+                                    beginners and experts.
+                                </li>
+                                <li>
+                                    4. Avoid exclusionary or overly casual terms that may
+                                    confuse or isolate users.
+                                </li>
+                                <li>
+                                    5. Promote a respectful, friendly, and emotionally
+                                    supportive tone.
+                                </li>
+                            </ul>
+                        </section>
 
-            <!-- 4. Dynamic Content -->
-            <section class="component-section" id="dynamic-content">
-                <h2>Dynamic Content</h2>
-                <p>
-                    This section demonstrates a placeholder for API-driven dynamic content. It
-                    shows how the site can present <strong>daily reflections</strong> that
-                    reinforce our values (Privacy, Accessibility, Fairness, Trust).
-                </p>
-                <div id="api-placeholder" class="card" aria-live="polite">
-                    <h3>🌐 Daily Reflection</h3>
-                    <p>Loading reflection...</p>
+                        <!-- Original Homepage Text -->
+                        <section class="component-section" id="original-homepage-text">
+                            <h2>Original Homepage Text</h2>
+                            <p>Welcome to the space where hobbies spark friendships.</p>
+                            <p>
+                                Whether you're into gaming, anime, music, dance, food, or
+                                something uniquely your own—this platform is built for you.
+                            </p>
+                            <p>
+                                Here, you'll find people who get your vibe, share your
+                                passions, and are open to making meaningful connections.
+                            </p>
+                            <p>
+                                Come as you are, explore what you love, and grow your community
+                                one interest at a time.
+                            </p>
+                        </section>
+
+                        <!-- Revised Homepage Text -->
+                        <section class="component-section" id="revised-homepage-text">
+                            <h2>Revised Homepage Text</h2>
+                            <p>🎉Welcome to the space where hobbies spark friendships.</p>
+                            <p>
+                                🎮Whether you're into gaming, anime, music, dance, food, or a
+                                unique passion of your own—this platform is here for everyone.
+                            </p>
+                            <p>
+                                🤝 You'll connect with people who share your interests, respect
+                                your identity, and welcome meaningful conversations—no matter
+                                your background, ability, or level of experience.
+                            </p>
+                            <p>
+                                ✨Come as you are. Discover what excites you. Build your
+                                community one shared interest at a time.
+                            </p>
+                        </section>
+
+                        <!-- Language Revision Annotation -->
+                        <section class="component-section" id="annotation-language">
+                            <h2>Language Revision Annotation</h2>
+                            <p>
+                                This annotation explains the rationale behind revising the
+                                homepage text using inclusive and respectful language. The
+                                revised version removes assumptions about the user's identity
+                                and replaces vague or casual phrases with wording that welcomes
+                                everyone.
+                            </p>
+                            <p>
+                                For example, "this platform is built for you" became "this
+                                platform is here for everyone." We also added phrases such as
+                                "respect your identity" and "no matter your background,
+                                ability, or level of experience"—aligned with the Australian
+                                Government Style Manual on inclusive communication.
+                            </p>
+                            <p>
+                                These changes support WCAG 3.1.1 (language clarity) and address
+                                community trust and belonging needs identified in WP2.
+                            </p>
+                        </section>
+                    </div>
                 </div>
+
+                <!-- Accessibility Audit Accordion Item -->
+                <div class="accordion-item level-1">
+                    <button class="accordion-header" aria-expanded="false">
+                        Accessibility Audit
+                    </button>
+                    <div class="accordion-content">
+                        <section class="component-section" id="accessibility-audit">
+                            <h2>Accessibility Audit Summary</h2>
+
+                            <h3>Insufficient Text Contrast</h3>
+                            <ul>
+                                <li>
+                                    <strong>WCAG Success Criteria:</strong> 1.4.3 Contrast
+                                    (Minimum)
+                                </li>
+                                <li>
+                                    <strong>Affected Elements:</strong> Buttons and links with
+                                    light backgrounds
+                                </li>
+                                <li>
+                                    <strong>Impact on Users:</strong> Users with low vision or
+                                    color blindness may struggle to read or interact with text
+                                    that has insufficient contrast. Examples include contrast
+                                    ratios of 3.15 and 3.82, below the minimum 4.5:1.
+                                </li>
+                                <li>
+                                    <strong>How to fix:</strong> Adjust color schemes by either
+                                    darkening the text or lightening the background to meet the
+                                    contrast ratio of at least 4.5:1.
+                                </li>
+                            </ul>
+
+                            <h3>Missing Keyboard Focus Indicators</h3>
+                            <ul>
+                                <li>
+                                    <strong>WCAG Success Criteria:</strong> 2.4.7 Focus Visible
+                                </li>
+                                <li>
+                                    <strong>Affected Elements:</strong> Buttons and links
+                                    during keyboard tab navigation
+                                </li>
+                                <li>
+                                    <strong>Impact on Users:</strong> Keyboard-only users may
+                                    be unable to track which element is currently focused,
+                                    making navigation difficult and increasing the risk of
+                                    interaction errors.
+                                </li>
+                                <li>
+                                    <strong>How to fix:</strong> Ensure all interactive
+                                    elements have visible focus indicators, such as an outline
+                                    or border, and that no CSS rules remove or override this
+                                    visibility.
+                                </li>
+                            </ul>
+
+                            <h3>Duplicate Navigation Roles Without Labels</h3>
+                            <ul>
+                                <li>
+                                    <strong>WCAG Success Criteria:</strong> 1.3.1 Info and
+                                    Relationships
+                                </li>
+                                <li>
+                                    <strong>Affected Elements:</strong> Multiple
+                                    <code>&lt;nav&gt;</code> sections
+                                </li>
+                                <li>
+                                    <strong>Impact on Users:</strong> Screen reader users
+                                    cannot distinguish between different navigation areas, as
+                                    they are not uniquely identified. This reduces clarity and
+                                    hinders efficient page orientation.
+                                </li>
+                                <li>
+                                    <strong>How to fix:</strong> Add unique
+                                    <code>aria-label</code> attributes to each
+                                    <code>&lt;nav&gt;</code>, such as
+                                    <code>aria-label="Main Navigation"</code> and
+                                    <code>aria-label="Footer Navigation"</code>.
+                                </li>
+                            </ul>
+
+                            <p class="caption">
+                                Addressing these issues will significantly improve
+                                accessibility for screen reader users, people with low vision,
+                                and keyboard-only users — supporting a more inclusive and
+                                WCAG-compliant user experience.
+                            </p>
+                        </section>
+                    </div>
+                </div>
+
+                <!-- Seeing Ourselves Accordion Item -->
+                <div class="accordion-item level-1">
+                    <button class="accordion-header" aria-expanded="false">
+                        Seeing Ourselves
+                    </button>
+                    <div class="accordion-content">
+                        <section
+                            class="component-section"
+                            aria-labelledby="community-title"
+                            aria-live="polite"
+                        >
+                            <h2 id="community-title">🌏 Community Reflections</h2>
+                            <p class="caption">
+                                Reflections from our student community — shared voices that
+                                shape who we are.
+                            </p>
+                            <p class="caption">
+                                See how others in our community express their stories, values,
+                                and experiences.
+                            </p>
+
+                            <!-- Cards from API will appear here -->
+                            <div id="community-list"></div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Response to Client (outside accordion) -->
+            <section class="component-section" id="response-to-client">
+                <h2 class="section-title">Response to Client</h2>
+                <p>
+                    We appreciate the feedback provided by the IBM Equal Access Accessibility
+                    Checker and acknowledge the issues affecting user experience. In our final
+                    iteration, we will address each concern as follows:
+                </p>
+                <ul>
+                    <li>
+                        <strong>Text Contrast:</strong> All low-contrast elements will be
+                        revised by adjusting text and background colors to meet at least a
+                        4.5:1 contrast ratio.
+                    </li>
+                    <li>
+                        <strong>Keyboard Navigation:</strong> Visible focus indicators will be
+                        restored and styled consistently across all interactive elements.
+                    </li>
+                    <li>
+                        <strong>Navigation Labels:</strong> We will add unique
+                        <code>aria-label</code> attributes to differentiate multiple navigation
+                        sections for screen reader users.
+                    </li>
+                </ul>
+                <p>
+                    These actions will help ensure compliance with WCAG 2.2 guidelines, improve
+                    usability for low-vision and keyboard-only users, and reflect our
+                    commitment to inclusive design.
+                </p>
             </section>
         </main>
 
-        <!-- JS -->
+        <!-- JavaScript -->
         <script type="module" src="js/reflective_design.js"></script>
-        <!-- If later needed, you can create reflective_design.js -->
     </body>
 </html>

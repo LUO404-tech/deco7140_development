@@ -137,26 +137,26 @@ body {
     font-size: 1rem;
     cursor: pointer;
     border: none;
-    min-width: 150px; /* consistent button width */
+    min-width: 150px;
     text-align: center;
     transition: background-color 0.3s ease;
 }
 
 /* Default (Primary) */
 .button.primary {
-    background-color: var(--secondary-color); /* same as Figma blue */
+    background-color: var(--secondary-color);
     color: white;
 }
 
 /* Hover */
 .button.primary:hover,
 .button.primary.hover {
-    background-color: var(--accent-color); /* same as Figma red */
+    background-color: var(--accent-color);
 }
 
 /* Disabled */
 .button.primary:disabled {
-    background-color: #ccc; /* same as Figma grey */
+    background-color: #ccc;
     cursor: not-allowed;
 }
 
@@ -214,4 +214,45 @@ body {
 .card p {
     font-size: 1rem;
     color: #555;
+}
+
+/* ================================
+   Values Mapping Table Styles
+   ================================ */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+    font-size: 0.95rem;
+}
+
+thead {
+    background-color: #f0f0f0;
+}
+
+th,
+td {
+    padding: 1rem;
+    border: 1px solid #ddd;
+    vertical-align: top;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f6ff;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+td strong {
+    color: var(--secondary-color);
+}
+
+.annotation {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #666;
+    line-height: 1.5;
 }

@@ -2,7 +2,7 @@
    Reflective Design Page-specific Styles
    ================================ */
 
-/* Page background */
+/* Background */
 body {
     background-color: var(--bg-light);
 }
@@ -35,7 +35,7 @@ body {
     color: var(--accent-color);
 }
 
-/* Intro */
+/* Intro Section */
 .intro {
     margin: 2rem auto 3rem auto;
     max-width: 1100px;
@@ -48,7 +48,7 @@ body {
     margin-bottom: 1rem;
 }
 
-/* Section base */
+/* Section Containers */
 .component-section {
     max-width: 1100px;
     margin: 2rem auto;
@@ -75,60 +75,17 @@ body {
     margin-top: 0.5rem;
 }
 
-/* ================================
-   Values Mapping Table
-   ================================ */
-.values-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 1rem 0;
-    font-size: 0.95rem;
+/* Section Titles */
+.section-title {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    padding-bottom: 0.4rem;
+    border-bottom: 2px solid var(--secondary-color);
+    margin-bottom: 1.5rem;
 }
 
-.values-table th,
-.values-table td {
-    border: 1px solid #ddd;
-    padding: 0.75rem;
-    text-align: left;
-}
-
-.values-table th {
-    background: var(--primary-color);
-    color: #fff;
-}
-
-.values-table tr:nth-child(even) {
-    background: #f9f9f9;
-}
-
-/* ================================
-   Imagery & Tone Gallery
-   ================================ */
-.image-gallery {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    justify-content: flex-start;
-}
-
-.image-gallery figure {
-    max-width: 250px;
-    text-align: center;
-}
-
-.image-gallery img {
-    max-width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-.image-gallery figcaption {
-    font-size: 0.85rem;
-    color: #444;
-    margin-top: 0.5rem;
-}
-
-/* Blockquote styling */
+/* Blockquote Style */
 blockquote {
     margin: 1.5rem 0;
     padding: 1rem 1.5rem;
@@ -139,46 +96,8 @@ blockquote {
 }
 
 /* ================================
-   Language Comparison
+   Dynamic Content Placeholder (API)
    ================================ */
-.language-comparison {
-    background: #fafafa;
-    padding: 1rem 1.5rem;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    margin: 1rem 0;
-}
-
-.language-comparison p {
-    margin: 0.5rem 0;
-}
-
-.language-comparison strong {
-    color: var(--accent-color);
-}
-
-/* ================================
-   Dynamic Content (API Example)
-   ================================ */
-.api-demo {
-    background: #f9f9f9;
-    padding: 1rem 1.5rem;
-    border: 1px dashed var(--secondary-color);
-    border-radius: 6px;
-    min-height: 80px;
-    font-size: 0.95rem;
-    color: #333;
-}
-
-.imagery-demo {
-    font-size: 2.5rem;
-    display: flex;
-    gap: 1.5rem;
-    justify-content: center;
-    margin-top: 1rem;
-}
-
-/* Dynamic Content Box */
 #api-placeholder {
     background: #f9f9f9;
     padding: 1.5rem;
@@ -195,31 +114,141 @@ blockquote {
 }
 
 /* ================================
-   Values Mapping Grid (replacing table)
+   Community API Cards
    ================================ */
-.values-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-    margin-top: 1.5rem;
+#community-list {
+    margin-top: 2rem;
 }
 
-.value-card {
+.community-card {
     background: #fff;
     border: 1px solid #ddd;
     border-radius: 10px;
     padding: 1.2rem;
+    margin-bottom: 1.5rem;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.value-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+.community-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
 
-.value-card h3 {
-    font-size: 1.2rem;
+.community-card-title {
+    font-size: 1.25rem;
     color: var(--secondary-color);
+    font-weight: bold;
     margin-bottom: 0.5rem;
+}
+
+.community-card-message {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.community-card-photo {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+/* ================================
+   Emoji Checklist
+   ================================ */
+.emoji-checklist {
+    list-style: none;
+    padding-left: 0;
+}
+
+.emoji-checklist li {
+    margin-bottom: 0.8rem;
+    font-size: 1.05rem;
+}
+
+/* Page Container */
+.page-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+/* Card container for community messages */
+.card {
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    background-color: var(--bg-light, #fff);
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+}
+
+/* Card title */
+.card-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-color, #333);
+}
+
+/* Card text */
+.card-text {
+    font-size: 1rem;
+    color: var(--text-light, #666);
+}
+
+/* Optional photo */
+.card-img-top {
+    max-width: 100%;
+    height: auto;
+    margin-top: 1rem;
+    border-radius: 8px;
+}
+
+/* ================================
+   Values Mapping Table Styles
+   ================================ */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+    font-size: 0.95rem;
+}
+
+thead {
+    background-color: #f0f0f0;
+}
+
+th,
+td {
+    padding: 1rem;
+    border: 1px solid #ddd;
+    vertical-align: top;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f6ff;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+td strong {
+    color: var(--secondary-color);
+}
+
+.annotation {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #666;
+    line-height: 1.5;
 }
