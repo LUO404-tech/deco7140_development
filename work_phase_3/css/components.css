@@ -2,7 +2,7 @@
    MENUS (Global Navigation)
    ================================ */
 
-/* Desktop menu styles */
+/* Desktop navigation bar */
 #nav-desktop {
     position: fixed;
     top: 0;
@@ -10,6 +10,7 @@
     background-color: var(--secondary-color);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     display: none; /* hidden on mobile */
+    z-index: 1000;
 }
 
 #nav-desktop ul {
@@ -34,7 +35,7 @@
 }
 
 /* ================================
-   Mobile menu (hamburger)
+   Mobile Navigation (hamburger)
    ================================ */
 .navbar {
     position: fixed;
@@ -58,35 +59,31 @@
 }
 
 /* ================================
-   Mobile menu (hamburger as left drawer)
+   Mobile Navigation (left drawer)
    ================================ */
 .menu {
     display: flex;
     flex-direction: column;
     background-color: white;
 
-    /* Fixed to the left side of the screen */
     position: fixed;
     top: 0;
     left: 0;
     height: 100%;
-    width: 250px; /* drawer width */
+    width: 250px;
 
     padding: 2rem 1rem;
     box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15);
     z-index: 999;
 
-    /* Hide menu by default (slide off screen) */
     transform: translateX(-100%);
-    transition: transform 0.3s ease-in-out; /* smooth animation */
+    transition: transform 0.3s ease-in-out;
 }
 
-/* When "open" class is added, slide into view */
 .menu.open {
     transform: translateX(0);
 }
 
-/* Menu items */
 .menu li {
     list-style: none;
     margin-bottom: 1rem;
@@ -100,32 +97,9 @@
     color: var(--primary-color);
 }
 
-/* Hover effect for menu links */
 .menu li a:hover {
     background-color: var(--accent-color);
     color: white;
-}
-
-.menu li {
-    list-style: none;
-}
-
-.menu li a {
-    display: block;
-    padding: 0.75rem 1.25rem;
-    text-decoration: none;
-    font-size: 1rem;
-    color: var(--primary-color);
-}
-
-.menu li a:hover {
-    background-color: var(--accent-color);
-    color: white;
-}
-
-/* Show menu when "open" class is added */
-.menu.open {
-    display: flex;
 }
 
 /* ================================
@@ -133,12 +107,22 @@
    ================================ */
 @media screen and (min-width: 768px) {
     .navbar {
-        display: none; /* hide mobile nav */
+        display: none;
     }
 
     #nav-desktop {
-        display: block; /* show desktop nav */
+        display: block;
     }
+}
+
+/* ================================
+   Main Content Area
+   ================================ */
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 6rem 1.5rem 4rem; /* leave space for fixed nav */
+    box-sizing: border-box;
 }
 
 /* ================================
@@ -190,7 +174,7 @@
 }
 
 .accordion-content {
-    display: none; /* hidden by default, toggled via JS */
+    display: none;
     padding: 0.75rem 1rem;
     background: #f9f9f9;
     animation: fadeIn 0.3s ease-in-out;
@@ -210,22 +194,77 @@
    Responsive Images
    ================================ */
 .responsive-img {
-    max-width: 80%; /* Limit image width to 80% of the container */
-    height: auto; /* Keep aspect ratio */
-    display: block; /* Display as block element */
-    margin: 1rem auto; /* Center image with margin */
-    border: 2px solid #ddd; /* Optional: subtle border for clarity */
-    border-radius: 6px; /* Optional: rounded corners */
+    max-width: 80%;
+    height: auto;
+    display: block;
+    margin: 1rem auto;
+    border: 2px solid #ddd;
+    border-radius: 6px;
 }
 
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem; /* spacing between items */
+    gap: 1.5rem;
     margin: 2rem 0;
 }
 
 .gallery-grid img {
     max-width: 100%;
     height: auto;
+}
+
+/* ================================
+   Card Layouts
+   ================================ */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+.card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.card p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--text-color);
+}
+
+@media screen and (max-width: 600px) {
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ================================
+   Highlight Boxes
+   ================================ */
+.highlight-box {
+    background: #f0f8ff;
+    border-left: 4px solid var(--secondary-color);
+    padding: 1rem 1.25rem;
+    border-radius: 6px;
+    margin: 1.5rem 0;
+    font-size: 1rem;
+    line-height: 1.6;
 }

@@ -2,15 +2,21 @@
    Visceral Design Page-specific Styles
    ================================ */
 
-body {
+/* Page background */
+body.visceral-design {
     background-color: var(--bg-light);
+}
+
+/* Ensure content is not hidden behind fixed navigation */
+body.visceral-design main {
+    padding-top: 5rem; /* adjust this based on nav height */
 }
 
 /* Breadcrumb styles */
 .breadcrumb {
     display: block;
     max-width: 1100px;
-    margin: 5rem auto 2rem; /* add margin to avoid overlap with fixed nav */
+    margin: 2rem auto; /* spacing below nav */
     font-size: 0.95rem;
     color: var(--text-color);
     background: #f9f9f9; /* light gray background for visibility */
@@ -74,9 +80,17 @@ body {
     text-align: center;
 }
 
+/* Gallery images */
 .gallery-grid img {
     max-width: 100%;
     border-radius: 6px;
+    cursor: zoom-in; /* hint that image can be enlarged */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.02); /* slight zoom on hover */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .gallery-grid figcaption {
