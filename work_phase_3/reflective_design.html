@@ -460,29 +460,118 @@
                     </div>
                 </div>
 
-                <!-- Seeing Ourselves Accordion Item -->
+                <!-- Seeing Ourselves Accordion Item - UPDATED -->
                 <div class="accordion-item level-1">
                     <button class="accordion-header" aria-expanded="false">
-                        Seeing Ourselves
+                        🌟 Seeing Ourselves in the Interface
                     </button>
                     <div class="accordion-content">
-                        <section
-                            class="component-section"
-                            aria-labelledby="community-title"
-                            aria-live="polite"
-                        >
-                            <h2 id="community-title">🌏 Community Reflections</h2>
-                            <p class="caption">
-                                Reflections from our student community — shared voices that
-                                shape who we are.
+                        <!-- Introduction Section -->
+                        <section class="component-section" id="seeing-ourselves-intro">
+                            <h2>Seeing Ourselves: Community Reflections</h2>
+                            <p>
+                                This section demonstrates how
+                                <strong>reflective design</strong>
+                                connects users not just to a website, but to a sense of
+                                <strong>identity, community, and shared values</strong>.
                             </p>
+                            <p>
+                                By allowing users to <strong>see themselves</strong> and
+                                <strong>their community</strong> represented dynamically
+                                through real contributions, we support the development of trust
+                                and belonging.
+                            </p>
+                        </section>
+
+                        <!-- Reflective Design Principles -->
+                        <section class="component-section" id="reflective-principles">
+                            <h3>Reflective Design Principles Applied</h3>
+                            <div class="principles-grid">
+                                <div class="principle-card">
+                                    <h4>🤝 Identity & Belonging</h4>
+                                    <p>
+                                        Each community member's contribution is valued and
+                                        displayed, creating a tapestry of shared experiences.
+                                    </p>
+                                </div>
+                                <div class="principle-card">
+                                    <h4>💬 Meaningful Connection</h4>
+                                    <p>
+                                        Real stories and messages from actual users build
+                                        emotional engagement and authenticity.
+                                    </p>
+                                </div>
+                                <div class="principle-card">
+                                    <h4>🌐 Community Trust</h4>
+                                    <p>
+                                        Transparent display of community content reinforces
+                                        trust in the platform and each other.
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Dynamic Community Content -->
+                        <section class="component-section" id="dynamic-community">
+                            <h3>Our Community Voices</h3>
                             <p class="caption">
-                                See how others in our community express their stories, values,
-                                and experiences.
+                                Real messages from our student community — each card represents
+                                a unique voice and perspective that contributes to our
+                                collective identity.
                             </p>
 
-                            <!-- Cards from API will appear here -->
-                            <div id="community-list"></div>
+                            <!-- Loading State -->
+                            <div id="community-loading" class="loading-state">
+                                <div class="loading-spinner"></div>
+                                <p>Loading community stories...</p>
+                            </div>
+
+                            <!-- Dynamic Content Container -->
+                            <div id="community-list" class="community-grid" aria-live="polite">
+                                <!-- Dynamic content will be inserted here by JavaScript -->
+                            </div>
+
+                            <!-- Empty State (hidden by default) -->
+                            <div
+                                id="community-empty"
+                                class="empty-state"
+                                style="display: none"
+                            >
+                                <p>
+                                    No community stories yet. Be the first to share your story!
+                                </p>
+                            </div>
+                        </section>
+
+                        <!-- Technical Implementation Notes -->
+                        <section class="component-section" id="technical-notes">
+                            <h3>Technical Implementation</h3>
+                            <p>
+                                This section uses
+                                <strong>dynamic content retrieval</strong> from our course API
+                                to display real community contributions. The implementation
+                                includes:
+                            </p>
+                            <ul>
+                                <li>
+                                    <strong>GET API requests</strong> to fetch community data
+                                </li>
+                                <li>
+                                    <strong>JavaScript modules</strong> for reusable API
+                                    functions
+                                </li>
+                                <li>
+                                    <strong>Dynamic HTML generation</strong> to display
+                                    community cards
+                                </li>
+                                <li>
+                                    <strong>Error handling</strong> for graceful failure states
+                                </li>
+                                <li>
+                                    <strong>Accessible markup</strong> supporting screen
+                                    readers
+                                </li>
+                            </ul>
                         </section>
                     </div>
                 </div>
@@ -494,100 +583,98 @@
                     Response to Client: Newsletter Subscription Plugin
                 </h2>
 
-                <div class="ethical-response">
-                    <!-- Introduction -->
-                    <section class="response-section">
-                        <h3>Introduction</h3>
-                        <p>
-                            We appreciate your request to implement a newsletter subscription
-                            plugin to maintain community engagement and keep members informed
-                            about platform updates.
-                        </p>
-                    </section>
+                <!-- Introduction -->
+                <section class="response-subsection">
+                    <h3>Introduction</h3>
+                    <p>
+                        We appreciate your request to implement a
+                        <strong>newsletter subscription plugin</strong> to maintain
+                        <strong>community engagement</strong> and keep members informed about
+                        platform updates.
+                    </p>
+                </section>
 
-                    <!-- Ethical Reasoning -->
-                    <section class="response-section">
-                        <h3>Ethical Reasoning</h3>
-                        <p>
-                            Our analysis identified key ethical considerations that require
-                            attention:
-                        </p>
-                        <ul>
-                            <li>
-                                <strong>Privacy & Data Protection:</strong> Collection and
-                                storage of personal email addresses
-                            </li>
-                            <li>
-                                <strong>Informed Consent:</strong> Ensuring users fully
-                                understand what they're subscribing to
-                            </li>
-                            <li>
-                                <strong>Communication Overload:</strong> Risk of overwhelming
-                                users with excessive emails
-                            </li>
-                            <li>
-                                <strong>ACS Principles:</strong> Primacy of Public Interest and
-                                Honesty require transparent practices
-                            </li>
-                        </ul>
-                    </section>
+                <!-- Ethical Reasoning -->
+                <section class="response-subsection">
+                    <h3>Ethical Reasoning</h3>
+                    <p>
+                        Our analysis identified key ethical considerations that require
+                        attention:
+                    </p>
+                    <ul>
+                        <li>
+                            <strong>Privacy & Data Protection:</strong> Collection and storage
+                            of personal email addresses
+                        </li>
+                        <li>
+                            <strong>Informed Consent:</strong> Ensuring users fully understand
+                            what they're subscribing to
+                        </li>
+                        <li>
+                            <strong>Communication Overload:</strong> Risk of overwhelming users
+                            with excessive emails
+                        </li>
+                        <li>
+                            <strong>ACS Principles:</strong> Primacy of Public Interest and
+                            Honesty require transparent practices
+                        </li>
+                    </ul>
+                </section>
 
-                    <!-- Recommendation -->
-                    <section class="response-section">
-                        <h3>Recommendation</h3>
-                        <p>
-                            We propose implementing the newsletter with these ethical
-                            safeguards:
-                        </p>
-                        <ul>
-                            <li>
-                                <strong>Explicit Opt-In:</strong> No pre-checked boxes; active
-                                user consent required
-                            </li>
-                            <li>
-                                <strong>Granular Preferences:</strong> Users choose content
-                                types and frequency
-                            </li>
-                            <li>
-                                <strong>Transparent Communication:</strong> Clear explanation
-                                of data usage and easy unsubscribe
-                            </li>
-                            <li>
-                                <strong>Minimal Data Collection:</strong> Only essential
-                                information for newsletter delivery
-                            </li>
-                        </ul>
-                    </section>
+                <!-- Recommendation -->
+                <section class="response-subsection">
+                    <h3>Recommendation</h3>
+                    <p>
+                        We propose implementing the newsletter with these ethical safeguards:
+                    </p>
+                    <ul>
+                        <li>
+                            <strong>Explicit Opt-In:</strong> No pre-checked boxes; active user
+                            consent required
+                        </li>
+                        <li>
+                            <strong>Granular Preferences:</strong> Users choose content types
+                            and frequency
+                        </li>
+                        <li>
+                            <strong>Transparent Communication:</strong> Clear explanation of
+                            data usage and easy unsubscribe
+                        </li>
+                        <li>
+                            <strong>Minimal Data Collection:</strong> Only essential
+                            information for newsletter delivery
+                        </li>
+                    </ul>
+                </section>
 
-                    <!-- Client Perspective -->
-                    <section class="response-section">
-                        <h3>Client Perspective</h3>
-                        <p>This approach benefits both users and your organization:</p>
-                        <ul>
-                            <li>
-                                <strong>Enhanced Trust:</strong> Transparent practices build
-                                stronger community relationships
-                            </li>
-                            <li>
-                                <strong>Better Engagement:</strong> Targeted content increases
-                                relevance and reduces unsubscribes
-                            </li>
-                            <li>
-                                <strong>Risk Mitigation:</strong> Compliance with privacy
-                                regulations protects brand reputation
-                            </li>
-                            <li>
-                                <strong>Sustainable Growth:</strong> Ethical design supports
-                                long-term user loyalty and retention
-                            </li>
-                        </ul>
-                        <p>
-                            This balanced solution maintains your engagement goals while
-                            upholding our commitment to user trust and ethical design
-                            principles.
-                        </p>
-                    </section>
-                </div>
+                <!-- Client Perspective -->
+                <section class="response-subsection">
+                    <h3>Client Perspective</h3>
+                    <p>This approach benefits both users and your organization:</p>
+                    <ul>
+                        <li>
+                            <strong>Enhanced Trust:</strong> Transparent practices build
+                            stronger community relationships
+                        </li>
+                        <li>
+                            <strong>Better Engagement:</strong> Targeted content increases
+                            relevance and reduces unsubscribes
+                        </li>
+                        <li>
+                            <strong>Risk Mitigation:</strong> Compliance with privacy
+                            regulations protects brand reputation
+                        </li>
+                        <li>
+                            <strong>Sustainable Growth:</strong> Ethical design supports
+                            long-term user loyalty and retention
+                        </li>
+                    </ul>
+                    <p>
+                        This balanced solution maintains your engagement goals while upholding
+                        our commitment to <strong>user trust</strong> and
+                        <strong>ethical design principles</strong>.
+                    </p>
+                </section>
             </section>
         </main>
 
