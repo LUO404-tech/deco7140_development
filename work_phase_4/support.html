@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Community Support — Hobbies & Subcultures</title>
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/base.css" />
+        <link rel="stylesheet" href="css/layout.css" />
+        <link rel="stylesheet" href="css/components.css" />
+        <!-- Accordion behavior (ARIA-compliant) -->
+        <script src="js/ui/accordion.js" defer></script>
+    </head>
+    <body>
+        <a href="#main" class="skip-link">Skip to content</a>
+
+        <header class="site-header">
+            <nav class="nav container" aria-label="Main">
+                <a class="brand" href="index.html">Hobbies & Subcultures</a>
+                <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false">
+                    ☰
+                </button>
+                <div id="primary-nav" class="navlist">
+                    <a href="index.html">Home</a>
+                    <a href="introduction.html" aria-current="page">Introduction</a>
+                    <a href="news.html">News</a>
+                    <a href="hubs.html">Community Hubs</a>
+                    <a href="learning.html">Learning Studio</a>
+                    <a href="support.html" aria-current="page">Community Support</a>
+                </div>
+            </nav>
+        </header>
+
+        <main id="main" class="container stack">
+            <section class="section stack">
+                <h1>Community Support</h1>
+                <p class="lead">Guidelines, rules, and a way to report a problem.</p>
+
+                <!-- Accessible accordion -->
+                <div class="accordion" id="support-acc">
+                    <div class="item">
+                        <button class="header" aria-expanded="false" aria-controls="g1">
+                            Community Guidelines &amp; Rules
+                        </button>
+                        <div id="g1" class="content" hidden>
+                            <ul>
+                                <li>Be respectful and inclusive; use welcoming language.</li>
+                                <li>Share verifiable information; credit sources.</li>
+                                <li>No harassment or hate speech.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <button class="header" aria-expanded="false" aria-controls="g2">
+                            Report a Problem
+                        </button>
+                        <div id="g2" class="content" hidden>
+                            <form>
+                                <div class="field">
+                                    <label for="issue">Describe the issue</label>
+                                    <input id="issue" required />
+                                </div>
+                                <button class="btn" type="submit">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="container" style="padding: var(--space-5) 0; color: var(--color-muted)">
+            <p>© WP4 — consistent structure • responsive design • accessible UI.</p>
+        </footer>
+        <script src="js/ui/nav.js" defer></script>
+    </body>
+</html>

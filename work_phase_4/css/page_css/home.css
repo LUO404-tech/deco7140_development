@@ -1,0 +1,30 @@
+/* =========================================================
+   Home page only (welcome, search, hero image)
+   ========================================================= */
+
+#main {
+    margin-block: var(--space-5);
+}
+
+/* Hero image area */
+.hero-figure {
+    margin: var(--space-4) auto;
+    width: min(100%, 760px);
+}
+.hero-figure img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+/* Form inputs: bigger touch targets (2.5.5) */
+input[type="search"] {
+    padding: 0.6rem 0.75rem;
+    border-radius: 8px;
+    border: 1px solid #c9c9c9;
+}
+input[type="search"]:focus-visible {
+    outline: 3px solid #7faadb;
+    outline-offset: 2px;
+}

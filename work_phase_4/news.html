@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>News — Hobbies & Subcultures</title>
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/base.css" />
+        <link rel="stylesheet" href="css/layout.css" />
+        <link rel="stylesheet" href="css/components.css" />
+        <!-- Loads demo dynamic feature to render cards from data/news.json -->
+        <script src="js/api/news.js" defer></script>
+    </head>
+    <body>
+        <a href="#main" class="skip-link">Skip to content</a>
+
+        <header class="site-header">
+            <nav class="nav container" aria-label="Main">
+                <a class="brand" href="index.html">Hobbies & Subcultures</a>
+                <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false">
+                    ☰
+                </button>
+                <div id="primary-nav" class="navlist">
+                    <a href="index.html">Home</a>
+                    <a href="introduction.html" aria-current="page">Introduction</a>
+                    <a href="news.html" aria-current="page">News</a>
+                    <a href="hubs.html">Community Hubs</a>
+                    <a href="learning.html">Learning Studio</a>
+                    <a href="support.html">Community Support</a>
+                </div>
+            </nav>
+        </header>
+
+        <main id="main" class="container stack">
+            <section class="section stack">
+                <h1>News</h1>
+                <p class="lead">Upcoming activities and announcements.</p>
+
+                <!-- Live region to announce loading/empty/error to screen readers -->
+                <div id="news-status" role="status" aria-live="polite" class="hint">
+                    Loading news…
+                </div>
+
+                <!-- Grid will be filled by JS with article cards -->
+                <div id="news-grid" class="grid grid-3" aria-busy="true"></div>
+
+                <!-- Template for JS cloning -->
+                <template id="news-card">
+                    <article class="card">
+                        <h3 class="title"></h3>
+                        <p class="meta hint"></p>
+                        <p class="desc"></p>
+                        <a class="btn" target="_blank" rel="noopener">Read more</a>
+                    </article>
+                </template>
+            </section>
+        </main>
+
+        <footer class="container" style="padding: var(--space-5) 0; color: var(--color-muted)">
+            <p>© WP4 — consistent structure • responsive design • accessible UI.</p>
+        </footer>
+        <script src="js/ui/nav.js" defer></script>
+    </body>
+</html>

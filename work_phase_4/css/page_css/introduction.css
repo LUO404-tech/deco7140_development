@@ -1,0 +1,63 @@
+/* ===== Introduction page specific styles ===== */
+
+/* Hero (top) illustration: keep readable, responsive, and not overwhelming */
+.hero {
+    margin: var(--space-4) auto var(--space-5);
+    text-align: center;
+}
+.hero img {
+    /* Width scales with viewport but never exceeds 720px;
+     Height is capped so text stays above the fold */
+    width: min(100%, 720px);
+    max-height: clamp(12rem, 30vh, 20rem);
+    object-fit: contain; /* no cropping */
+    display: block;
+    margin-inline: auto;
+    border-radius: var(--radius);
+}
+.hero figcaption {
+    margin-top: var(--space-1);
+    font-size: 0.95rem;
+    color: var(--color-muted);
+}
+
+/* Section cards for community list (optional polish) */
+.community-section {
+    margin-top: var(--space-5);
+}
+.community-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--space-3);
+}
+.community-card {
+    background: var(--color-surface);
+    border-radius: var(--radius);
+    padding: var(--space-3);
+    box-shadow: var(--shadow);
+}
+.community-card img {
+    width: 100%;
+    height: 140px; /* consistent visual rhythm */
+    object-fit: contain; /* keep icon aspect */
+    display: block;
+    margin: 0 auto var(--space-2);
+}
+.community-card h3 {
+    margin: 0 0 var(--space-1);
+    font-size: var(--fz-500);
+}
+.community-card p {
+    margin: 0;
+}
+
+/* Make tap targets comfy (≥44px) on touch devices */
+@media (pointer: coarse) {
+    .community-card a,
+    .hero a,
+    button,
+    .site-header a {
+        padding: 0.5rem 0.75rem;
+        min-height: 44px;
+    }
+}

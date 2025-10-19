@@ -1,0 +1,106 @@
+/* =========================================================
+   Components (generic, nav-free): buttons, cards, accordion
+   ========================================================= */
+
+/* Buttons */
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1rem;
+    background: var(--color-link);
+    color: #fff;
+    border: 0;
+    border-radius: var(--radius);
+    font-size: 0.95rem;
+    cursor: pointer;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+    text-decoration: none;
+}
+.button:hover {
+    background: #2556d6;
+}
+.button:focus-visible {
+    outline: 3px solid currentColor;
+    outline-offset: 2px;
+}
+.button[disabled],
+.button[aria-disabled="true"] {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+/* Cards/grid */
+.grid {
+    display: grid;
+    gap: var(--space-3);
+}
+.grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+.grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+@media (max-width: 700px) {
+    .grid-2,
+    .grid-3 {
+        grid-template-columns: 1fr;
+    }
+}
+
+.card {
+    background: var(--color-surface);
+    border: 1px solid #ddd;
+    border-radius: var(--radius);
+    padding: 1rem 1.25rem;
+    box-shadow: var(--shadow);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* Accordion (expects JS to toggle [hidden] and [aria-expanded]) */
+.accordion {
+    margin: var(--space-4) 0;
+    border: 1px solid #ddd;
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+.accordion-item {
+    border-bottom: 1px solid #ddd;
+}
+.accordion-item:last-child {
+    border-bottom: 0;
+}
+.accordion-header {
+    width: 100%;
+    border: 0;
+    text-align: left;
+    cursor: pointer;
+    font-weight: 700;
+    padding: 0.8rem 1rem;
+    background: var(--color-primary);
+    color: #fff;
+}
+.accordion-header:hover,
+.accordion-header:focus-visible {
+    background: #1f2f41;
+    outline: none;
+}
+.accordion-content {
+    padding: 0.9rem 1rem;
+    background: #f9f9f9;
+}
+.accordion-content[hidden] {
+    display: none;
+}
+
+/* Images */
+.responsive-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}

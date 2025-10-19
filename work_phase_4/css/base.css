@@ -1,0 +1,175 @@
+/* =========================================================
+   Base styles (pairs with reset.css)
+   Purpose:
+   - Global tokens (colors/spacing/typography)
+   - Accessible defaults (WCAG 2.2 AA friendly)
+   ========================================================= */
+
+/* Optional font import */
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&display=swap");
+
+/* 1) Design tokens */
+:root {
+    /* Brand / UI colors */
+    --color-primary: #2c3e50; /* headings, accents in content */
+    --color-accent: #e74c3c; /* emphasis / alerts */
+    --color-link: #2962ff; /* link (high contrast) */
+    --color-text: #222; /* body text */
+    --color-muted: #666; /* secondary text */
+    --color-bg: #f7f7f8; /* page background */
+    --color-surface: #ffffff; /* cards / panels */
+
+    /* Global NAV colors (sky blue + dark text to meet contrast) */
+    --color-nav: #7ea7d9; /* sky blue background */
+    --color-nav-fg: #0f2a44; /* dark text on sky blue (AA) */
+    --color-nav-hover: #4a78b7; /* hover state; we invert text to white */
+
+    /* Typography stacks */
+    --font-serif: "Crimson Text", Georgia, "Times New Roman", serif;
+    --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+        sans-serif;
+
+    /* Fluid type scale */
+    --fz-300: clamp(0.95rem, 0.9rem + 0.2vw, 1.05rem); /* body */
+    --fz-400: clamp(1.05rem, 1rem + 0.3vw, 1.125rem); /* large body */
+    --fz-500: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem); /* h3 */
+    --fz-600: clamp(1.5rem, 1.2rem + 1vw, 2rem); /* h2 */
+    --fz-700: clamp(1.9rem, 1.4rem + 2vw, 2.5rem); /* h1 */
+
+    /* Spacing */
+    --space-0: 0;
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 1rem;
+    --space-4: 1.5rem;
+    --space-5: 2rem;
+    --space-6: 3rem;
+
+    /* Misc */
+    --radius: 12px;
+    --shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    --maxw-container: 1100px;
+
+    /* Compat alias */
+    --maxw: var(--maxw-container);
+}
+
+/* 2) Base document styles */
+html,
+body {
+    height: 100%;
+}
+body {
+    font-family: var(--font-serif);
+    font-size: var(--fz-300);
+    line-height: 1.6;
+    color: var(--color-text);
+    background: var(--color-bg);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* 3) Typography */
+h1,
+h2,
+h3 {
+    color: var(--color-primary);
+    line-height: 1.25;
+    margin-top: var(--space-4);
+    margin-bottom: var(--space-2);
+}
+h1 {
+    font-size: var(--fz-700);
+}
+h2 {
+    font-size: var(--fz-600);
+}
+h3 {
+    font-size: var(--fz-500);
+}
+
+p {
+    margin: 0 0 var(--space-3);
+}
+.text-muted,
+small {
+    color: var(--color-muted);
+}
+
+/* 4) Links (visible focus) */
+a {
+    color: var(--color-link);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+a:hover {
+    text-decoration-thickness: 2px;
+}
+a:focus-visible {
+    outline: 3px solid currentColor;
+    outline-offset: 2px;
+}
+
+/* 5) Containers / surfaces */
+.container {
+    width: min(100% - 2rem, var(--maxw));
+    margin-inline: auto;
+}
+.surface {
+    background: var(--color-surface);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: var(--space-4);
+}
+
+/* 6) Figures */
+figure {
+    margin: 0 0 var(--space-3);
+}
+figcaption {
+    color: var(--color-muted);
+    font-size: 0.95em;
+    margin-top: var(--space-1);
+}
+
+/* 7) Selection (optional) */
+::selection {
+    background: #cde1ff;
+    color: #000;
+}
+
+/* 8) Helpers */
+.stack {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+/* Hidden but accessible (for live regions etc.) */
+.visually-hidden {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+/* 9) Dark scheme (optional) */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-text: #eaeaea;
+        --color-muted: #b6b6b6;
+        --color-bg: #0f1115;
+        --color-surface: #171923;
+        --color-link: #82b1ff;
+        --color-primary: #c9d1d9;
+        /* Nav also darkens automatically because text uses currentColor on hover */
+    }
+    .surface {
+        box-shadow: none;
+    }
+}

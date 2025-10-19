@@ -1,0 +1,99 @@
+/* =========================================================
+   Layout: container system, header/nav shell, skip link, grids
+   ========================================================= */
+
+/* Containers */
+.container {
+    width: min(100% - 2rem, var(--maxw));
+    margin-inline: auto;
+}
+
+/* Skip link (2.4.1) */
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    background: #ffeb3b;
+    color: #000;
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    z-index: 1000;
+}
+.skip-link:focus {
+    left: 1rem;
+    top: 1rem;
+}
+
+/* Sticky header + nav (AA contrast) */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background: var(--color-nav); /* sky blue */
+    color: var(--color-nav-fg); /* dark text */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    padding: 0.65rem 0.75rem;
+}
+.brand {
+    margin-right: auto;
+    font-weight: 800;
+    color: var(--color-nav-fg);
+    text-decoration: none;
+    padding: 0.5rem 0.75rem; /* >= 44px target size */
+    border-radius: 8px;
+}
+.brand:focus-visible {
+    outline: 3px solid currentColor;
+    outline-offset: 2px;
+}
+.nav a {
+    color: var(--color-nav-fg);
+    text-decoration: none;
+    padding: 0.55rem 0.8rem; /* >= 44px target size */
+    border-radius: 8px;
+}
+.nav a:hover,
+.nav a:focus-visible {
+    background: var(--color-nav-hover);
+    color: #fff; /* ensure contrast on hover */
+    outline: none;
+}
+
+/* Hamburger */
+.nav-toggle {
+    background: none;
+    border: 2px solid transparent;
+    color: var(--color-nav-fg);
+    font-size: 1.4rem;
+    border-radius: 8px;
+    padding: 0.35rem 0.55rem;
+    cursor: pointer;
+}
+.nav-toggle:focus-visible {
+    outline: 3px solid currentColor;
+    outline-offset: 2px;
+}
+
+/* Collapsible nav list (mobile) */
+.navlist {
+    display: flex;
+    gap: 0.25rem;
+}
+@media (max-width: 700px) {
+    .navlist {
+        display: none;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .navlist.is-open {
+        display: flex;
+    }
+}

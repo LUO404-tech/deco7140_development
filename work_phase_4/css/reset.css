@@ -1,0 +1,64 @@
+/* ============================
+   WP4 Simple Reset / Normalize
+   Purpose: reduce cross-browser quirks
+   without wiping useful defaults (headings,
+   list markers, focus outlines, etc.)
+   ============================ */
+
+/* 1) Consistent box model across the site */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* 2) Base text rendering and baseline rhythm */
+html {
+    /* Prevent iOS Safari from resizing text after orientation changes */
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0; /* Remove default body margin only */
+    line-height: 1.5; /* Comfortable default line height */
+}
+
+/* 3) Media elements scale nicely in responsive layouts */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block; /* Avoid extra descender space from inline images */
+    max-width: 100%; /* Never overflow their container */
+    height: auto;
+}
+
+/* 4) Inherit font settings for form controls (keep native focus outlines) */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* 5) Keep list markers; just normalize left padding */
+ul,
+ol {
+    padding-left: 1.25rem;
+}
+
+/* 6) Safer wrapping to avoid overflow on long words/URLs */
+:where(p, h1, h2, h3, h4, h5, h6) {
+    overflow-wrap: anywhere;
+}
+
+/* 7) Respect users who prefer reduced motion (WCAG friendly) */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
