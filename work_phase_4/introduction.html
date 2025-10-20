@@ -5,14 +5,40 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Introduction · Hobbies & Subcultures</title>
 
-        <!-- Global CSS stack (keep your existing order) -->
+        <!-- Global CSS stack (keep this order) -->
         <link rel="stylesheet" href="css/reset.css" />
         <link rel="stylesheet" href="css/base.css" />
         <link rel="stylesheet" href="css/layout.css" />
         <link rel="stylesheet" href="css/components.css" />
 
-        <!-- Page-level CSS for Introduction only -->
-        <link rel="stylesheet" href="page_css/introduction.css" />
+        <!-- Page-level CSS (cache-busting v=3) -->
+        <link rel="stylesheet" href="page_css/introduction.css?v=3" />
+
+        <!-- Tiny safety overrides in case the page-level CSS didn't load -->
+        <style>
+            .intro-hero {
+                display: grid;
+                gap: 1rem;
+                align-items: center;
+            }
+            @media (min-width: 900px) {
+                .intro-hero {
+                    grid-template-columns: 1fr 1.2fr;
+                }
+            }
+            .intro-hero-img {
+                max-width: min(640px, 100%);
+                height: auto;
+                display: block;
+                margin-inline: auto;
+            }
+            .community-card img {
+                width: 140px;
+                height: auto;
+                display: block;
+                margin-inline: auto;
+            }
+        </style>
     </head>
     <body>
         <!-- Skip link for keyboard users -->
@@ -21,10 +47,9 @@
         <!-- Sticky header shared across pages -->
         <header class="site-header">
             <nav class="nav container" aria-label="Primary">
-                <!-- Brand/link back to site home -->
-                <a class="brand" href="index.html">Hobbies & Subcultures</a>
+                <a class="brand" href="index.html">Hobbies &amp; Subcultures</a>
 
-                <!-- (Optional) hamburger: navigate to site home as you requested -->
+                <!-- Per your requirement: hamburger links back to site home -->
                 <a
                     class="nav-toggle"
                     href="index.html"
@@ -33,7 +58,6 @@
                     >☰</a
                 >
 
-                <!-- Primary links -->
                 <div id="primary-nav" class="navlist">
                     <a href="index.html">Home</a>
                     <a href="introduction.html" aria-current="page">Introduction</a>
@@ -49,15 +73,17 @@
             <!-- Hero / page lead -->
             <section class="intro-hero surface" aria-labelledby="intro-heading">
                 <div class="intro-hero__media">
-                    <!-- Hero image for the community (decorative but with helpful alt) -->
                     <img
+                        class="intro-hero-img"
                         src="images/community.png"
                         width="768"
                         height="512"
-                        alt="A diverse group of people forming a circle under a heart icon"
+                        alt="A diverse group of people gathered under a heart, symbolising an inclusive hobby community"
                         loading="lazy"
+                        decoding="async"
                     />
                 </div>
+
                 <div class="intro-hero__text">
                     <h1 id="intro-heading">What This Community Is</h1>
                     <p>
@@ -69,77 +95,77 @@
                 </div>
             </section>
 
-            <!-- Community types with representative images -->
+            <!-- Community types -->
             <section class="section" aria-labelledby="types-heading">
                 <h2 id="types-heading">Community Types</h2>
                 <p class="lead">
                     Examples of audience needs covered by each category. Images are
-                    illustrative and have accessible alt text.
+                    illustrative and include helpful alt text.
                 </p>
 
                 <div class="card-grid community-types">
-                    <!-- Gaming & Cosplay -->
-                    <article class="card community-card">
+                    <article class="card community-card" aria-labelledby="ct-gaming">
                         <figure>
                             <img
                                 src="images/game-console.png"
                                 width="512"
                                 height="512"
-                                alt="Game controller and a screen with a classic game character"
+                                alt="Game controller and screen with a classic arcade character"
                                 loading="lazy"
+                                decoding="async"
                             />
-                            <figcaption>
+                            <figcaption id="ct-gaming">
                                 <strong>Gaming &amp; Cosplay</strong> — supports Alex’s persona
                                 (gaming &amp; cosplay events).
                             </figcaption>
                         </figure>
                     </article>
 
-                    <!-- Knitting & Craft -->
-                    <article class="card community-card">
+                    <article class="card community-card" aria-labelledby="ct-knit">
                         <figure>
                             <img
                                 src="images/knitting.png"
                                 width="512"
                                 height="512"
-                                alt="Knitting yarn with a textile pattern"
+                                alt="Knitting yarn and textile pattern"
                                 loading="lazy"
+                                decoding="async"
                             />
-                            <figcaption>
+                            <figcaption id="ct-knit">
                                 <strong>Knitting &amp; Craft</strong> — connects to Lila’s DIY
                                 and creative projects.
                             </figcaption>
                         </figure>
                     </article>
 
-                    <!-- Anime & Collecting -->
-                    <article class="card community-card">
+                    <article class="card community-card" aria-labelledby="ct-anime">
                         <figure>
                             <img
                                 src="images/gundam.png"
                                 width="512"
                                 height="512"
-                                alt="A stylised robot face that represents anime and model collecting"
+                                alt="Stylised robot face representing anime and model collecting"
                                 loading="lazy"
+                                decoding="async"
                             />
-                            <figcaption>
+                            <figcaption id="ct-anime">
                                 <strong>Anime &amp; Collecting</strong> — meets Kenji’s need
                                 for manga/figure exchange.
                             </figcaption>
                         </figure>
                     </article>
 
-                    <!-- Street Dance & Urban -->
-                    <article class="card community-card">
+                    <article class="card community-card" aria-labelledby="ct-dance">
                         <figure>
                             <img
                                 src="images/street-dance.png"
                                 width="512"
                                 height="512"
-                                alt="A dancer performing a freeze move"
+                                alt="Street dancer performing a freeze move"
                                 loading="lazy"
+                                decoding="async"
                             />
-                            <figcaption>
+                            <figcaption id="ct-dance">
                                 <strong>Street Dance &amp; Urban</strong> — reflects Diego’s
                                 interest in dance battles.
                             </figcaption>
@@ -148,7 +174,7 @@
                 </div>
             </section>
 
-            <!-- More context using native details/summary (a11y-friendly accordion) -->
+            <!-- More context -->
             <section class="section" aria-labelledby="context-heading">
                 <h2 id="context-heading">More Context</h2>
 
@@ -187,11 +213,9 @@
                 </details>
             </section>
 
-            <!-- Back to top -->
             <p class="to-top"><a href="#main">Back to top ↑</a></p>
         </main>
 
-        <!-- If you already have a shared JS file, keep it -->
         <script src="js/main.js" defer></script>
     </body>
 </html>

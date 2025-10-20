@@ -3,26 +3,36 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>News — Hobbies & Subcultures</title>
+        <title>News · Hobbies & Subcultures</title>
+
+        <!-- Global CSS stack (keep order) -->
         <link rel="stylesheet" href="css/reset.css" />
         <link rel="stylesheet" href="css/base.css" />
         <link rel="stylesheet" href="css/layout.css" />
         <link rel="stylesheet" href="css/components.css" />
-        <!-- Loads demo dynamic feature to render cards from data/news.json -->
-        <script src="js/api/news.js" defer></script>
+
+        <!-- Page-only styles -->
+        <link rel="stylesheet" href="page_css/news.css" />
     </head>
     <body>
-        <a href="#main" class="skip-link">Skip to content</a>
+        <!-- Skip link -->
+        <a class="skip-link" href="#main">Skip to content</a>
 
+        <!-- Shared header / sky-blue nav -->
         <header class="site-header">
-            <nav class="nav container" aria-label="Main">
+            <nav class="nav container" aria-label="Primary">
                 <a class="brand" href="index.html">Hobbies & Subcultures</a>
-                <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false">
-                    ☰
-                </button>
+                <!-- As requested: hamburger goes to site home -->
+                <a
+                    class="nav-toggle"
+                    href="index.html"
+                    aria-label="Back to site home"
+                    title="Back to site home"
+                    >☰</a
+                >
                 <div id="primary-nav" class="navlist">
                     <a href="index.html">Home</a>
-                    <a href="introduction.html" aria-current="page">Introduction</a>
+                    <a href="introduction.html">Introduction</a>
                     <a href="news.html" aria-current="page">News</a>
                     <a href="hubs.html">Community Hubs</a>
                     <a href="learning.html">Learning Studio</a>
@@ -31,34 +41,242 @@
             </nav>
         </header>
 
-        <main id="main" class="container stack">
-            <section class="section stack">
-                <h1>News</h1>
-                <p class="lead">Upcoming activities and announcements.</p>
-
-                <!-- Live region to announce loading/empty/error to screen readers -->
-                <div id="news-status" role="status" aria-live="polite" class="hint">
-                    Loading news…
+        <main id="main" class="container section">
+            <!-- ==================== Top News (hero) ==================== -->
+            <section class="news-hero surface" aria-labelledby="top-news-heading">
+                <div class="news-hero__media" aria-hidden="true">
+                    <!-- Keep your wide banner image -->
+                    <img src="images/top-news.jpg" alt="" />
                 </div>
+                <div class="news-hero__text">
+                    <!-- ★ Added the small newspaper icon inline with the H1 -->
+                    <h1 id="top-news-heading" class="with-icon">
+                        <img
+                            class="icon"
+                            src="images/newspaper.png"
+                            alt=""
+                            aria-hidden="true"
+                        />
+                        Top News
+                    </h1>
 
-                <!-- Grid will be filled by JS with article cards -->
-                <div id="news-grid" class="grid grid-3" aria-busy="true"></div>
-
-                <!-- Template for JS cloning -->
-                <template id="news-card">
-                    <article class="card">
-                        <h3 class="title"></h3>
-                        <p class="meta hint"></p>
-                        <p class="desc"></p>
-                        <a class="btn" target="_blank" rel="noopener">Read more</a>
-                    </article>
-                </template>
+                    <p class="lead">
+                        Upcoming highlights and important announcements from across our
+                        communities. Stay informed so you don’t miss key events.
+                    </p>
+                    <ul class="keypoints">
+                        <li>Weekly digest of featured activities</li>
+                        <li>Deadlines and sign-ups in one place</li>
+                        <li>Accessible summaries for quick scanning</li>
+                    </ul>
+                </div>
             </section>
+
+            <!-- ==================== Event Listings ==================== -->
+            <section class="section" aria-labelledby="events-heading">
+                <header class="stack">
+                    <h2 id="events-heading">Event Listings</h2>
+                    <p class="text-muted">
+                        Browse upcoming activities. Use filters to narrow by type.
+                    </p>
+
+                    <!-- Filter chips (keyboard & screen-reader friendly) -->
+                    <div class="filters" role="toolbar" aria-label="Filter events">
+                        <button class="chip is-active" data-filter="all" aria-pressed="true">
+                            All
+                        </button>
+                        <button class="chip" data-filter="clubs" aria-pressed="false">
+                            Clubs
+                        </button>
+                        <button class="chip" data-filter="competition" aria-pressed="false">
+                            Competition
+                        </button>
+                        <button class="chip" data-filter="workshop" aria-pressed="false">
+                            Workshop
+                        </button>
+                    </div>
+                </header>
+
+                <div class="card-grid events-grid" id="events-list" data-current-filter="all">
+                    <!-- Event card -->
+                    <article class="card event-card" data-type="workshop">
+                        <h3 class="event-title">Cosplay Foam Craft 101</h3>
+                        <p class="event-meta">
+                            <time datetime="2025-11-05T18:30">Wed, 5 Nov · 6:30 pm</time> ·
+                            Room A204
+                        </p>
+                        <p class="event-desc">
+                            Beginner-friendly workshop on patterns, heat shaping and safe
+                            finishing.
+                        </p>
+                        <div class="event-actions">
+                            <a
+                                class="button button--secondary"
+                                href="#"
+                                aria-label="View details for Cosplay Foam Craft 101"
+                                >Details</a
+                            >
+                            <span class="badge">Workshop</span>
+                        </div>
+                    </article>
+
+                    <article class="card event-card" data-type="clubs">
+                        <h3 class="event-title">Local Knitting Circle</h3>
+                        <p class="event-meta">
+                            <time datetime="2025-11-07T17:30">Fri, 7 Nov · 5:30 pm</time> ·
+                            Library Hub
+                        </p>
+                        <p class="event-desc">
+                            Bring yarn, swap patterns, and meet friendly makers.
+                        </p>
+                        <div class="event-actions">
+                            <a class="button button--secondary" href="#">Details</a>
+                            <span class="badge">Clubs</span>
+                        </div>
+                    </article>
+
+                    <article class="card event-card" data-type="competition">
+                        <h3 class="event-title">Street Dance Battle – Qualifiers</h3>
+                        <p class="event-meta">
+                            <time datetime="2025-11-12T19:00">Wed, 12 Nov · 7:00 pm</time> ·
+                            Sports Hall
+                        </p>
+                        <p class="event-desc">
+                            Prelims for 1v1 and 2v2 brackets. Spectators welcome.
+                        </p>
+                        <div class="event-actions">
+                            <a class="button button--secondary" href="#">Details</a>
+                            <span class="badge">Competition</span>
+                        </div>
+                    </article>
+
+                    <article class="card event-card" data-type="clubs">
+                        <h3 class="event-title">Retro Gaming Night</h3>
+                        <p class="event-meta">
+                            <time datetime="2025-11-14T18:00">Fri, 14 Nov · 6:00 pm</time> ·
+                            Commons 2F
+                        </p>
+                        <p class="event-desc">
+                            Open play on classic consoles; controllers provided.
+                        </p>
+                        <div class="event-actions">
+                            <a class="button button--secondary" href="#">Details</a>
+                            <span class="badge">Clubs</span>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- ==================== Calendar View ==================== -->
+            <section class="section" aria-labelledby="calendar-heading">
+                <!-- ★ Added the small calendar icon inline with the H2 -->
+                <h2 id="calendar-heading" class="with-icon">
+                    <img class="icon" src="images/calendar.png" alt="" aria-hidden="true" />
+                    Calendar View
+                </h2>
+                <p class="text-muted">
+                    Quick weekly overview. Dates are readable with screen readers.
+                </p>
+
+                <!-- Simple, accessible list (avoids complex table on small screens) -->
+                <ol class="calendar-list surface">
+                    <li>
+                        <h3 class="week-label">Week of 3 Nov</h3>
+                        <ul class="week-events">
+                            <li>
+                                <time datetime="2025-11-05">Wed 5</time> — Cosplay Foam Craft
+                                101 (18:30)
+                            </li>
+                            <li>
+                                <time datetime="2025-11-07">Fri 7</time> — Local Knitting
+                                Circle (17:30)
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3 class="week-label">Week of 10 Nov</h3>
+                        <ul class="week-events">
+                            <li>
+                                <time datetime="2025-11-12">Wed 12</time> — Street Dance Battle
+                                – Qualifiers (19:00)
+                            </li>
+                            <li>
+                                <time datetime="2025-11-14">Fri 14</time> — Retro Gaming Night
+                                (18:00)
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </section>
+
+            <!-- ==================== Local Clubs & Competitions ==================== -->
+            <section class="section" aria-labelledby="local-heading">
+                <!-- ★ Added the small competition/trophy icon inline with the H2 -->
+                <h2 id="local-heading" class="with-icon">
+                    <img class="icon" src="images/competition.png" alt="" aria-hidden="true" />
+                    Local Clubs &amp; Competitions
+                </h2>
+
+                <div class="card-grid grid-2">
+                    <article class="card">
+                        <h3>Clubs Directory</h3>
+                        <p>Find campus or nearby hobby clubs and regular meetups.</p>
+                        <a class="button" href="#" aria-label="Open Clubs Directory"
+                            >Open Directory</a
+                        >
+                    </article>
+
+                    <article class="card">
+                        <h3>Competition Board</h3>
+                        <p>Post or discover upcoming contests and prize events.</p>
+                        <a class="button" href="#" aria-label="Open Competition Board"
+                            >View Board</a
+                        >
+                    </article>
+                </div>
+            </section>
+
+            <p class="to-top"><a href="#main">Back to top ↑</a></p>
         </main>
 
-        <footer class="container" style="padding: var(--space-5) 0; color: var(--color-muted)">
-            <p>© WP4 — consistent structure • responsive design • accessible UI.</p>
-        </footer>
-        <script src="js/ui/nav.js" defer></script>
+        <!-- Small, page-scoped JS for the filter chips -->
+        <script>
+            // Accessible filter chips: toggle aria-pressed and filter cards
+            (function () {
+                const list = document.getElementById("events-list");
+                const chips = document.querySelectorAll(".filters .chip");
+
+                function applyFilter(value) {
+                    list.dataset.currentFilter = value;
+                    document.querySelectorAll(".event-card").forEach((card) => {
+                        const show = value === "all" || card.dataset.type === value;
+                        card.style.display = show ? "" : "none";
+                    });
+                }
+
+                chips.forEach((btn) => {
+                    btn.addEventListener("click", () => {
+                        chips.forEach((c) => {
+                            c.classList.remove("is-active");
+                            c.setAttribute("aria-pressed", "false");
+                        });
+                        btn.classList.add("is-active");
+                        btn.setAttribute("aria-pressed", "true");
+                        applyFilter(btn.dataset.filter);
+                    });
+                    // Keyboard activation (Space/Enter)
+                    btn.addEventListener("keydown", (e) => {
+                        if (e.key === " " || e.key === "Enter") {
+                            e.preventDefault();
+                            btn.click();
+                        }
+                    });
+                });
+
+                applyFilter("all"); // initial
+            })();
+        </script>
+
+        <script src="js/main.js" defer></script>
     </body>
 </html>

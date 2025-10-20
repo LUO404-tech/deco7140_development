@@ -1,63 +1,181 @@
-/* ===== Introduction page specific styles ===== */
+/* ==========================================
+   Introduction page specific styles (WP4)
+   Goals:
+   - Keep hero image readable (not overwhelming)
+   - Consistent community cards
+   - WCAG 2.2: clear focus, touch size, reflow
+   - Accordion: deep-blue header + white text on light page
+   ========================================== */
 
-/* Hero (top) illustration: keep readable, responsive, and not overwhelming */
-.hero {
-    margin: var(--space-4) auto var(--space-5);
-    text-align: center;
+/* ---- Local tokens (only this page uses) ---- */
+:root {
+    --acc-header-bg: #2a3f5f; /* deep blue */
+    --acc-header-hover-bg: #334d73;
+    --acc-header-open-bg: #223654;
+    --acc-content-bg: #ffffff; /* panel body remains light */
+    --acc-text: #ffffff;
+    --acc-text-body: #2a2a2a; /* content text */
+    --acc-link: #1e64ff;
+    --acc-border: rgba(0, 0, 0, 0.12);
+    --acc-focus: #99c2ff;
+
+    --tap-min: 44px;
 }
-.hero img {
-    /* Width scales with viewport but never exceeds 720px;
-     Height is capped so text stays above the fold */
-    width: min(100%, 720px);
-    max-height: clamp(12rem, 30vh, 20rem);
-    object-fit: contain; /* no cropping */
+
+/* =========================
+   HERO / LEAD SECTION
+   ========================= */
+.intro-hero {
+    display: grid;
+    gap: var(--space-4);
+    align-items: center;
+    margin-block: var(--space-5);
+}
+@media (min-width: 860px) {
+    .intro-hero {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Keep hero image controlled */
+.intro-hero__media img {
+    max-width: min(100%, 720px);
+    height: auto; /* override any inline height */
+    max-height: clamp(12rem, 32vh, 20rem);
+    object-fit: contain;
     display: block;
     margin-inline: auto;
     border-radius: var(--radius);
 }
-.hero figcaption {
-    margin-top: var(--space-1);
+.intro-hero__text h1 {
+    margin-top: 0;
+}
+
+.visually-muted,
+.intro-hero__media figcaption {
     font-size: 0.95rem;
     color: var(--color-muted);
+    margin-top: var(--space-1);
 }
 
-/* Section cards for community list (optional polish) */
-.community-section {
-    margin-top: var(--space-5);
+/* =========================
+   COMMUNITY TYPES (cards)
+   ========================= */
+.community-types {
+    margin-top: var(--space-3);
 }
-.community-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: var(--space-3);
-}
-.community-card {
+
+.community-types .community-card {
+    border: 1px solid rgba(0, 0, 0, 0.12);
     background: var(--color-surface);
-    border-radius: var(--radius);
-    padding: var(--space-3);
-    box-shadow: var(--shadow);
 }
-.community-card img {
+
+.community-types .community-card figure {
+    margin: 0;
+    text-align: center;
+}
+
+.community-types .community-card img {
     width: 100%;
-    height: 140px; /* consistent visual rhythm */
-    object-fit: contain; /* keep icon aspect */
+    height: 140px; /* unified rhythm */
+    object-fit: contain; /* do not crop icons */
     display: block;
     margin: 0 auto var(--space-2);
-}
-.community-card h3 {
-    margin: 0 0 var(--space-1);
-    font-size: var(--fz-500);
-}
-.community-card p {
-    margin: 0;
+    border-radius: calc(var(--radius) - 4px);
 }
 
-/* Make tap targets comfy (≥44px) on touch devices */
+.community-types .community-card figcaption {
+    font-size: 0.95rem;
+    color: var(--color-text);
+}
+
+/* =========================
+   ACCORDION (native <details>)
+   ========================= */
+details.accordion {
+    border: 1px solid var(--acc-border);
+    border-radius: var(--radius);
+    background: var(--color-surface);
+    padding: var(--space-1);
+}
+
+summary.accordion-header {
+    list-style: none;
+    cursor: pointer;
+    font-weight: 700;
+    color: var(--acc-text);
+    background: var(--acc-header-bg);
+    padding: 0.9rem 1rem;
+    margin: 0;
+    border-radius: calc(var(--radius) - 4px);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.08);
+    transition: background-color 0.15s ease;
+    min-height: var(--tap-min);
+}
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary.accordion-header::before {
+    content: "▸";
+    font-size: 0.95em;
+    line-height: 1;
+    transform-origin: center;
+    transition: transform 0.15s ease;
+    color: var(--acc-text);
+}
+
+summary.accordion-header:hover {
+    background: var(--acc-header-hover-bg);
+}
+summary.accordion-header:focus-visible {
+    background: var(--acc-header-hover-bg);
+    outline: 3px solid var(--acc-focus);
+    outline-offset: 2px;
+}
+
+details[open] > summary.accordion-header {
+    background: var(--acc-header-open-bg);
+}
+details[open] > summary.accordion-header::before {
+    transform: rotate(90deg);
+}
+
+.accordion .accordion-content {
+    background: var(--acc-content-bg);
+    color: var(--acc-text-body);
+    border-top: 1px solid var(--acc-border);
+    padding: 1rem;
+}
+
+.accordion .accordion-content a {
+    color: var(--acc-link);
+    text-decoration: underline;
+}
+
+/* Back-to-top spacing */
+.to-top {
+    margin-top: var(--space-5);
+}
+
+/* Touch comfort */
 @media (pointer: coarse) {
+    .site-header a,
     .community-card a,
-    .hero a,
     button,
-    .site-header a {
-        padding: 0.5rem 0.75rem;
-        min-height: 44px;
+    summary.accordion-header {
+        min-height: var(--tap-min);
+        padding: 0.65rem 0.9rem;
+    }
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+    summary.accordion-header,
+    summary.accordion-header::before {
+        transition: none;
     }
 }

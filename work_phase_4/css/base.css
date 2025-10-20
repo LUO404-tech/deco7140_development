@@ -157,19 +157,3 @@ figcaption {
     overflow: hidden;
     white-space: nowrap;
 }
-
-/* 9) Dark scheme (optional) */
-@media (prefers-color-scheme: dark) {
-    :root {
-        --color-text: #eaeaea;
-        --color-muted: #b6b6b6;
-        --color-bg: #0f1115;
-        --color-surface: #171923;
-        --color-link: #82b1ff;
-        --color-primary: #c9d1d9;
-        /* Nav also darkens automatically because text uses currentColor on hover */
-    }
-    .surface {
-        box-shadow: none;
-    }
-}

@@ -1,0 +1,87 @@
+/* ==========================================
+   Hubs page (page-scoped styles)
+   - Voices grid + card layout
+   - Simple filter chips
+   ========================================== */
+
+/* Voices grid (reuses your site spacing variables) */
+.voices-grid {
+    display: grid;
+    gap: var(--space-3);
+    margin-top: var(--space-3);
+}
+@media (min-width: 760px) {
+    .voices-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+/* Voice card layout */
+.voice-card {
+    display: grid;
+    grid-template-columns: 80px 1fr; /* avatar | text */
+    gap: var(--space-3);
+    align-items: start;
+}
+.voice-photo {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 1px solid #e5e9f2;
+}
+.voice-name {
+    margin: 0 0 0.25rem;
+    font-size: 1.05rem;
+}
+.voice-text {
+    margin: 0 0 0.5rem;
+    color: var(--color-text);
+}
+.voice-tag {
+    margin: 0;
+}
+
+/* Filters (toolbar of chips) */
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: var(--space-2);
+}
+.chip {
+    appearance: none;
+    border: 1px solid #e5e9f2;
+    background: #f7faff;
+    color: var(--color-primary);
+    padding: 0.45rem 0.75rem;
+    border-radius: 999px;
+    cursor: pointer;
+    line-height: 1;
+    min-height: 44px; /* WCAG touch target */
+}
+.chip:hover {
+    background: #eef5ff;
+}
+.chip:focus-visible {
+    outline: 3px solid #99c2ff; /* visible focus ring */
+    outline-offset: 2px;
+}
+.chip.is-active,
+.chip[aria-pressed="true"] {
+    background: var(--color-link);
+    color: #fff;
+    border-color: var(--color-link);
+}
+
+/* Badge token (reuses your card style) */
+.badge {
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.85rem;
+    border-radius: 999px;
+    background: #eef4ff;
+    color: var(--color-primary);
+    border: 1px solid #dbe7ff;
+    line-height: 1;
+}

@@ -4,23 +4,31 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Community Hubs — Hobbies & Subcultures</title>
+
+        <!-- Global CSS stack (keep order) -->
         <link rel="stylesheet" href="css/reset.css" />
         <link rel="stylesheet" href="css/base.css" />
         <link rel="stylesheet" href="css/layout.css" />
         <link rel="stylesheet" href="css/components.css" />
+
+        <!-- Page-only styles for Hubs -->
+        <link rel="stylesheet" href="page_css/hubs.css" />
     </head>
     <body>
         <a href="#main" class="skip-link">Skip to content</a>
 
         <header class="site-header">
-            <nav class="nav container" aria-label="Main">
+            <nav class="nav container" aria-label="Primary">
                 <a class="brand" href="index.html">Hobbies & Subcultures</a>
+
+                <!-- Your site uses a JS toggle in js/ui/nav.js -->
                 <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false">
                     ☰
                 </button>
+
                 <div id="primary-nav" class="navlist">
                     <a href="index.html">Home</a>
-                    <a href="introduction.html" aria-current="page">Introduction</a>
+                    <a href="introduction.html">Introduction</a>
                     <a href="news.html">News</a>
                     <a href="hubs.html" aria-current="page">Community Hubs</a>
                     <a href="learning.html">Learning Studio</a>
@@ -30,6 +38,7 @@
         </header>
 
         <main id="main" class="container stack">
+            <!-- Landing tiles -->
             <section class="section stack">
                 <h1>Community Hubs</h1>
                 <p class="lead">
@@ -40,25 +49,58 @@
                     <article class="card">
                         <h3>Browse Communities</h3>
                         <p class="hint">Filter by interest, location, or level.</p>
-                        <a class="btn" href="#" onclick="return false;">Explore</a>
+                        <a class="button" href="#" onclick="return false;">Explore</a>
                     </article>
                     <article class="card">
                         <h3>Hub Feed</h3>
                         <p class="hint">Recent posts & knowledge sharing.</p>
-                        <a class="btn" href="#" onclick="return false;">Open feed</a>
+                        <a class="button" href="#voices">Open feed</a>
                     </article>
                     <article class="card">
                         <h3>Share Experience</h3>
                         <p class="hint">Post your story or tips.</p>
-                        <a class="btn" href="#" onclick="return false;">Share</a>
+                        <a class="button" href="#" onclick="return false;">Share</a>
                     </article>
                 </div>
+            </section>
+
+            <!-- Our Community Voices (API-powered) -->
+            <section id="voices" class="section" aria-labelledby="voices-title">
+                <h2 id="voices-title">Our Community Voices</h2>
+
+                <!-- Optional filters; keep simple for now -->
+                <div class="filters" role="toolbar" aria-label="Filter voices">
+                    <button class="chip is-active" data-filter="all" aria-pressed="true">
+                        All
+                    </button>
+                    <button class="chip" data-filter="cosplay" aria-pressed="false">
+                        Cosplay
+                    </button>
+                    <button class="chip" data-filter="knitting" aria-pressed="false">
+                        Knitting
+                    </button>
+                    <button class="chip" data-filter="anime" aria-pressed="false">
+                        Anime
+                    </button>
+                    <button class="chip" data-filter="dance" aria-pressed="false">
+                        Dance
+                    </button>
+                </div>
+
+                <!-- Live region for status + results -->
+                <p id="community-status" class="muted" aria-live="polite">Loading…</p>
+                <div id="community-list" class="voices-grid" aria-live="polite"></div>
             </section>
         </main>
 
         <footer class="container" style="padding: var(--space-5) 0; color: var(--color-muted)">
             <p>© WP4 — consistent structure • responsive design • accessible UI.</p>
         </footer>
+
+        <!-- Your existing nav toggle script -->
         <script src="js/ui/nav.js" defer></script>
+
+        <!-- Page module: loads Community API and renders the feed -->
+        <script type="module" src="js/community.js" defer></script>
     </body>
 </html>
