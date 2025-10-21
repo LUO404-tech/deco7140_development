@@ -1,26 +1,10 @@
 /* ==========================================
-   Introduction page specific styles (WP4)
-   Goals:
-   - Keep hero image readable (not overwhelming)
+   Introduction page (WP4)
+   - Controlled hero image + text
    - Consistent community cards
-   - WCAG 2.2: clear focus, touch size, reflow
-   - Accordion: deep-blue header + white text on light page
+   - Accessible accordion (native <details>)
+   - WCAG 2.2: focus, touch target, reduced motion
    ========================================== */
-
-/* ---- Local tokens (only this page uses) ---- */
-:root {
-    --acc-header-bg: #2a3f5f; /* deep blue */
-    --acc-header-hover-bg: #334d73;
-    --acc-header-open-bg: #223654;
-    --acc-content-bg: #ffffff; /* panel body remains light */
-    --acc-text: #ffffff;
-    --acc-text-body: #2a2a2a; /* content text */
-    --acc-link: #1e64ff;
-    --acc-border: rgba(0, 0, 0, 0.12);
-    --acc-focus: #99c2ff;
-
-    --tap-min: 44px;
-}
 
 /* =========================
    HERO / LEAD SECTION
@@ -37,7 +21,7 @@
     }
 }
 
-/* Keep hero image controlled */
+/* Keep hero image controlled (even if the file is large) */
 .intro-hero__media img {
     max-width: min(100%, 720px);
     height: auto; /* override any inline height */
@@ -51,7 +35,6 @@
     margin-top: 0;
 }
 
-.visually-muted,
 .intro-hero__media figcaption {
     font-size: 0.95rem;
     color: var(--color-muted);
@@ -77,7 +60,7 @@
 
 .community-types .community-card img {
     width: 100%;
-    height: 140px; /* unified rhythm */
+    height: 140px; /* unified rhythm across cards */
     object-fit: contain; /* do not crop icons */
     display: block;
     margin: 0 auto var(--space-2);
@@ -91,8 +74,21 @@
 
 /* =========================
    ACCORDION (native <details>)
+   - Tokens are scoped to the accordion only
    ========================= */
 details.accordion {
+    /* Local tokens (scoped here, not global) */
+    --acc-header-bg: #2a3f5f;
+    --acc-header-hover-bg: #334d73;
+    --acc-header-open-bg: #223654;
+    --acc-content-bg: #ffffff;
+    --acc-text: #ffffff;
+    --acc-text-body: #2a2a2a;
+    --acc-link: #1e64ff;
+    --acc-border: rgba(0, 0, 0, 0.12);
+    --acc-focus: #99c2ff;
+    --tap-min: 44px;
+
     border: 1px solid var(--acc-border);
     border-radius: var(--radius);
     background: var(--color-surface);
@@ -161,7 +157,7 @@ details[open] > summary.accordion-header::before {
     margin-top: var(--space-5);
 }
 
-/* Touch comfort */
+/* Touch comfort on coarse pointers */
 @media (pointer: coarse) {
     .site-header a,
     .community-card a,
@@ -172,7 +168,7 @@ details[open] > summary.accordion-header::before {
     }
 }
 
-/* Reduce motion */
+/* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
     summary.accordion-header,
     summary.accordion-header::before {

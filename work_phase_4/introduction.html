@@ -11,34 +11,8 @@
         <link rel="stylesheet" href="css/layout.css" />
         <link rel="stylesheet" href="css/components.css" />
 
-        <!-- Page-level CSS (cache-busting v=3) -->
-        <link rel="stylesheet" href="page_css/introduction.css?v=3" />
-
-        <!-- Tiny safety overrides in case the page-level CSS didn't load -->
-        <style>
-            .intro-hero {
-                display: grid;
-                gap: 1rem;
-                align-items: center;
-            }
-            @media (min-width: 900px) {
-                .intro-hero {
-                    grid-template-columns: 1fr 1.2fr;
-                }
-            }
-            .intro-hero-img {
-                max-width: min(640px, 100%);
-                height: auto;
-                display: block;
-                margin-inline: auto;
-            }
-            .community-card img {
-                width: 140px;
-                height: auto;
-                display: block;
-                margin-inline: auto;
-            }
-        </style>
+        <!-- Page-level CSS -->
+        <link rel="stylesheet" href="css/page_css/introduction.css?v=3" />
     </head>
     <body>
         <!-- Skip link for keyboard users -->
@@ -59,7 +33,7 @@
                 >
 
                 <div id="primary-nav" class="navlist">
-                    <a href="index.html">Home</a>
+                    <a href="homepage.html">Home</a>
                     <a href="introduction.html" aria-current="page">Introduction</a>
                     <a href="news.html">News</a>
                     <a href="hubs.html">Community Hubs</a>

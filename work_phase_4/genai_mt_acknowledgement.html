@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>GenAI Acknowledgement</title>
+
+        <!-- Global CSS (keep order) -->
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/base.css" />
+        <link rel="stylesheet" href="css/layout.css" />
+        <link rel="stylesheet" href="css/components.css" />
+    </head>
+    <body>
+        <!-- Skip link -->
+        <a class="skip-link" href="#main">Skip to content</a>
+
+        <!-- Shared header (does not add this page to the nav) -->
+        <header class="site-header">
+            <nav class="nav container" aria-label="Primary">
+                <a class="brand" href="index.html">Hobbies &amp; Subcultures</a>
+
+                <button
+                    class="nav-toggle"
+                    type="button"
+                    aria-controls="primary-nav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                    title="Toggle navigation"
+                >
+                    ☰
+                </button>
+
+                <div id="primary-nav" class="navlist" data-collapsible>
+                    <a href="homepage.html">Home</a>
+                    <a href="introduction.html">Introduction</a>
+                    <a href="news.html">News</a>
+                    <a href="hubs.html">Community Hubs</a>
+                    <a href="learning.html">Learning Studio</a>
+                    <a href="support.html">Community Support</a>
+                </div>
+            </nav>
+        </header>
+
+        <main id="main" class="container section stack">
+            <h1>GenAI Acknowledgement (WP4)</h1>
+            <p class="doc-lead">
+                This document explains how <strong>Generative AI</strong> supported my WP4
+                work: integrating the course API, improving accessibility and CSS structure,
+                and building a clean project portal. I remain fully responsible for design
+                decisions, code quality, and compliance.
+            </p>
+
+            <!-- Summary cards -->
+            <section class="card-grid">
+                <article class="card">
+                    <span class="eyebrow">WP4 Focus</span>
+                    <h3>Where AI Helped</h3>
+                    <ul class="klist">
+                        <li>
+                            Shaping <strong>GET/POST modules</strong> and fetch patterns
+                            (<code>getData.js</code>, <code>postFormData.js</code>).
+                        </li>
+                        <li>
+                            Designing an <strong>accessible filter chip</strong> pattern (ARIA
+                            and keyboard support).
+                        </li>
+                        <li>
+                            Refactoring page-scoped CSS (remove overuse of
+                            <code>!important</code>, scope tokens).
+                        </li>
+                        <li>
+                            Right-sizing hero/feature images for the
+                            <strong>News</strong> page.
+                        </li>
+                        <li>
+                            Drafting the <strong>Project Portal</strong> layout and card
+                            microcopy.
+                        </li>
+                    </ul>
+                    <p class="meta">
+                        AI generated drafts/snippets that I reviewed, edited, and tested
+                        locally.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <span class="eyebrow">Benefits</span>
+                    <h3>What It Accelerated</h3>
+                    <ul class="klist">
+                        <li>Faster iteration on API wiring and error handling.</li>
+                        <li>
+                            Quicker convergence on accessible UI patterns (focus rings, touch
+                            targets, ARIA).
+                        </li>
+                        <li>
+                            Cleaner CSS structure via <strong>page-scoped tokens</strong> and
+                            consistent naming.
+                        </li>
+                    </ul>
+                </article>
+
+                <article class="card">
+                    <span class="eyebrow">Limitations</span>
+                    <h3>What It Didn’t Do</h3>
+                    <ul class="klist">
+                        <li>
+                            It did not decide site information architecture, sitemap, or visual
+                            style.
+                        </li>
+                        <li>
+                            Generated code sometimes required fixes for
+                            <strong>edge cases</strong> and <strong>browser behavior</strong>.
+                        </li>
+                        <li>
+                            Prompts needed specificity; I validated all outputs against
+                            assignment requirements and API docs.
+                        </li>
+                    </ul>
+                </article>
+
+                <article class="card">
+                    <span class="eyebrow">Integrity</span>
+                    <h3>My Role &amp; Accountability</h3>
+                    <p>
+                        I authored the final code and copy, verified accessibility (focus
+                        order, reduced motion, labels), and ensured the site meets
+                        <span class="badge-soft">WCAG 2.2</span> intent and project marking
+                        criteria. All API interactions follow the DECO7140 docs and use my own
+                        headers.
+                    </p>
+                </article>
+            </section>
+
+            <!-- Concrete contributions -->
+            <section class="section">
+                <h2>Concrete AI-Supported Contributions in WP4</h2>
+                <ul class="klist">
+                    <li>
+                        <strong>Community Hubs — API Integration:</strong> guidance on
+                        structuring a small GET module and a POST helper using
+                        <code>fetch</code>, headers, and basic JSON handling; wiring
+                        success/error messages to the DOM.
+                    </li>
+                    <li>
+                        <strong>Filter Chips:</strong> pattern for <code>aria-pressed</code>,
+                        keyboard activation (Space/Enter), and simple client-side filtering
+                        without heavy dependencies.
+                    </li>
+                    <li>
+                        <strong>News Page CSS:</strong> compact hero icon sizing (<code
+                            >object-fit: contain</code
+                        >, max-height/width caps) and steady card image rhythm.
+                    </li>
+                    <li>
+                        <strong>Introduction Page CSS:</strong> scoping accordion tokens to
+                        <code>details.accordion</code>, avoiding global
+                        <code>:root</code> leakage.
+                    </li>
+                    <li>
+                        <strong>Project Portal:</strong> card grid semantics, concise
+                        microcopy, and navigation consistency with the rest of the site.
+                    </li>
+                </ul>
+            </section>
+
+            <!-- What was done by student -->
+            <section class="section">
+                <h2>Decisions Made by Me</h2>
+                <ul class="klist">
+                    <li>
+                        Information architecture and page content structure based on my
+                        <em>Site Map</em> and wireframes.
+                    </li>
+                    <li>
+                        Final CSS tokens, spacing scale, and component polish to match the
+                        visual language across pages.
+                    </li>
+                    <li>
+                        Accessibility checks (focus-visible, labels, reflow, touch target
+                        sizing, color contrast choices).
+                    </li>
+                    <li>All copywriting, alt text, and selection of images/icons.</li>
+                </ul>
+            </section>
+
+            <!-- Prompts & Privacy -->
+            <section class="section">
+                <h2>Prompting &amp; Privacy</h2>
+                <ul class="klist">
+                    <li>
+                        I asked for <strong>small, auditable snippets</strong> (e.g., “a
+                        minimal POST helper with form-data and headers”).
+                    </li>
+                    <li>
+                        No personal or confidential data was sent to AI tools; example values
+                        were placeholders.
+                    </li>
+                    <li>
+                        All outputs were manually reviewed, edited, and tested locally before
+                        inclusion.
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Attribution -->
+            <section class="section">
+                <h2>Attribution</h2>
+                <p>
+                    Generative AI assistance (ChatGPT) was used as a development aid for
+                    ideation, code scaffolding, and wording suggestions. I verified and adapted
+                    all outputs to meet the assignment requirements. The final site
+                    implementation is my own work.
+                </p>
+                <p class="meta">
+                    Primary references during WP4: DECO7140 Community API docs (GET/POST), WCAG
+                    2.2 principles, and course guidance.
+                </p>
+            </section>
+
+            <p class="to-top"><a href="#main">Back to top ↑</a></p>
+        </main>
+
+        <script src="js/main.js" defer></script>
+    </body>
+</html>

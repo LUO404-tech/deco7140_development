@@ -1,12 +1,13 @@
 /* =========================================================
-   Home page only (welcome, search, hero image)
+   Home page only (welcome, search, hero image, portal grid)
    ========================================================= */
 
+/* ---- Page spacing ---- */
 #main {
     margin-block: var(--space-5);
 }
 
-/* Hero image area */
+/* ---- Hero image area ---- */
 .hero-figure {
     margin: var(--space-4) auto;
     width: min(100%, 760px);
@@ -18,7 +19,7 @@
     box-shadow: var(--shadow);
 }
 
-/* Form inputs: bigger touch targets (2.5.5) */
+/* ---- Search input: larger touch target (WCAG 2.2 2.5.5) ---- */
 input[type="search"] {
     padding: 0.6rem 0.75rem;
     border-radius: 8px;
@@ -27,4 +28,52 @@ input[type="search"] {
 input[type="search"]:focus-visible {
     outline: 3px solid #7faadb;
     outline-offset: 2px;
+}
+
+/* =========================================================
+   Project Portal section (the three navigation cards)
+   - Responsive grid
+   - Small "eyebrow" label above titles
+   - Gentle spacing for CTA buttons in cards
+   ========================================================= */
+
+/* Optional hero spacing for the portal section title/lead */
+.portal-hero {
+    margin-block: var(--space-5);
+}
+
+/* Card grid: stack on mobile, 3 columns on ≥760px */
+.portal-grid {
+    display: grid;
+    gap: var(--space-4);
+}
+@media (min-width: 760px) {
+    .portal-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Eyebrow label above card title (e.g., "Docs", "Submission") */
+.card .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    color: var(--color-primary);
+}
+
+/* Give the primary/secondary button a bit of breathing room */
+.card .button {
+    margin-top: var(--space-2);
+}
+
+/* (Optional) Make portal cards flex so buttons sit nicely at the end */
+.portal-grid .card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+.portal-grid .card p:last-of-type {
+    margin-bottom: 0;
 }
