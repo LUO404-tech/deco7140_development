@@ -5,26 +5,33 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Community Hubs — Hobbies & Subcultures</title>
 
-        <!-- Global CSS stack (keep order) -->
+        <!-- Global CSS (keep this order) -->
         <link rel="stylesheet" href="css/reset.css" />
         <link rel="stylesheet" href="css/base.css" />
         <link rel="stylesheet" href="css/layout.css" />
         <link rel="stylesheet" href="css/components.css" />
 
-        <!-- Page-only styles for Hubs -->
-        <link rel="stylesheet" href="page_css/hubs.css" />
+        <!-- Optional page-scoped styles (chip/grid helpers).
+       If you already merged these into your global CSS, you can remove this line. -->
+        <link rel="stylesheet" href="page_css/hubs.css?v=1" />
     </head>
     <body>
-        <a href="#main" class="skip-link">Skip to content</a>
+        <!-- Keyboard skip link -->
+        <a class="skip-link" href="#main">Skip to content</a>
 
+        <!-- Shared header / sky-blue nav -->
         <header class="site-header">
-            <nav class="nav container" aria-label="Primary">
-                <a class="brand" href="index.html">Hobbies & Subcultures</a>
+            <nav class="nav container" aria-label="Main">
+                <a class="brand" href="index.html">Hobbies &amp; Subcultures</a>
 
-                <!-- Your site uses a JS toggle in js/ui/nav.js -->
-                <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false">
-                    ☰
-                </button>
+                <!-- Per your site pattern: hamburger navigates back to site home -->
+                <a
+                    class="nav-toggle"
+                    href="index.html"
+                    aria-label="Back to site home"
+                    title="Back to site home"
+                    >☰</a
+                >
 
                 <div id="primary-nav" class="navlist">
                     <a href="index.html">Home</a>
@@ -38,9 +45,9 @@
         </header>
 
         <main id="main" class="container stack">
-            <!-- Landing tiles -->
-            <section class="section stack">
-                <h1>Community Hubs</h1>
+            <!-- Page intro -->
+            <section class="section stack" aria-labelledby="hubs-title">
+                <h1 id="hubs-title">Community Hubs</h1>
                 <p class="lead">
                     Browse communities, share experience, and access useful resources.
                 </p>
@@ -53,8 +60,8 @@
                     </article>
                     <article class="card">
                         <h3>Hub Feed</h3>
-                        <p class="hint">Recent posts & knowledge sharing.</p>
-                        <a class="button" href="#voices">Open feed</a>
+                        <p class="hint">Recent posts &amp; knowledge sharing.</p>
+                        <a class="button" href="#" onclick="return false;">Open feed</a>
                     </article>
                     <article class="card">
                         <h3>Share Experience</h3>
@@ -64,11 +71,13 @@
                 </div>
             </section>
 
-            <!-- Our Community Voices (API-powered) -->
-            <section id="voices" class="section" aria-labelledby="voices-title">
-                <h2 id="voices-title">Our Community Voices</h2>
+            <!-- ============================== -->
+            <!--  API (GET): Community Voices  -->
+            <!-- ============================== -->
+            <section class="section stack" aria-labelledby="voices-heading">
+                <h2 id="voices-heading">Our Community Voices</h2>
 
-                <!-- Optional filters; keep simple for now -->
+                <!-- Optional filter chips (script filters by keyword in name/message) -->
                 <div class="filters" role="toolbar" aria-label="Filter voices">
                     <button class="chip is-active" data-filter="all" aria-pressed="true">
                         All
@@ -87,20 +96,70 @@
                     </button>
                 </div>
 
-                <!-- Live region for status + results -->
-                <p id="community-status" class="muted" aria-live="polite">Loading…</p>
-                <div id="community-list" class="voices-grid" aria-live="polite"></div>
+                <!-- Live status region for loading/errors/empty state -->
+                <p id="community-status" class="muted" role="status" aria-live="polite">
+                    Loading…
+                </p>
+
+                <!-- Cards rendered by JS (GET /decoapi/community/) -->
+                <div id="community-list" class="voices-grid"></div>
+
+                <!-- No-JS fallback (explains API feature requires JavaScript) -->
+                <noscript
+                    ><p class="text-muted">
+                        JavaScript is required to load the community feed.
+                    </p></noscript
+                >
+            </section>
+
+            <!-- ============================== -->
+            <!--  API (POST): Join the Community -->
+            <!-- ============================== -->
+            <section class="section stack" aria-labelledby="join-heading">
+                <h2 id="join-heading">Join the Community</h2>
+
+                <!-- This form is posted to the same API endpoint using FormData -->
+                <form id="community-form" class="card stack" enctype="multipart/form-data">
+                    <label>
+                        Full name
+                        <input name="name" required autocomplete="name" />
+                    </label>
+
+                    <label>
+                        Email
+                        <input type="email" name="email" required autocomplete="email" />
+                    </label>
+
+                    <label>
+                        Message (optional)
+                        <textarea
+                            name="message"
+                            rows="3"
+                            placeholder="Say hello or share a short intro…"
+                        ></textarea>
+                    </label>
+
+                    <label>
+                        Photo (optional, ≤10MB)
+                        <input type="file" name="photo" accept="image/*" />
+                    </label>
+
+                    <button class="button" type="submit">Submit</button>
+                </form>
+
+                <!-- Live region for form feedback (success/error) -->
+                <p id="form-feedback" class="muted" role="status" aria-live="polite"></p>
             </section>
         </main>
 
         <footer class="container" style="padding: var(--space-5) 0; color: var(--color-muted)">
-            <p>© WP4 — consistent structure • responsive design • accessible UI.</p>
+            <p>© WP4 — API integration • accessible UI • responsive layout.</p>
         </footer>
 
-        <!-- Your existing nav toggle script -->
+        <!-- Page scripts:
+       - community.js handles GET (renders voices) and POST (submits form)
+       - nav.js is your existing navigation script (deferred) -->
+        <script type="module" src="js/community.js"></script>
         <script src="js/ui/nav.js" defer></script>
-
-        <!-- Page module: loads Community API and renders the feed -->
-        <script type="module" src="js/community.js" defer></script>
     </body>
 </html>
