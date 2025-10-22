@@ -235,48 +235,9 @@
                     </article>
                 </div>
             </section>
-
             <p class="to-top"><a href="#main">Back to top ↑</a></p>
         </main>
-
-        <!-- Small, page-scoped JS for the filter chips -->
-        <script>
-            // Accessible filter chips: toggle aria-pressed and filter cards
-            (function () {
-                const list = document.getElementById("events-list");
-                const chips = document.querySelectorAll(".filters .chip");
-
-                function applyFilter(value) {
-                    list.dataset.currentFilter = value;
-                    document.querySelectorAll(".event-card").forEach((card) => {
-                        const show = value === "all" || card.dataset.type === value;
-                        card.style.display = show ? "" : "none";
-                    });
-                }
-
-                chips.forEach((btn) => {
-                    btn.addEventListener("click", () => {
-                        chips.forEach((c) => {
-                            c.classList.remove("is-active");
-                            c.setAttribute("aria-pressed", "false");
-                        });
-                        btn.classList.add("is-active");
-                        btn.setAttribute("aria-pressed", "true");
-                        applyFilter(btn.dataset.filter);
-                    });
-                    // Keyboard activation (Space/Enter)
-                    btn.addEventListener("keydown", (e) => {
-                        if (e.key === " " || e.key === "Enter") {
-                            e.preventDefault();
-                            btn.click();
-                        }
-                    });
-                });
-
-                applyFilter("all"); // initial
-            })();
-        </script>
-
+        <script src="js/news.js" defer></script>
         <script src="js/main.js" defer></script>
     </body>
 </html>
