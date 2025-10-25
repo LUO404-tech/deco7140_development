@@ -85,3 +85,33 @@
     border: 1px solid #dbe7ff;
     line-height: 1;
 }
+
+/* Equal height cards so the row looks neat */
+.grid.grid-3 .card {
+    display: flex;
+    flex-direction: column;
+}
+.grid.grid-3 .card .btn {
+    margin-top: auto;
+}
+
+/* Voice card polish */
+.voice-card {
+    display: flex;
+    gap: 1rem;
+}
+.voice-photo {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.voice-time {
+    font-size: 0.9rem;
+    color: var(--color-muted);
+}
+
+/* Loading/empty states spacing */
+#community-status {
+    margin: 0.5rem 0 1rem;
+}

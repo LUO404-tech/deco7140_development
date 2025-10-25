@@ -1,11 +1,19 @@
 // js/modules/getData.js
-export const fetchGetData = (url, headers = {}) =>
-    fetch(url, { method: "GET", headers })
-        .then((r) => {
-            if (!r.ok) throw new Error(r.status);
-            return r.json();
+const fetchGetData = (url, headers = {}) => {
+    return fetch(url, {
+        method: "GET",
+        headers: headers,
+    })
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error("Server returned an error.");
+            }
+            return response.json();
         })
-        .catch((err) => {
-            console.error("GET failed:", err);
+        .catch((error) => {
+            console.error("Error fetching data:", error);
             return null;
         });
+};
+
+export { fetchGetData };

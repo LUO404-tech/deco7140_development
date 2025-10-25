@@ -5,24 +5,26 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Hobbies & Subcultures — Home</title>
 
-        <!-- Global styles (order matters: reset → base → layout → components → page overrides) -->
+        <!-- Global styles (order matters) -->
         <link rel="stylesheet" href="css/reset.css" />
         <link rel="stylesheet" href="css/base.css" />
         <link rel="stylesheet" href="css/layout.css" />
         <link rel="stylesheet" href="css/components.css" />
-        <link rel="stylesheet" href="page_css/home.css" />
+        <!-- If your file lives at /css/page_css/home.css keep this; 
+         if it's /page_css/home.css change the path accordingly -->
+        <link rel="stylesheet" href="css/page_css/home.css" />
     </head>
     <body>
-        <!-- Skip link for keyboard users (meets WCAG 2.4.1) -->
+        <!-- Skip link for keyboard users -->
         <a class="skip-link" href="#main">Skip to main content</a>
 
-        <!-- Sticky, responsive site header + navigation -->
+        <!-- Shared header / navigation -->
         <header class="site-header">
             <nav class="nav container" aria-label="Primary">
-                <!-- Brand always links to the *overall* homepage -->
-                <a class="brand" href="/index.html">Hobbies &amp; Subcultures</a>
+                <!-- Brand points to your WP4 portal in the same folder -->
+                <a class="brand" href="index.html">Hobbies &amp; Subcultures</a>
 
-                <!-- Hamburger (mobile) toggles the nav list -->
+                <!-- Hamburger (mobile) -->
                 <button
                     class="nav-toggle"
                     type="button"
@@ -33,9 +35,8 @@
                     ☰
                 </button>
 
-                <!-- Primary nav links -->
                 <div id="primary-nav" class="navlist" role="navigation">
-                    <a href="index.html" aria-current="page">Home</a>
+                    <a href="homepage.html" aria-current="page">Home</a>
                     <a href="introduction.html">Introduction</a>
                     <a href="news.html">News</a>
                     <a href="hubs.html">Community Hubs</a>
@@ -49,7 +50,7 @@
         <main id="main" class="container" tabindex="-1">
             <header class="stack" aria-labelledby="welcome-title">
                 <h1 id="welcome-title">Welcome</h1>
-                <ul>
+                <ul class="welcome-list">
                     <li>🎉 Welcome to the space where hobbies spark friendships!</li>
                     <li>
                         🎮 Whether you're into gaming, anime, music, dance, food, or a unique
@@ -67,20 +68,23 @@
                 </ul>
             </header>
 
-            <!-- Accessible search (explicit label, role="search") -->
+            <!-- Search -->
             <section class="surface stack" aria-labelledby="search-title">
                 <h2 id="search-title">Search the site</h2>
+
+                <!-- IDs below are required by js/homepage.js -->
                 <form
+                    id="site-search"
                     role="search"
                     action="#"
                     method="get"
                     class="stack"
                     aria-describedby="search-hint"
                 >
-                    <label for="q">Search communities, events, or resources</label>
+                    <label for="search-input">Search communities, events, or resources</label>
                     <div class="stack" style="gap: 0.5rem">
                         <input
-                            id="q"
+                            id="search-input"
                             name="q"
                             type="search"
                             inputmode="search"
@@ -91,20 +95,20 @@
                         />
                         <button type="submit" class="button">Search</button>
                     </div>
+
                     <p id="search-hint" class="text-muted">
                         Try quick links:
-                        <a href="search.html?q=cosplay">cosplay</a> ·
-                        <a href="search.html?q=calendar">calendar</a> ·
-                        <a href="search.html?q=tutorial">tutorial</a>
+                        <a href="#" data-search="cosplay">cosplay</a> ·
+                        <a href="#" data-search="calendar">calendar</a> ·
+                        <a href="#" data-search="tutorial">tutorial</a>
                     </p>
-                    <!-- Live region (reserved for validation/feedback if needed) -->
+
                     <p id="search-feedback" class="visually-hidden" aria-live="polite"></p>
                 </form>
             </section>
 
-            <!-- Thematic image (alt + figcaption + lazy loading) -->
+            <!-- Hero image -->
             <figure class="hero-figure">
-                <!-- Replace with your own image file; keep the same path/name -->
                 <img
                     src="images/partners.png"
                     alt="Students from different hobbies forming a circle with hands joined in the center"
@@ -117,7 +121,8 @@
             </figure>
         </main>
 
-        <!-- Minimal, accessible hamburger script (shared across pages) -->
-        <script src="js/main.js"></script>
+        <!-- Scripts -->
+        <script type="module" src="js/main.js" defer></script>
+        <script type="module" src="js/homepage.js" defer></script>
     </body>
 </html>

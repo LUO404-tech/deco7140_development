@@ -11,20 +11,18 @@
         <link rel="stylesheet" href="css/layout.css" />
         <link rel="stylesheet" href="css/components.css" />
 
-        <!-- Optional page-scoped styles (chip/grid helpers).
-       If you already merged these into your global CSS, you can remove this line. -->
-        <link rel="stylesheet" href="page_css/hubs.css?v=1" />
+        <!-- Page CSS (optional); 如果你已把样式并入全局，可移除此行 -->
+        <link rel="stylesheet" href="page_css/hubs.css?v=2" />
     </head>
     <body>
-        <!-- Keyboard skip link -->
+        <!-- Skip link -->
         <a class="skip-link" href="#main">Skip to content</a>
 
-        <!-- Shared header / sky-blue nav -->
+        <!-- Shared header -->
         <header class="site-header">
             <nav class="nav container" aria-label="Main">
                 <a class="brand" href="index.html">Hobbies &amp; Subcultures</a>
 
-                <!-- Per your site pattern: hamburger navigates back to site home -->
                 <button
                     class="nav-toggle"
                     type="button"
@@ -47,7 +45,7 @@
         </header>
 
         <main id="main" class="container stack">
-            <!-- Page intro -->
+            <!-- Intro + three entry cards -->
             <section class="section stack" aria-labelledby="hubs-title">
                 <h1 id="hubs-title">Community Hubs</h1>
                 <p class="lead">
@@ -58,28 +56,46 @@
                     <article class="card">
                         <h3>Browse Communities</h3>
                         <p class="hint">Filter by interest, location, or level.</p>
-                        <a class="button" href="#" onclick="return false;">Explore</a>
+                        <a class="button" href="#browse" data-scroll-to="#browse">Explore</a>
                     </article>
+
                     <article class="card">
                         <h3>Hub Feed</h3>
                         <p class="hint">Recent posts &amp; knowledge sharing.</p>
-                        <a class="button" href="#" onclick="return false;">Open feed</a>
+                        <a class="button" href="#feed" data-scroll-to="#feed">Open feed</a>
                     </article>
+
                     <article class="card">
                         <h3>Share Experience</h3>
                         <p class="hint">Post your story or tips.</p>
-                        <a class="button" href="#" onclick="return false;">Share</a>
+                        <a class="button" href="#share" data-scroll-to="#share">Share</a>
                     </article>
                 </div>
             </section>
 
-            <!-- ============================== -->
-            <!--  API (GET): Community Voices  -->
-            <!-- ============================== -->
-            <section class="section stack" aria-labelledby="voices-heading">
+            <!-- A) Browse (directory chips + 延伸链接) -->
+            <section id="browse" class="section stack" aria-labelledby="browse-heading">
+                <h2 id="browse-heading">Browse Communities</h2>
+
+                <div class="grid grid-4">
+                    <button class="chip" data-filter="cosplay">Cosplay</button>
+                    <button class="chip" data-filter="knitting">Knitting</button>
+                    <button class="chip" data-filter="anime">Anime</button>
+                    <button class="chip" data-filter="dance">Dance</button>
+                </div>
+
+                <p class="text-muted">
+                    Want more context? See
+                    <a href="introduction.html#types-heading">Community Types</a> or
+                    <a href="news.html#local-heading">Local Clubs &amp; Competitions</a>.
+                </p>
+            </section>
+
+            <!-- B) API (GET): Our Community Voices -->
+            <section id="feed" class="section stack" aria-labelledby="voices-heading">
                 <h2 id="voices-heading">Our Community Voices</h2>
 
-                <!-- Optional filter chips (script filters by keyword in name/message) -->
+                <!-- Filter chips (feed toolbar) -->
                 <div class="filters" role="toolbar" aria-label="Filter voices">
                     <button class="chip is-active" data-filter="all" aria-pressed="true">
                         All
@@ -98,29 +114,23 @@
                     </button>
                 </div>
 
-                <!-- Live status region for loading/errors/empty state -->
-                <p id="community-status" class="muted" role="status" aria-live="polite">
-                    Loading…
-                </p>
+                <!-- Live status -->
+                <p id="community-status" class="muted" role="status" aria-live="polite"></p>
 
-                <!-- Cards rendered by JS (GET /decoapi/community/) -->
-                <div id="community-list" class="voices-grid"></div>
+                <!-- Cards rendered by JS -->
+                <div id="community-list" class="card-grid"></div>
 
-                <!-- No-JS fallback (explains API feature requires JavaScript) -->
-                <noscript
-                    ><p class="text-muted">
+                <noscript>
+                    <p class="text-muted">
                         JavaScript is required to load the community feed.
-                    </p></noscript
-                >
+                    </p>
+                </noscript>
             </section>
 
-            <!-- ============================== -->
-            <!--  API (POST): Join the Community -->
-            <!-- ============================== -->
-            <section class="section stack" aria-labelledby="join-heading">
+            <!-- C) API (POST): Join the Community -->
+            <section id="share" class="section stack" aria-labelledby="join-heading">
                 <h2 id="join-heading">Join the Community</h2>
 
-                <!-- This form is posted to the same API endpoint using FormData -->
                 <form id="community-form" class="card stack" enctype="multipart/form-data">
                     <label>
                         Full name
@@ -149,7 +159,6 @@
                     <button class="button" type="submit">Submit</button>
                 </form>
 
-                <!-- Live region for form feedback (success/error) -->
                 <p id="form-feedback" class="muted" role="status" aria-live="polite"></p>
             </section>
         </main>
@@ -158,10 +167,10 @@
             <p>© WP4 — API integration • accessible UI • responsive layout.</p>
         </footer>
 
-        <!-- Page scripts:
-       - community.js handles GET (renders voices) and POST (submits form)
-       - nav.js is your existing navigation script (deferred) -->
+        <!-- Scripts:
+         - community.js: GET (render voices) + POST (submit form) + smooth-scroll & browse→feed bridge
+         - main.js: your shared nav toggle -->
         <script type="module" src="js/community.js"></script>
-        <script src="js/ui/nav.js" defer></script>
+        <script src="js/main.js" defer></script>
     </body>
 </html>

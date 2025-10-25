@@ -77,3 +77,13 @@ input[type="search"]:focus-visible {
 .portal-grid .card p:last-of-type {
     margin-bottom: 0;
 }
+
+/* ---- Welcome list: remove bullets & tidy spacing ---- */
+.welcome-list {
+    list-style: none; /* no bullets */
+    padding-left: 0; /* remove default indent */
+    margin: 0 0 var(--space-3);
+}
+.welcome-list li {
+    margin: 0.25rem 0; /* small vertical rhythm */
+}

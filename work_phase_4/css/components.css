@@ -1,8 +1,14 @@
 /* =========================================================
-   Components (generic, nav-free): buttons, cards, accordion
+   Components (global, nav-free)
+   Buttons • Cards • Grid helpers • Accordion • Chips/Badges
+   Also includes "stretched link" to make entire card clickable
    ========================================================= */
 
-/* Buttons */
+/* ------------------------------
+   Buttons
+   ------------------------------ */
+
+/* Primary button (works for <a> and <button>) */
 .button {
     display: inline-flex;
     align-items: center;
@@ -14,34 +20,66 @@
     border: 0;
     border-radius: var(--radius);
     font-size: 0.95rem;
+    line-height: 1.2;
     cursor: pointer;
-    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
     text-decoration: none;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+    transition: background-color 0.15s ease, box-shadow 0.15s ease, transform 0.04s ease;
 }
+
 .button:hover {
-    background: #2556d6;
+    background: #2556d6; /* slightly darker brand */
 }
+
+.button:active {
+    transform: translateY(1px);
+}
+
 .button:focus-visible {
-    outline: 3px solid currentColor;
+    outline: 3px solid currentColor; /* visible focus ring */
     outline-offset: 2px;
 }
+
 .button[disabled],
 .button[aria-disabled="true"] {
     opacity: 0.55;
     cursor: not-allowed;
 }
 
-/* Cards/grid */
+/* Secondary (neutral) button */
+.button--secondary {
+    background: #eef4ff;
+    color: var(--color-primary);
+    border: 1px solid #dbe7ff;
+}
+
+.button--secondary:hover {
+    background: #e6efff;
+}
+
+/* Button groups */
+.button-group {
+    display: inline-flex;
+    gap: 0.5rem;
+}
+
+/* ------------------------------
+   Grid helpers (generic layout)
+   ------------------------------ */
+
 .grid {
     display: grid;
     gap: var(--space-3);
 }
+
 .grid-2 {
     grid-template-columns: repeat(2, 1fr);
 }
 .grid-3 {
     grid-template-columns: repeat(3, 1fr);
 }
+
+/* Stack to single column on small screens */
 @media (max-width: 700px) {
     .grid-2,
     .grid-3 {
@@ -49,56 +87,152 @@
     }
 }
 
+/* ------------------------------
+   Cards
+   ------------------------------ */
+
 .card {
+    position: relative; /* required for stretched-link */
     background: var(--color-surface);
     border: 1px solid #ddd;
     border-radius: var(--radius);
     padding: 1rem 1.25rem;
     box-shadow: var(--shadow);
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
 }
+
 .card:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+    border-color: #d6d6d6;
 }
 
-/* Accordion (expects JS to toggle [hidden] and [aria-expanded]) */
+/* Keep buttons elevated above stretched link */
+.card .button,
+.card .button--secondary {
+    position: relative;
+    z-index: 2;
+}
+
+/* Align CTA to card bottom when desired (equal-height rows) */
+.grid.grid-3 .card .button,
+.grid.grid-3 .card .button--secondary {
+    margin-top: auto;
+}
+
+/* Stretched link: turn entire card into a clickable area
+   Usage: <a class="stretched-link" href="..."></a> as a last child */
+.stretched-link {
+    position: absolute;
+    inset: 0; /* top/right/bottom/left: 0 */
+    z-index: 1; /* below real interactive controls */
+    text-indent: -9999px;
+}
+
+/* ------------------------------
+   Badges & Chips (generic)
+   ------------------------------ */
+
+/* Small label pill (e.g., event category) */
+.badge {
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.85rem;
+    border-radius: 999px;
+    background: #eef4ff;
+    color: var(--color-primary);
+    border: 1px solid #dbe7ff;
+    line-height: 1;
+}
+
+/* Clickable pill. Can be used for filters in multiple pages */
+.chip {
+    appearance: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    border: 1px solid #e5e9f2;
+    background: #f7faff;
+    color: var(--color-primary);
+    padding: 0.45rem 0.75rem;
+    border-radius: 999px;
+    cursor: pointer;
+    line-height: 1;
+    min-height: 44px; /* WCAG 2.5.5 touch target */
+    user-select: none;
+}
+
+.chip:hover {
+    background: #eef5ff;
+}
+
+.chip:focus-visible {
+    outline: 3px solid #99c2ff;
+    outline-offset: 2px;
+}
+
+.chip.is-active,
+.chip[aria-pressed="true"] {
+    background: var(--color-link);
+    color: #fff;
+    border-color: var(--color-link);
+}
+
+/* ------------------------------
+   Accordion (JS-driven)
+   Expect markup:
+   .accordion > .accordion-item > button.accordion-header + .accordion-content
+   Toggle [hidden] on .accordion-content and aria-expanded on header
+   ------------------------------ */
+
 .accordion {
     margin: var(--space-4) 0;
     border: 1px solid #ddd;
     border-radius: var(--radius);
     overflow: hidden;
+    background: var(--color-surface);
 }
+
 .accordion-item {
     border-bottom: 1px solid #ddd;
 }
 .accordion-item:last-child {
     border-bottom: 0;
 }
+
 .accordion-header {
     width: 100%;
     border: 0;
     text-align: left;
     cursor: pointer;
     font-weight: 700;
-    padding: 0.8rem 1rem;
+    padding: 0.85rem 1rem;
     background: var(--color-primary);
     color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
+
 .accordion-header:hover,
 .accordion-header:focus-visible {
     background: #1f2f41;
     outline: none;
 }
+
 .accordion-content {
     padding: 0.9rem 1rem;
     background: #f9f9f9;
 }
+
 .accordion-content[hidden] {
     display: none;
 }
 
-/* Images */
+/* ------------------------------
+   Media helpers
+   ------------------------------ */
+
 .responsive-img {
     max-width: 100%;
     height: auto;
