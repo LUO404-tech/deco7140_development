@@ -5,27 +5,23 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Project Portal · Hobbies & Subcultures</title>
 
-        <!-- Global CSS (keep order) -->
+        <!-- Global CSS (order matters) -->
         <link rel="stylesheet" href="css/reset.css" />
         <link rel="stylesheet" href="css/base.css" />
         <link rel="stylesheet" href="css/layout.css" />
         <link rel="stylesheet" href="css/components.css" />
 
-        <!-- Page CSS (has .portal-grid, .portal-hero etc.) -->
+        <!-- Page CSS: portal grid + flip styles -->
         <link rel="stylesheet" href="css/page_css/home.css" />
     </head>
     <body>
-        <!-- Skip link for keyboard users -->
         <a class="skip-link" href="#main">Skip to content</a>
 
-        <!-- Shared header / sky-blue nav -->
         <header class="site-header">
             <nav class="nav container" aria-label="Primary">
-                <!-- Brand: go back to your personal root homepage (one level up) -->
-                <!-- Tip: if you deploy at domain root, you can also use href="/index.html" -->
                 <a class="brand" href="../index.html">Hobbies &amp; Subcultures</a>
 
-                <!-- Hamburger: per your requirement, this links to the site homepage (WP4) -->
+                <!-- Per requirement: hamburger links to site home (WP4) -->
                 <a
                     class="nav-toggle"
                     href="homepage.html"
@@ -46,7 +42,6 @@
         </header>
 
         <main id="main" class="container section">
-            <!-- Portal hero -->
             <section class="portal-hero">
                 <h1>Project Portal</h1>
                 <p class="lead">
@@ -55,59 +50,160 @@
                 </p>
             </section>
 
-            <!-- Portal cards -->
+            <!-- Flip cards -->
             <section class="portal-grid" aria-labelledby="portal-links">
                 <h2 id="portal-links" class="visually-hidden">Portal Links</h2>
 
-                <!-- Website Home -->
-                <article class="card">
-                    <span class="eyebrow">Site</span>
-                    <h3>Website Home</h3>
-                    <p>Open the homepage for the Hobbies &amp; Subcultures site.</p>
-                    <a class="button" href="homepage.html" aria-label="Open website homepage">
-                        Open homepage
-                    </a>
+                <!-- 1) Website Home -->
+                <article class="card flip" data-flip>
+                    <div class="flip-inner">
+                        <!-- Front -->
+                        <div class="flip-front">
+                            <span class="eyebrow">Site</span>
+                            <img
+                                class="card-icon"
+                                src="images/homepage.png"
+                                width="96"
+                                height="96"
+                                alt=""
+                                aria-hidden="true"
+                            />
+                            <h3>Website Home</h3>
+
+                            <!-- Whole front is a focusable cover to flip -->
+                            <button
+                                class="flip-cover"
+                                type="button"
+                                data-flip-toggle
+                                aria-expanded="false"
+                                aria-controls="home-back"
+                            >
+                                <span class="visually-hidden"
+                                    >Show details for Website Home</span
+                                >
+                            </button>
+                        </div>
+
+                        <!-- Back (click/Enter/Space anywhere to flip back) -->
+                        <div
+                            class="flip-back"
+                            id="home-back"
+                            tabindex="0"
+                            aria-label="Close details, Website Home"
+                        >
+                            <h3>Website Home</h3>
+                            <p class="muted">
+                                Includes Welcome, Search, hero image, and global navigation.
+                            </p>
+                            <a class="button" href="homepage.html">Open homepage</a>
+                        </div>
+                    </div>
                 </article>
 
-                <!-- GenAI Acknowledgement -->
-                <article class="card">
-                    <span class="eyebrow">Docs</span>
-                    <h3>GenAI Acknowledgement</h3>
-                    <p>
-                        Statement describing how generative AI was used in this assignment and
-                        proper attribution.
-                    </p>
-                    <a
-                        class="button button--secondary"
-                        href="genai_mt_acknowledgement.html"
-                        aria-label="Open GenAI Acknowledgement document"
-                    >
-                        Open document
-                    </a>
+                <!-- 2) GenAI Acknowledgement -->
+                <article class="card flip" data-flip>
+                    <div class="flip-inner">
+                        <!-- Front -->
+                        <div class="flip-front">
+                            <span class="eyebrow">Docs</span>
+                            <img
+                                class="card-icon"
+                                src="images/software-application.png"
+                                width="96"
+                                height="96"
+                                alt=""
+                                aria-hidden="true"
+                            />
+                            <h3>GenAI Acknowledgement</h3>
+
+                            <button
+                                class="flip-cover"
+                                type="button"
+                                data-flip-toggle
+                                aria-expanded="false"
+                                aria-controls="genai-back"
+                            >
+                                <span class="visually-hidden"
+                                    >Show details for GenAI Acknowledgement</span
+                                >
+                            </button>
+                        </div>
+
+                        <!-- Back -->
+                        <div
+                            class="flip-back"
+                            id="genai-back"
+                            tabindex="0"
+                            aria-label="Close details, GenAI Acknowledgement"
+                        >
+                            <h3>GenAI Acknowledgement</h3>
+                            <ul class="list-compact">
+                                <li>How AI assisted (coding help, UI polish).</li>
+                                <li>Limits, risks, and final accountability.</li>
+                                <li>Alignment with WCAG 2.2 &amp; integrity.</li>
+                            </ul>
+                            <a class="button" href="genai_mt_acknowledgement.html"
+                                >Open document</a
+                            >
+                        </div>
+                    </div>
                 </article>
 
-                <!-- Implementation Rationale -->
-                <article class="card">
-                    <span class="eyebrow">Docs</span>
-                    <h3>Implementation Rationale</h3>
-                    <p>
-                        Explains key design decisions, accessibility considerations, and how
-                        the API is integrated in WP4.
-                    </p>
-                    <a
-                        class="button button--secondary"
-                        href="implementation_rationale.html"
-                        aria-label="Open Implementation Rationale document"
-                    >
-                        Open document
-                    </a>
+                <!-- 3) Implementation Rationale -->
+                <article class="card flip" data-flip>
+                    <div class="flip-inner">
+                        <!-- Front -->
+                        <div class="flip-front">
+                            <span class="eyebrow">Docs</span>
+                            <img
+                                class="card-icon"
+                                src="images/plan.png"
+                                width="96"
+                                height="96"
+                                alt=""
+                                aria-hidden="true"
+                            />
+                            <h3>Implementation Rationale</h3>
+
+                            <button
+                                class="flip-cover"
+                                type="button"
+                                data-flip-toggle
+                                aria-expanded="false"
+                                aria-controls="impl-back"
+                            >
+                                <span class="visually-hidden"
+                                    >Show details for Implementation Rationale</span
+                                >
+                            </button>
+                        </div>
+
+                        <!-- Back -->
+                        <div
+                            class="flip-back"
+                            id="impl-back"
+                            tabindex="0"
+                            aria-label="Close details, Implementation Rationale"
+                        >
+                            <h3>Implementation Rationale</h3>
+                            <ul class="list-compact">
+                                <li>Design tokens &amp; component reuse.</li>
+                                <li>Accessibility &amp; performance trade-offs.</li>
+                                <li>API modules (GET/POST) &amp; error handling.</li>
+                            </ul>
+                            <a class="button" href="implementation_rationale.html"
+                                >Open document</a
+                            >
+                        </div>
+                    </div>
                 </article>
             </section>
 
             <p class="to-top"><a href="#main">Back to top ↑</a></p>
         </main>
 
-        <!-- Shared JS if any -->
+        <!-- Scripts -->
         <script src="js/main.js" defer></script>
+        <script type="module" src="js/index.js" defer></script>
     </body>
 </html>

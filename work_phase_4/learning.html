@@ -3,24 +3,35 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Learning Studio — Hobbies & Subcultures</title>
+        <title>Learning Studio · Hobbies & Subcultures</title>
+
+        <!-- Global CSS (order matters) -->
         <link rel="stylesheet" href="css/reset.css" />
         <link rel="stylesheet" href="css/base.css" />
         <link rel="stylesheet" href="css/layout.css" />
         <link rel="stylesheet" href="css/components.css" />
+
+        <!-- Page CSS -->
+        <link rel="stylesheet" href="page_css/learning.css" />
     </head>
     <body>
-        <a href="#main" class="skip-link">Skip to content</a>
+        <a class="skip-link" href="#main">Skip to content</a>
 
         <header class="site-header">
-            <nav class="nav container" aria-label="Main">
-                <a class="brand" href="index.html">Hobbies & Subcultures</a>
-                <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false">
+            <nav class="nav container" aria-label="Primary">
+                <a class="brand" href="index.html">Hobbies &amp; Subcultures</a>
+                <button
+                    class="nav-toggle"
+                    type="button"
+                    aria-controls="primary-nav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
                     ☰
                 </button>
                 <div id="primary-nav" class="navlist">
                     <a href="homepage.html">Home</a>
-                    <a href="introduction.html" aria-current="page">Introduction</a>
+                    <a href="introduction.html">Introduction</a>
                     <a href="news.html">News</a>
                     <a href="hubs.html">Community Hubs</a>
                     <a href="learning.html" aria-current="page">Learning Studio</a>
@@ -29,9 +40,9 @@
             </nav>
         </header>
 
-        <main id="main" class="container stack">
-            <section class="section stack">
-                <h1>Learning Studio</h1>
+        <main id="main" class="container section">
+            <section class="section stack" aria-labelledby="studio-title">
+                <h1 id="studio-title">Learning Studio</h1>
                 <p class="lead">
                     Structured resources: beginner guides, tutorials, and Q&amp;A.
                 </p>
@@ -39,26 +50,127 @@
                 <div class="grid grid-3">
                     <article class="card">
                         <h3>Beginner Guides</h3>
-                        <p class="hint">Start here to get the basics.</p>
-                        <a class="btn" href="#" onclick="return false;">View</a>
+                        <p>Start here to get the basics.</p>
+                        <button id="open-guides" class="button" type="button">View</button>
                     </article>
+
                     <article class="card">
                         <h3>Video Tutorials</h3>
-                        <p class="hint">Step-by-step learning.</p>
-                        <a class="btn" href="#" onclick="return false;">Watch</a>
+                        <p>Step-by-step learning.</p>
+                        <button id="open-videos" class="button" type="button">Watch</button>
                     </article>
+
                     <article class="card">
                         <h3>Q &amp; A</h3>
-                        <p class="hint">Ask questions and get help.</p>
-                        <a class="btn" href="#" onclick="return false;">Open</a>
+                        <p>Ask questions and get help.</p>
+                        <button id="open-qa" class="button" type="button">Open</button>
                     </article>
                 </div>
             </section>
+
+            <!-- Beginner Guides -->
+            <dialog id="guides-dialog" class="modal">
+                <button class="modal__close" id="close-guides" aria-label="Close">✕</button>
+                <header class="modal__header">
+                    <h3 class="modal__title">Beginner Guides</h3>
+                </header>
+                <div class="modal__content">
+                    <ul class="guide-list">
+                        <li>
+                            <strong>Cosplay safety basics</strong> — picking comfortable
+                            materials, heat-safe tools.
+                        </li>
+                        <li>
+                            <strong>Knitting starter kit</strong> — needles, acrylic yarn,
+                            tension practice.
+                        </li>
+                        <li>
+                            <strong>Anime drawing</strong> — warm-ups, references, line
+                            control.
+                        </li>
+                        <li>
+                            <strong>Dance practice</strong> — short sessions, mirror feedback,
+                            record progress.
+                        </li>
+                    </ul>
+                </div>
+            </dialog>
+
+            <!-- Video Tutorials -->
+            <dialog id="videos-dialog" class="modal">
+                <button class="modal__close" id="close-videos" aria-label="Close">✕</button>
+                <header class="modal__header">
+                    <h3 class="modal__title">Video Tutorials</h3>
+                </header>
+                <div class="modal__controls">
+                    <label for="video-filter" class="visually-hidden"
+                        >Filter by category</label
+                    >
+                    <select id="video-filter" class="select">
+                        <option value="All">All</option>
+                        <option value="Cosplay">Cosplay</option>
+                        <option value="Knitting">Knitting</option>
+                        <option value="Anime">Anime</option>
+                        <option value="Dance">Dance</option>
+                    </select>
+                </div>
+                <ul
+                    id="video-list"
+                    class="video-list"
+                    aria-live="polite"
+                    aria-busy="true"
+                ></ul>
+                <p class="text-muted small">Links open on YouTube in a new tab.</p>
+            </dialog>
+
+            <!-- Q & A (left FAQ + right email button) -->
+            <dialog id="qa-dialog" class="modal">
+                <button class="modal__close" id="close-qa" aria-label="Close">✕</button>
+                <header class="modal__header"><h3 class="modal__title">Q &amp; A</h3></header>
+
+                <div class="modal__controls">
+                    <label for="qa-filter" class="visually-hidden">Filter by category</label>
+                    <select id="qa-filter" class="select">
+                        <option value="All">All</option>
+                        <option value="Cosplay">Cosplay</option>
+                        <option value="Knitting">Knitting</option>
+                        <option value="Anime">Anime</option>
+                        <option value="Dance">Dance</option>
+                    </select>
+                </div>
+
+                <div class="modal__content two-col">
+                    <section>
+                        <ul
+                            id="faq-list"
+                            class="faq-list"
+                            aria-live="polite"
+                            aria-busy="true"
+                        ></ul>
+                    </section>
+
+                    <aside class="form-card" id="qa-email">
+                        <h3>Ask a Question</h3>
+                        <p class="text-muted small">
+                            This opens your mail app with a pre-filled message.
+                        </p>
+                        <button class="button" type="button" id="qa-email-btn">
+                            Email a question
+                        </button>
+                    </aside>
+                </div>
+            </dialog>
+
+            <noscript
+                ><p class="text-muted">JavaScript is required to view the modals.</p></noscript
+            >
         </main>
 
         <footer class="container" style="padding: var(--space-5) 0; color: var(--color-muted)">
-            <p>© WP4 — consistent structure • responsive design • accessible UI.</p>
+            <p>© WP4 — structured learning • responsive design • accessible UI.</p>
         </footer>
-        <script src="js/ui/nav.js" defer></script>
+
+        <script src="js/main.js" defer></script>
+        <script type="module" src="js/learning.js"></script>
     </body>
 </html>

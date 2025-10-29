@@ -1,5 +1,5 @@
 /* =========================================================
-   Home page only (welcome, search, hero image, portal grid)
+   Home page (welcome, search, hero image, portal grid & flips)
    ========================================================= */
 
 /* ---- Page spacing ---- */
@@ -19,7 +19,7 @@
     box-shadow: var(--shadow);
 }
 
-/* ---- Search input: larger touch target (WCAG 2.2 2.5.5) ---- */
+/* ---- Search input: larger touch target (WCAG 2.5.5) ---- */
 input[type="search"] {
     padding: 0.6rem 0.75rem;
     border-radius: 8px;
@@ -31,18 +31,15 @@ input[type="search"]:focus-visible {
 }
 
 /* =========================================================
-   Project Portal section (the three navigation cards)
-   - Responsive grid
-   - Small "eyebrow" label above titles
-   - Gentle spacing for CTA buttons in cards
+   Project Portal (grid + flip cards)
    ========================================================= */
 
-/* Optional hero spacing for the portal section title/lead */
+/* Section intro spacing */
 .portal-hero {
     margin-block: var(--space-5);
 }
 
-/* Card grid: stack on mobile, 3 columns on ≥760px */
+/* Card grid: stack on mobile, 3 cols on ≥760px */
 .portal-grid {
     display: grid;
     gap: var(--space-4);
@@ -53,7 +50,7 @@ input[type="search"]:focus-visible {
     }
 }
 
-/* Eyebrow label above card title (e.g., "Docs", "Submission") */
+/* Eyebrow label above card title (e.g., "Docs") */
 .card .eyebrow {
     display: inline-flex;
     align-items: center;
@@ -63,27 +60,148 @@ input[type="search"]:focus-visible {
     color: var(--color-primary);
 }
 
-/* Give the primary/secondary button a bit of breathing room */
-.card .button {
-    margin-top: var(--space-2);
-}
-
-/* (Optional) Make portal cards flex so buttons sit nicely at the end */
-.portal-grid .card {
+/* Regular (non-flip) cards keep flex layout */
+.portal-grid .card:not(.flip) {
     display: flex;
     flex-direction: column;
     gap: var(--space-2);
 }
-.portal-grid .card p:last-of-type {
+.portal-grid .card:not(.flip) p:last-of-type {
     margin-bottom: 0;
 }
 
-/* ---- Welcome list: remove bullets & tidy spacing ---- */
+/* ---- Welcome list: no bullets & tidy spacing ---- */
 .welcome-list {
-    list-style: none; /* no bullets */
-    padding-left: 0; /* remove default indent */
+    list-style: none;
+    padding-left: 0;
     margin: 0 0 var(--space-3);
 }
 .welcome-list li {
-    margin: 0.25rem 0; /* small vertical rhythm */
+    margin: 0.25rem 0;
+}
+
+/* =========================================================
+   Flip cards
+   - Desktop: hover/focus flips
+   - Mobile/keyboard: JS toggles .is-flipped
+   ========================================================= */
+
+/* Outer shell (card look is drawn by both faces) */
+.portal-grid .card.flip {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    perspective: 1000px; /* enable 3D */
+    min-height: 260px; /* stable height */
+}
+
+/* Core 3D wrapper */
+.portal-grid .flip .flip-inner {
+    position: relative;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease;
+}
+
+/* Two faces share the same “card” look */
+.portal-grid .flip .flip-front,
+.portal-grid .flip .flip-back {
+    position: absolute;
+    inset: 0;
+    padding: 1rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    backface-visibility: hidden;
+    border-radius: var(--radius);
+    background: var(--color-surface);
+    border: 1px solid #ddd;
+    box-shadow: var(--shadow);
+}
+.portal-grid .flip .flip-back {
+    transform: rotateY(180deg);
+}
+
+/* Flip triggers (hover, focus-within, or JS adds .is-flipped) */
+.portal-grid .flip:hover .flip-inner,
+.portal-grid .flip:focus-within .flip-inner,
+.portal-grid .flip.is-flipped .flip-inner {
+    transform: rotateY(180deg);
+}
+
+/* Row for action buttons (if any on front) */
+.actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: auto;
+}
+
+/* Ghost-styled button variant */
+.button--ghost {
+    background: #eaf0ff;
+    color: var(--color-primary);
+}
+.button--ghost:hover {
+    background: #dbe7ff;
+}
+
+/* ---------- Icon on the flip-front ---------- */
+.card-icon {
+    width: 96px;
+    height: auto;
+    display: block;
+    margin: 0.25rem 0 0.25rem;
+    filter: drop-shadow(0 1px 0 rgba(0, 0, 0, 0.05));
+}
+
+/* ---------- Make the whole front face clickable ---------- */
+.flip-front {
+    position: relative;
+}
+/* An invisible, focusable cover that spans the front face */
+.flip-cover {
+    position: absolute;
+    inset: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
+.flip-cover:focus-visible {
+    outline: 3px solid var(--color-link);
+    outline-offset: -3px;
+    border-radius: var(--radius);
+}
+
+/* ---------- Back face: remove bullets & hide “Back” ---------- */
+.flip-back {
+    cursor: pointer;
+} /* allow click-anywhere to flip back */
+.flip-back:focus-visible {
+    outline: 3px solid var(--color-link);
+    outline-offset: -3px;
+    border-radius: var(--radius);
+}
+
+/* Remove black dots on the back-side list */
+.flip-back .list-compact {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+.flip-back .list-compact li {
+    margin: 0.35rem 0;
+}
+
+/* Hide any explicit “Back” link/button on the back face */
+.flip-back .link-btn {
+    display: none !important;
+}
+
+/* ---- Motion safety ---- */
+@media (prefers-reduced-motion: reduce) {
+    .portal-grid .flip .flip-inner {
+        transition: none;
+        transform: none !important;
+    }
 }
