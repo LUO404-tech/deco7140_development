@@ -3,34 +3,71 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>GenAI Acknowledgement</title>
+        <title>GenAI / MT Acknowledgement</title>
 
-        <!-- Global CSS (keep order) -->
+        <!-- global styles -->
         <link rel="stylesheet" href="css/reset.css" />
         <link rel="stylesheet" href="css/base.css" />
         <link rel="stylesheet" href="css/layout.css" />
         <link rel="stylesheet" href="css/components.css" />
+
+        <!-- page-scoped styles (same blue card look as Implementation Rationale) -->
+        <link rel="stylesheet" href="css/page_css/genai_mt_acknowledgement.css?v=1" />
+
+        <!-- page-local helpers for highlight + small titles -->
+        <style>
+            /* “eyebrow” style for mini titles inside a card */
+            .impl-line {
+                margin-bottom: 0.4rem;
+            }
+
+            .impl-tag {
+                display: inline-block;
+                font-weight: 700;
+                color: #121d33;
+                margin-right: 0.35rem;
+            }
+
+            /* highlighter style like your WP2 yellow marks */
+            .hl {
+                background: #fef3c7;
+                border-radius: 0.25rem;
+                padding: 0.08rem 0.45rem 0.18rem;
+            }
+
+            code.hl {
+                font-family: ui-monospace, SFMono-Regular, SFMono-Regular, SFMono-Regular,
+                    Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+                font-size: 0.85em;
+            }
+
+            /* tighten the list in reflection so it doesn’t look like bullets */
+            .impl-points p {
+                margin-bottom: 0.45rem;
+            }
+
+            /* keep the note at the bottom a bit lighter */
+            .impl-note {
+                font-size: 0.82rem;
+                color: rgba(7, 20, 35, 0.55);
+            }
+        </style>
     </head>
     <body>
-        <!-- Skip link -->
         <a class="skip-link" href="#main">Skip to content</a>
 
-        <!-- Shared header (does not add this page to the nav) -->
         <header class="site-header">
             <nav class="nav container" aria-label="Primary">
                 <a class="brand" href="index.html">Hobbies &amp; Subcultures</a>
-
                 <button
                     class="nav-toggle"
                     type="button"
                     aria-controls="primary-nav"
                     aria-expanded="false"
                     aria-label="Toggle navigation"
-                    title="Toggle navigation"
                 >
                     ☰
                 </button>
-
                 <div id="primary-nav" class="navlist" data-collapsible>
                     <a href="homepage.html">Home</a>
                     <a href="introduction.html">Introduction</a>
@@ -43,180 +80,146 @@
             </nav>
         </header>
 
-        <main id="main" class="container section stack">
-            <h1>GenAI Acknowledgement (WP4)</h1>
-            <p class="doc-lead">
-                This document explains how <strong>Generative AI</strong> supported my WP4
-                work: integrating the course API, improving accessibility and CSS structure,
-                and building a clean project portal. I remain fully responsible for design
-                decisions, code quality, and compliance.
+        <main id="main" class="container section stack genai-page">
+            <h1 class="impl-title">GenAI / MT Acknowledgement (WP4)</h1>
+            <p class="impl-lead">
+                This page documents how Generative AI (ChatGPT) and MT-style prompts were used
+                during
+                <code class="hl">work_phase_4</code>. All outputs were reviewed, adapted to the
+                WP3/WP4 style, and tested locally. The final website remains my own work.
             </p>
 
-            <!-- Summary cards -->
-            <section class="card-grid">
-                <article class="card">
-                    <span class="eyebrow">WP4 Focus</span>
-                    <h3>Where AI Helped</h3>
-                    <ul class="klist">
-                        <li>
-                            Shaping <strong>GET/POST modules</strong> and fetch patterns
-                            (<code>getData.js</code>, <code>postFormData.js</code>).
-                        </li>
-                        <li>
-                            Designing an <strong>accessible filter chip</strong> pattern (ARIA
-                            and keyboard support).
-                        </li>
-                        <li>
-                            Refactoring page-scoped CSS (remove overuse of
-                            <code>!important</code>, scope tokens).
-                        </li>
-                        <li>
-                            Right-sizing hero/feature images for the
-                            <strong>News</strong> page.
-                        </li>
-                        <li>
-                            Drafting the <strong>Project Portal</strong> layout and card
-                            microcopy.
-                        </li>
-                    </ul>
-                    <p class="meta">
-                        AI generated drafts/snippets that I reviewed, edited, and tested
-                        locally.
-                    </p>
-                </article>
-
-                <article class="card">
-                    <span class="eyebrow">Benefits</span>
-                    <h3>What It Accelerated</h3>
-                    <ul class="klist">
-                        <li>Faster iteration on API wiring and error handling.</li>
-                        <li>
-                            Quicker convergence on accessible UI patterns (focus rings, touch
-                            targets, ARIA).
-                        </li>
-                        <li>
-                            Cleaner CSS structure via <strong>page-scoped tokens</strong> and
-                            consistent naming.
-                        </li>
-                    </ul>
-                </article>
-
-                <article class="card">
-                    <span class="eyebrow">Limitations</span>
-                    <h3>What It Didn’t Do</h3>
-                    <ul class="klist">
-                        <li>
-                            It did not decide site information architecture, sitemap, or visual
-                            style.
-                        </li>
-                        <li>
-                            Generated code sometimes required fixes for
-                            <strong>edge cases</strong> and <strong>browser behavior</strong>.
-                        </li>
-                        <li>
-                            Prompts needed specificity; I validated all outputs against
-                            assignment requirements and API docs.
-                        </li>
-                    </ul>
-                </article>
-
-                <article class="card">
-                    <span class="eyebrow">Integrity</span>
-                    <h3>My Role &amp; Accountability</h3>
-                    <p>
-                        I authored the final code and copy, verified accessibility (focus
-                        order, reduced motion, labels), and ensured the site meets
-                        <span class="badge-soft">WCAG 2.2</span> intent and project marking
-                        criteria. All API interactions follow the DECO7140 docs and use my own
-                        headers.
-                    </p>
-                </article>
-            </section>
-
-            <!-- Concrete contributions -->
-            <section class="section">
-                <h2>Concrete AI-Supported Contributions in WP4</h2>
-                <ul class="klist">
-                    <li>
-                        <strong>Community Hubs — API Integration:</strong> guidance on
-                        structuring a small GET module and a POST helper using
-                        <code>fetch</code>, headers, and basic JSON handling; wiring
-                        success/error messages to the DOM.
-                    </li>
-                    <li>
-                        <strong>Filter Chips:</strong> pattern for <code>aria-pressed</code>,
-                        keyboard activation (Space/Enter), and simple client-side filtering
-                        without heavy dependencies.
-                    </li>
-                    <li>
-                        <strong>News Page CSS:</strong> compact hero icon sizing (<code
-                            >object-fit: contain</code
-                        >, max-height/width caps) and steady card image rhythm.
-                    </li>
-                    <li>
-                        <strong>Introduction Page CSS:</strong> scoping accordion tokens to
-                        <code>details.accordion</code>, avoiding global
-                        <code>:root</code> leakage.
-                    </li>
-                    <li>
-                        <strong>Project Portal:</strong> card grid semantics, concise
-                        microcopy, and navigation consistency with the rest of the site.
-                    </li>
-                </ul>
-            </section>
-
-            <!-- What was done by student -->
-            <section class="section">
-                <h2>Decisions Made by Me</h2>
-                <ul class="klist">
-                    <li>
-                        Information architecture and page content structure based on my
-                        <em>Site Map</em> and wireframes.
-                    </li>
-                    <li>
-                        Final CSS tokens, spacing scale, and component polish to match the
-                        visual language across pages.
-                    </li>
-                    <li>
-                        Accessibility checks (focus-visible, labels, reflow, touch target
-                        sizing, color contrast choices).
-                    </li>
-                    <li>All copywriting, alt text, and selection of images/icons.</li>
-                </ul>
-            </section>
-
-            <!-- Prompts & Privacy -->
-            <section class="section">
-                <h2>Prompting &amp; Privacy</h2>
-                <ul class="klist">
-                    <li>
-                        I asked for <strong>small, auditable snippets</strong> (e.g., “a
-                        minimal POST helper with form-data and headers”).
-                    </li>
-                    <li>
-                        No personal or confidential data was sent to AI tools; example values
-                        were placeholders.
-                    </li>
-                    <li>
-                        All outputs were manually reviewed, edited, and tested locally before
-                        inclusion.
-                    </li>
-                </ul>
-            </section>
-
-            <!-- Attribution -->
-            <section class="section">
-                <h2>Attribution</h2>
+            <!-- 1. Acknowledgement -->
+            <section class="impl-block" id="ack">
+                <h2 class="impl-heading">1. Acknowledgement of GenAI / MT Use</h2>
                 <p>
-                    Generative AI assistance (ChatGPT) was used as a development aid for
-                    ideation, code scaffolding, and wording suggestions. I verified and adapted
-                    all outputs to meet the assignment requirements. The final site
-                    implementation is my own work.
+                    I used ChatGPT as an implementation helper while building
+                    <code class="hl">work_phase_4</code>. It was mainly used to produce small,
+                    inspectable code and to clarify how to build specific WP4 interactions.
                 </p>
-                <p class="meta">
-                    Primary references during WP4: DECO7140 Community API docs (GET/POST), WCAG
-                    2.2 principles, and course guidance.
+
+                <div class="impl-points">
+                    <p class="impl-line">
+                        <span class="impl-tag">Course API helpers:</span>
+                        generate JavaScript snippets to load community posts with
+                        <code class="hl">GET</code>
+                        and to submit new entries with
+                        <code class="hl">POST</code>.
+                    </p>
+                    <p class="impl-line">
+                        <span class="impl-tag">Layout and image debugging:</span>
+                        ask how to tune hero cards and form containers so they match the WP4
+                        spacing system on desktop and mobile.
+                    </p>
+                    <p class="impl-line">
+                        <span class="impl-tag">Feature-level guidance:</span>
+                        ask how to add YouTube tutorial links on
+                        <code>learning.html</code>; how to build a “copy my contact email”
+                        button on <code>support.html</code>; how to set up a simple site search
+                        pattern on <code>homepage.html</code>; and how to implement the “Join
+                        the Community” inline-response behaviour on
+                        <code>hubs.html</code> (including which JavaScript structure to use).
+                    </p>
+                </div>
+
+                <p class="impl-note">
+                    I did <strong>not</strong> use AI to design whole pages, decide the site
+                    map, or pick the final visual style – those decisions came from my WP2 user
+                    stories, WP3 prototypes, and the A4 task sheet.
                 </p>
+            </section>
+
+            <!-- 2. Checklist -->
+            <section class="impl-block" id="checklist">
+                <h2 class="impl-heading">2. Completed GenAI / MT Usage Checklist</h2>
+                <p>
+                    This section shows how my usage aligns with the UQ GenAI / MT framework
+                    (Week 10–11).
+                </p>
+                <div class="impl-points">
+                    <p class="impl-line">
+                        <span class="impl-tag">Clear, narrow prompts:</span>
+                        I asked for small, auditable snippets (for example, “a minimal
+                        <code class="hl">POST</code> helper with headers and JSON handling”)
+                        instead of asking the AI to build the whole page.
+                    </p>
+                    <p class="impl-line">
+                        <span class="impl-tag">Local testing:</span>
+                        all generated code was reviewed, edited where needed, and tested in the
+                        actual WP4 pages before submission.
+                    </p>
+                    <p class="impl-line">
+                        <span class="impl-tag">No personal data:</span>
+                        prompts used placeholder emails / names and did not include student or
+                        private data.
+                    </p>
+                    <p class="impl-line">
+                        <span class="impl-tag">Documented use:</span>
+                        this page records where AI supported the build and where human
+                        decisions were kept.
+                    </p>
+                </div>
+            </section>
+
+            <!-- 3. Reflection -->
+            <section class="impl-block" id="reflection">
+                <h2 class="impl-heading">3. Reflection on GenAI / MT Usage</h2>
+                <p>
+                    Overall, GenAI helped me move faster on repetitive front-end tasks and gave
+                    me alternatives for DOM patterns I was not 100% confident about.
+                </p>
+                <div class="impl-points">
+                    <p class="impl-line">
+                        <span class="impl-tag">Creativity &amp; problem-solving:</span>
+                        it suggested different ways to attach a copy-to-clipboard action, to
+                        embed YouTube resources on the Learning page, and to show success /
+                        error messages after a
+                        <code class="hl">POST</code>.
+                    </p>
+                    <p class="impl-line">
+                        <span class="impl-tag">Technical proficiency:</span>
+                        I compared the AI suggestions with the course API docs and only kept
+                        the parts that matched the DECO7140 build.
+                    </p>
+                    <p class="impl-line">
+                        <span class="impl-tag">Critical evaluation:</span>
+                        some AI code overwrote or removed parts of my existing pages (for
+                        example, it restyled containers or replaced helper text). Because of
+                        that, I now
+                        <strong>always</strong> check the diff, keep my own version as the
+                        source of truth, and write more precise prompts so the AI does not
+                        touch layout or content that is already finished.
+                    </p>
+                    <p class="impl-line">
+                        <span class="impl-tag">Future practice:</span>
+                        I will continue to use AI for small, traceable blocks, but I will keep
+                        information architecture, content structure, and assessment text as my
+                        own work.
+                    </p>
+                </div>
+            </section>
+
+            <!-- 4. Integrity -->
+            <section class="impl-block" id="integrity">
+                <h2 class="impl-heading">4. Integrity Statement</h2>
+                <p>
+                    I am responsible for the final website. All AI-assisted code and copy were
+                    reviewed, localised to the project, and checked against the DECO7140
+                    requirements. This page is provided to make my GenAI / MT usage
+                    transparent.
+                </p>
+                <div class="impl-points">
+                    <p class="impl-line">
+                        <span class="impl-tag">Authoring:</span>
+                        I authored the final HTML, CSS, accessibility decisions, and page
+                        content.
+                    </p>
+                    <p class="impl-line">
+                        <span class="impl-tag">Compliance:</span>
+                        I followed the UQ GenAI / MT Usage Framework and the principles of
+                        academic integrity.
+                    </p>
+                </div>
             </section>
 
             <p class="to-top"><a href="#main">Back to top ↑</a></p>

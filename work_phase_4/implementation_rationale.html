@@ -11,8 +11,8 @@
         <link rel="stylesheet" href="css/layout.css" />
         <link rel="stylesheet" href="css/components.css" />
 
-        <!-- page-specific styles -->
-        <link rel="stylesheet" href="css/page_css/implementation_rationale.css?v=2" />
+        <!-- page-scoped styles -->
+        <link rel="stylesheet" href="css/page_css/implementation_rationale.css?v=7" />
     </head>
     <body>
         <a class="skip-link" href="#main">Skip to content</a>
@@ -43,196 +43,259 @@
 
         <main id="main" class="container section stack impl-page">
             <h1 class="impl-title">Implementation Rationale</h1>
-            <p class="impl-lead">
-                This page explains how the WP4 build was implemented from the WP3 concept, how
-                it aligns with the Connect Communities Initiative (CCI), and how accessibility
-                and ethical decisions from earlier phases were carried through.
-            </p>
 
             <!-- 1. Alignment -->
             <section class="impl-block" id="alignment">
                 <h2 class="impl-heading">1. Alignment with Client and User Needs</h2>
                 <p>
-                    The client stories described a platform for people who enjoy hobby and
-                    subculture communities (cosplay, anime, dance, crafting, indie music) – not
-                    just UQ students. WP4 keeps that broader audience: pages stay friendly,
-                    ESL-readable, and interest driven.
+                    In WP3 I defined the audience as people who enjoy hobby and subculture
+                    communities (cosplay, anime, dance, crafting, indie music, and related
+                    interests). When building WP4 I kept the same audience, so the website
+                    stays interest-driven, ESL-friendly, and easy to browse.
                 </p>
-                <ul>
-                    <li>
-                        <strong>Same IA as WP3:</strong> navigation follows the WP3 site map
-                        (Home, Introduction, News, Community Hubs, Learning Studio, Community
-                        Support) so returning users recognise the structure and new users can
-                        browse by topic.
-                    </li>
-                    <li>
-                        <strong>Homepage welcome text reused:</strong> the welcome copy on
-                        <code>homepage.html</code> is the revised, inclusive wording you wrote
-                        in WP3, so the tone stays “for everyone who likes these communities”.
-                    </li>
-                    <li>
-                        <strong>Learning Studio for newcomers:</strong> WP4 adds Learning
-                        Studio with Beginner Guides and Video Tutorials so first-time visitors
-                        can understand terms, culture, and safety before posting. This supports
-                        the user need for a gentle, low-pressure onboarding.
-                    </li>
-                    <li>
-                        <strong>API pattern continued from WP3:</strong> as in WP3’s API
-                        exercises, WP4 uses one GET to surface current community voices and one
-                        POST (“Join the Community”) so any hobby fan can contribute without a
-                        complex signup.
-                    </li>
-                    <li>
-                        <strong>Login consistent with WP3 forms:</strong> the login page reuses
-                        the WP3 form styling (bold labels, rounded card, blue primary button)
-                        so the new feature does not break the visual system you established
-                        earlier.
-                    </li>
-                    <li>
-                        <strong>CCI alignment:</strong> content is organised around interest
-                        groups, has low-barrier input fields, and keeps clear labels, which
-                        matches CCI’s goal of helping people join or form communities quickly.
-                    </li>
-                </ul>
+                <div class="impl-points">
+                    <p>
+                        <span class="impl-label"
+                            >Information architecture reused from WP3:</span
+                        >
+                        I kept the WP3 site map –
+                        <em
+                            >Home, Introduction, News, Community Hubs, Learning Studio,
+                            Community Support, Login</em
+                        >
+                        – so anyone who saw the WP3 prototype can recognise the structure and
+                        new visitors can navigate by page purpose.
+                    </p>
+                    <p>
+                        <span class="impl-label">Homepage welcome text reused:</span>
+                        the welcome on <code>homepage.html</code> keeps the inclusive,
+                        community-first tone I wrote in WP3, so WP4 pages still speak to
+                        “people who like these communities”, not to a narrow campus-only group.
+                    </p>
+                    <p>
+                        <span class="impl-label">Learning Studio added for newcomers:</span>
+                        I added a Learning Studio page with <em>Beginner Guides</em> and
+                        <em>Video Tutorials</em> so people who are new to a hobby can get
+                        context before visiting Community Hubs or posting.
+                    </p>
+                    <p>
+                        <span class="impl-label">WP3 API practice carried over:</span>
+                        WP4 uses the same pattern from WP3: one GET to load current community
+                        voices, and one POST (“Join the Community”) so users can contribute
+                        without a complex sign-up.
+                    </p>
+                    <p>
+                        <span class="impl-label">Form style kept in the same system:</span>
+                        the login page follows the WP3 form style (bold labels, rounded white
+                        card, blue primary action) so the new page belongs visually to the same
+                        project, even though WP4 added a second <em>Clear</em> button.
+                    </p>
+                    <p>
+                        <span class="impl-label">Card components inherited:</span>
+                        I reused the rounded, shadowed cards from WP3 (Values Mapping Table,
+                        reflective pages) for the hubs hero cards and the join form. This makes
+                        WP4 visually consistent with the WP3 deliverables.
+                    </p>
+                    <p>
+                        <span class="impl-label">Connection to CCI:</span>
+                        content is grouped by interests, input fields are low-barrier, and
+                        labels are clear – this aligns with the Connect Communities Initiative
+                        goal of helping people join or create communities quickly.
+                    </p>
+                </div>
             </section>
 
             <!-- 2. Accessibility & Ethics -->
             <section class="impl-block" id="accessibility-ethics">
                 <h2 class="impl-heading">2. Accessibility and Ethical Considerations</h2>
                 <p>
-                    WP4 reuses the accessibility decisions from WP2/WP3 (semantic headings,
-                    keyboard navigation, inclusive language) and applies them to the new
-                    API-driven pages.
+                    I did not restart accessibility work from zero. Instead, I applied the
+                    WP2/WP3 principles to the new API-based pages and to the login flow.
                 </p>
-                <ul>
-                    <li>
-                        <strong>Keyboard &amp; focus:</strong> filter chips in
-                        <code>hubs.html</code> use <code>aria-pressed</code> and can be
-                        activated with Enter/Space, so keyboard-only users can switch
-                        communities.
-                    </li>
-                    <li>
-                        <strong>Plain / ESL-friendly labels:</strong> forms use short field
-                        labels (“Email”, “Password”, “Message (optional)”) and helper text,
-                        following the WP3 style guide.
-                    </li>
-                    <li>
-                        <strong>Minimal data collection:</strong> the community form only sends
-                        what the DECO7140 API requires (name, email, category, message,
-                        optional image), matching your WP2 ethics position of collecting only
-                        necessary data.
-                    </li>
-                    <li>
-                        <strong>Consistent colour and contrast:</strong> the login card,
-                        Learning Studio tiles, and implementation pages reuse the same blues
-                        and rounded cards from WP3 to reduce cognitive load.
-                    </li>
-                    <li>
-                        <strong>Support for newcomers:</strong> Learning Studio is an ethical
-                        gesture towards new users – it lowers the knowledge barrier so no group
-                        is excluded just because they are “new to cosplay/anime”.
-                    </li>
-                </ul>
+                <div class="impl-points">
+                    <p>
+                        <span class="impl-label">Keyboard and focus support:</span>
+                        filter chips on <code>hubs.html</code> are buttons with
+                        <code>aria-pressed</code>
+                        and can be triggered with Enter/Space so keyboard-only users can change
+                        the active community.
+                    </p>
+                    <p>
+                        <span class="impl-label">ESL-friendly copy:</span>
+                        forms use short, typical labels (“Email”, “Password”, “Message
+                        (optional)”), based on the WP3 style guide and reflective design page.
+                    </p>
+                    <p>
+                        <span class="impl-label">Minimal data collection:</span>
+                        the community POST form only sends what the DECO7140 API needs (name,
+                        email, category, message, optional image). This continues the privacy
+                        decisions from the WP3 Values Mapping Table.
+                    </p>
+                    <p>
+                        <span class="impl-label">Learning as inclusion:</span>
+                        providing beginner material in the Learning Studio prevents new users
+                        from being excluded just because they do not know the subculture terms
+                        yet.
+                    </p>
+                    <p>
+                        <span class="impl-label">Inclusive language carried over:</span>
+                        WP4 keeps the “everyone / users / people” wording from WP3 so content
+                        stays neutral and respectful.
+                    </p>
+                </div>
             </section>
 
             <!-- 3. Variations -->
             <section class="impl-block" id="variations">
                 <h2 class="impl-heading">3. Variations from A3 Design Proposal</h2>
                 <p>
-                    A few changes were made while connecting the real API and finalising WP4,
-                    but they stay within the original concept.
+                    When I connected the real API and tested the pages, I made a few
+                    adjustments. All of them stay inside the original concept.
                 </p>
-                <ul>
-                    <li>
-                        <strong>Inline replies:</strong> the API does not support threaded
-                        replies, so a local inline-reply UI was added to each card. This keeps
-                        the “community conversation” feeling from A3 without breaking the
-                        endpoint.
-                    </li>
-                    <li>
-                        <strong>Hashtag category prefix:</strong> messages posted through the
-                        form are prefixed with <code>#cosplay</code>, <code>#knitting</code>,
-                        etc. so the client-side filter can reliably group posts.
-                    </li>
-                    <li>
-                        <strong>Optimised images:</strong> hub/support cards use tighter image
-                        sizing than the A3 mockups to improve UQCloud load time.
-                    </li>
-                    <li>
-                        <strong>Extra nav item (“Login”):</strong> the nav now includes
-                        <code>login.html</code> so the form demo is discoverable from every
-                        page.
-                    </li>
-                </ul>
-                <p class="impl-note">
-                    All variations were made for feasibility, performance, or API-integration
-                    reasons and keep the WP3 visual language.
-                </p>
+                <div class="impl-points">
+                    <p>
+                        <span class="impl-label">Inline reply on community posts:</span>
+                        because the API does not provide threaded replies but A3 emphasised
+                        interaction, I added a local inline-reply UI under each card so users
+                        can respond in context without breaking the endpoint.
+                    </p>
+                    <p>
+                        <span class="impl-label">Hashtag prefixes for filtering:</span>
+                        posts are prefixed with tags like <code>#cosplay</code> or
+                        <code>#anime</code> so the client-side filter can reliably group voices
+                        by interest.
+                    </p>
+                    <p>
+                        <span class="impl-label">Login actions extended:</span>
+                        instead of a single “Submit” button like the WP3 demo, the WP4 login
+                        card has both
+                        <em>Sign in</em> and <em>Clear</em> so users can correct mistakes
+                        quickly, especially on mobile.
+                    </p>
+                    <p>
+                        <span class="impl-label">Refreshed blue palette:</span>
+                        I used the WP4 header blue on cards and buttons, instead of copying the
+                        WP3 demo colour exactly. This keeps contrast good enough for the audit
+                        and matches the final layout.
+                    </p>
+                    <p>
+                        <span class="impl-label">Image sizing adjusted:</span>
+                        some hero/card images are tighter than the A3 mockups to load faster on
+                        UQCloud.
+                    </p>
+                    <p>
+                        <span class="impl-label">Login added to global nav:</span>
+                        I exposed <code>login.html</code> in the shared navigation so the
+                        marker can reach the form from any page.
+                    </p>
+                </div>
             </section>
 
             <!-- 4. Challenges -->
             <section class="impl-block" id="challenges">
                 <h2 class="impl-heading">4. Challenges and Strategies</h2>
-                <ul>
-                    <li>
-                        <strong>Single API list → multiple views:</strong> the endpoint returns
-                        one flat list; the page adds client-side sorting and filtering so users
-                        can browse by community without extra API calls.
-                    </li>
-                    <li>
-                        <strong>Keeping nav consistent:</strong> all WP4 pages reuse the same
-                        header markup and JS toggle so updates (like the Login link) only need
-                        to be made once.
-                    </li>
-                    <li>
-                        <strong>Form UX:</strong> to avoid confusing new hobby users, form
-                        fields were kept short, with optional fields marked, and success
-                        messages added after POST.
-                    </li>
-                    <li>
-                        <strong>Matching WP3 typography:</strong> headings and card spacing
-                        were aligned with the WP3 Style Guide so WP4 pages still “look like”
-                        the project, even though they are API-driven.
-                    </li>
-                </ul>
+                <div class="impl-points">
+                    <p>
+                        <span class="impl-label">Flat API → multiple views:</span>
+                        the endpoint returns one flat list, but I needed “by community” views.
+                        I solved it on the client side with filtering and status messages so
+                        users can switch categories without reloading.
+                    </p>
+                    <p>
+                        <span class="impl-label">Keeping navigation consistent:</span>
+                        all WP4 pages reuse the same header markup and JS toggle. After I added
+                        the Login item, I only updated this shared piece once.
+                    </p>
+                    <p>
+                        <span class="impl-label">Form UX for mixed-ability users:</span>
+                        I kept inputs short, marked optional fields clearly, and added
+                        success/failure feedback after POST so users always know whether the
+                        API call worked.
+                    </p>
+                    <p>
+                        <span class="impl-label">Visual continuity with WP3:</span>
+                        I matched WP3 typography, spacing, and card borders so WP4 still “looks
+                        like” the project shown in the Behavioural / Reflective design pages.
+                    </p>
+                </div>
             </section>
 
-            <!-- 5. Accessibility audit -->
+            <!-- 5. Accessibility Audit -->
             <section class="impl-block" id="accessibility-audit">
                 <h2 class="impl-heading">5. Accessibility Audit</h2>
                 <p>
-                    The pages were checked with the IBM Equal Access Accessibility Checker.
-                    Insert the screenshot here in the final submission.
+                    I ran the IBM <strong>Equal Access Accessibility Checker</strong> (Chrome
+                    DevTools) on <code>work_phase_4/hubs.html</code> on 31 Oct 2025. I picked
+                    this page because it is the most complete WP4 example: shared navigation,
+                    hero cards, filter chips, API-loaded voices, and the “Join the Community”
+                    POST form.
                 </p>
-                <ul>
-                    <li>
-                        Most results were informational/warnings about landmark repetition.
-                    </li>
-                    <li>
-                        Form labels and button text already met the tool’s recommendations, so
-                        no structural changes were needed.
-                    </li>
-                    <li>
-                        Minor contrast notes were reviewed against the existing WP palette
-                        before deciding to keep the current blue.
-                    </li>
-                </ul>
+                <div class="impl-points">
+                    <p>
+                        <span class="impl-label">Environment:</span>
+                        Chrome 141, DevTools device preview iPhone SE (375px),
+                        <code>http://127.0.0.1:5501/work_phase_4/hubs.html</code>.
+                    </p>
+                    <p>
+                        <span class="impl-label">Main violation – SVG accessible names:</span>
+                        the scan reported several “The SVG element has no accessible name”
+                        issues. These come from the decorative hero illustrations inherited
+                        from WP3. I kept the icons for visual support and documented the issue.
+                    </p>
+                    <p>
+                        <span class="impl-label">Focus indicator advisory:</span>
+                        the tool reminded me to check keyboard focus indicators for the filter
+                        chips because they use custom borders. I kept the current look so the
+                        page still matches the WP3 style guide and noted it as a future
+                        improvement.
+                    </p>
+                    <p>
+                        <span class="impl-label">Colour / blue scheme:</span>
+                        the checker warned to verify that colour is not the only cue. The chips
+                        already use
+                        <code>aria-pressed</code>, so I kept the WP4 blue scheme.
+                    </p>
+                </div>
+
+                <figure class="audit-figure">
+                    <img
+                        src="images/accessibility-audit-hubs.png"
+                        alt="Accessibility scan of the Community Hubs page in Chrome with the IBM Equal Access Accessibility Checker listing several SVG accessible-name issues."
+                    />
+                    <figcaption>
+                        Figure 1. IBM Equal Access Accessibility Checker results for
+                        <code>work_phase_4/hubs.html</code>. Most violations are repeated SVG
+                        accessible-name warnings from decorative hero images.
+                    </figcaption>
+                </figure>
+
+                <p>
+                    Because these SVGs are non-interactive and came from the WP3 visual
+                    language, I chose to keep them and record the finding here instead of
+                    removing the images.
+                </p>
             </section>
 
             <!-- 6. GitHub -->
             <section class="impl-block" id="github">
                 <h2 class="impl-heading">6. GitHub Repository</h2>
-                <p>Source code is maintained in GitHub for versioning and traceability:</p>
                 <p>
+                    All WP4 pages and this implementation rationale are versioned together with
+                    WP1, WP2, and WP3 in GitHub.
+                </p>
+                <p>
+                    Repository:
                     <a
                         href="https://github.com/LUO404-tech/deco7140_development"
                         target="_blank"
-                        >https://github.com/LUO404-tech/deco7140_development</a
+                        rel="noopener"
                     >
+                        https://github.com/LUO404-tech/deco7140_development
+                    </a>
                 </p>
                 <p class="impl-note">
-                    Repository contains WP1–WP4 folders, shared navigation markup, API helper
-                    modules, and this implementation rationale page.
+                    The repository contains shared navigation markup, the community API script,
+                    page-level CSS, and the accessibility screenshot asset used on this page.
                 </p>
             </section>
 

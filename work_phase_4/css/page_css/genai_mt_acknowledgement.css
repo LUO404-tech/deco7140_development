@@ -1,7 +1,7 @@
-/* Implementation Rationale – page-scoped styling */
-/* light-blue cards, paragraph-based items */
+/* GenAI / MT Acknowledgement – page-scoped styles */
+/* reuse the blue-card style from implementation rationale */
 
-.impl-page {
+.genai-page {
     gap: 1.75rem;
     padding-bottom: 4.5rem;
 }
@@ -9,11 +9,16 @@
 .impl-title {
     font-size: clamp(2.1rem, 3vw, 2.4rem);
     font-weight: 700;
-    letter-spacing: -0.01em;
     color: #162135;
 }
 
-/* blue panels like your original rationale */
+.impl-lead {
+    max-width: 58rem;
+    line-height: 1.6;
+    color: rgba(22, 33, 53, 0.75);
+}
+
+/* same card style */
 .impl-block {
     background: #eaf2ff;
     border-left: 5px solid #2f5ed8;
@@ -34,11 +39,10 @@
 }
 
 .impl-heading::before {
-    content: "💡";
+    content: "📝";
     font-size: 1rem;
 }
 
-/* paragraph group (replaces <ul><li>) */
 .impl-points {
     display: grid;
     gap: 0.55rem;
@@ -60,33 +64,10 @@
     color: rgba(13, 22, 36, 0.6);
 }
 
-/* screenshot block */
-.audit-figure {
-    margin-top: 1.2rem;
-    border: 1px solid rgba(15, 23, 42, 0.08);
-    border-radius: 0.75rem;
-    background: #fff;
-    overflow: hidden;
-}
-
-.audit-figure img {
-    display: block;
-    width: 100%;
-    height: auto;
-}
-
-.audit-figure figcaption {
-    padding: 0.85rem 1rem;
-    font-size: 0.83rem;
-    color: rgba(15, 23, 42, 0.7);
-    background: rgba(148, 163, 184, 0.08);
-}
-
 .to-top {
     margin-top: 1.5rem;
 }
 
-/* mobile tweaks */
 @media (max-width: 640px) {
     .impl-block {
         border-radius: 0.85rem;

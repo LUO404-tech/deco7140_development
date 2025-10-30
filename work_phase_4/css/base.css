@@ -157,3 +157,30 @@ figcaption {
     overflow: hidden;
     white-space: nowrap;
 }
+
+/* 9) Skip link (visually hidden until focused)
+   ------------------------------------------------
+   - Every page has <a class="skip-link" href="#main">Skip to content</a>
+   - Here we hide it off-screen by default
+   - When user tabs to it, we bring it back into view
+*/
+.skip-link {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    padding: 0.55rem 1rem;
+    background: #1f4fd5; /* match your blue */
+    color: #fff;
+    border-radius: 0.5rem;
+    z-index: 1000;
+    transform: translateY(-150%);
+    transition: transform 0.15s ease-out;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+    transform: translateY(0);
+}
