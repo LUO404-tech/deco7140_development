@@ -1,0 +1,89 @@
+/* Implementation Rationale – page-scoped styling
+   mimic the "Reflection" block from your GenAI page
+*/
+
+.impl-page {
+    gap: 1.75rem;
+    padding-bottom: 4.5rem;
+}
+
+.impl-title {
+    font-size: clamp(2.1rem, 3vw, 2.4rem);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: #162135;
+}
+
+.impl-lead {
+    max-width: 58rem;
+    color: rgba(22, 33, 53, 0.75);
+    line-height: 1.6;
+}
+
+/* blue panels like the reflection card */
+.impl-block {
+    background: #eaf2ff;
+    border-left: 5px solid #2f5ed8;
+    border-radius: 1rem;
+    padding: 1.3rem 1.35rem 1.35rem;
+    box-shadow: 0 12px 26px rgba(14, 45, 95, 0.03);
+    display: grid;
+    gap: 0.65rem;
+}
+
+.impl-heading {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #13223b;
+    display: flex;
+    gap: 0.4rem;
+    align-items: center;
+}
+
+.impl-heading::before {
+    content: "💡";
+    font-size: 1.05rem;
+}
+
+.impl-block p {
+    margin: 0;
+    color: rgba(13, 22, 36, 0.9);
+}
+
+.impl-block ul {
+    margin: 0;
+    padding-left: 1.05rem;
+    display: grid;
+    gap: 0.45rem;
+}
+
+.impl-block li {
+    line-height: 1.45;
+}
+
+.impl-source,
+.impl-note {
+    font-size: 0.78rem;
+    color: rgba(13, 22, 36, 0.6);
+}
+
+/* links inside the panel */
+.impl-block a {
+    color: #1f4fd5;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.to-top {
+    margin-top: 1.5rem;
+}
+
+/* small screens */
+@media (max-width: 640px) {
+    .impl-block {
+        border-radius: 0.85rem;
+    }
+    .impl-block ul {
+        padding-left: 1rem;
+    }
+}

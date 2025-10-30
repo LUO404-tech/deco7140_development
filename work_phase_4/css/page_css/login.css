@@ -1,0 +1,105 @@
+/* css/page_css/login.css */
+
+.login-page {
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+    margin-bottom: 3.5rem;
+}
+
+/* page heading */
+.login-page .page-title {
+    font-size: clamp(2.4rem, 3vw, 2.9rem);
+    line-height: 1.02;
+    letter-spacing: -0.01em;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 0.75rem;
+}
+
+.login-page .page-lead {
+    max-width: 60rem;
+    color: var(--color-muted);
+    margin-bottom: 1.6rem;
+}
+
+/* form card */
+.login-form {
+    max-width: 42rem;
+    display: grid;
+    gap: 1rem;
+    padding: 1.5rem 1.5rem 1.25rem;
+    border-radius: 1.25rem;
+    background: #fff;
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.03);
+}
+
+.login-form label {
+    display: block;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.login-form input[type="email"],
+.login-form input[type="password"] {
+    width: 100%;
+    margin-top: 0.35rem;
+    border: 1px solid #d4d8e0;
+    border-radius: 0.6rem;
+    padding: 0.55rem 0.6rem;
+    font-size: 0.92rem;
+    background: #fefefe;
+    transition: border 0.12s ease, box-shadow 0.12s ease;
+}
+
+.login-form input:focus-visible {
+    outline: none;
+    border-color: #2556d6;
+    box-shadow: 0 0 0 3px rgba(37, 86, 214, 0.18);
+}
+
+.login-form .hint {
+    display: block;
+    font-weight: 400;
+    font-size: 0.78rem;
+    color: rgba(15, 23, 42, 0.55);
+    margin-top: 0.25rem;
+}
+
+.login-form .actions {
+    display: flex;
+    gap: 0.6rem;
+    margin-top: 0.5rem;
+}
+
+.login-form .button {
+    background: var(--color-link);
+    color: #fff;
+    border: none;
+    border-radius: 999px;
+    padding: 0.48rem 1.4rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.login-form .button:hover {
+    background: #1f48b6;
+}
+
+.login-form .button--ghost {
+    background: #fff;
+    border: 1px solid rgba(15, 23, 42, 0.12);
+    color: #0f172a;
+}
+
+.login-form .button--ghost:hover {
+    background: rgba(15, 23, 42, 0.025);
+}
+
+@media (max-width: 540px) {
+    .login-form {
+        padding: 1.1rem 1rem 1.05rem;
+    }
+    .login-form .actions {
+        flex-wrap: wrap;
+    }
+}

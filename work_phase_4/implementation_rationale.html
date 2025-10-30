@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Implementation Rationale</title>
+
+        <!-- global styles -->
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/base.css" />
+        <link rel="stylesheet" href="css/layout.css" />
+        <link rel="stylesheet" href="css/components.css" />
+
+        <!-- page-specific styles -->
+        <link rel="stylesheet" href="css/page_css/implementation_rationale.css?v=2" />
+    </head>
+    <body>
+        <a class="skip-link" href="#main">Skip to content</a>
+
+        <header class="site-header">
+            <nav class="nav container" aria-label="Primary">
+                <a class="brand" href="index.html">Hobbies &amp; Subcultures</a>
+                <button
+                    class="nav-toggle"
+                    type="button"
+                    aria-controls="primary-nav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    ☰
+                </button>
+                <div id="primary-nav" class="navlist" data-collapsible>
+                    <a href="homepage.html">Home</a>
+                    <a href="introduction.html">Introduction</a>
+                    <a href="news.html">News</a>
+                    <a href="hubs.html">Community Hubs</a>
+                    <a href="learning.html">Learning Studio</a>
+                    <a href="support.html">Community Support</a>
+                    <a href="login.html">Login</a>
+                </div>
+            </nav>
+        </header>
+
+        <main id="main" class="container section stack impl-page">
+            <h1 class="impl-title">Implementation Rationale</h1>
+            <p class="impl-lead">
+                This page explains how the WP4 build was implemented from the WP3 concept, how
+                it aligns with the Connect Communities Initiative (CCI), and how accessibility
+                and ethical decisions from earlier phases were carried through.
+            </p>
+
+            <!-- 1. Alignment -->
+            <section class="impl-block" id="alignment">
+                <h2 class="impl-heading">1. Alignment with Client and User Needs</h2>
+                <p>
+                    The client stories described a platform for people who enjoy hobby and
+                    subculture communities (cosplay, anime, dance, crafting, indie music) – not
+                    just UQ students. WP4 keeps that broader audience: pages stay friendly,
+                    ESL-readable, and interest driven.
+                </p>
+                <ul>
+                    <li>
+                        <strong>Same IA as WP3:</strong> navigation follows the WP3 site map
+                        (Home, Introduction, News, Community Hubs, Learning Studio, Community
+                        Support) so returning users recognise the structure and new users can
+                        browse by topic.
+                    </li>
+                    <li>
+                        <strong>Homepage welcome text reused:</strong> the welcome copy on
+                        <code>homepage.html</code> is the revised, inclusive wording you wrote
+                        in WP3, so the tone stays “for everyone who likes these communities”.
+                    </li>
+                    <li>
+                        <strong>Learning Studio for newcomers:</strong> WP4 adds Learning
+                        Studio with Beginner Guides and Video Tutorials so first-time visitors
+                        can understand terms, culture, and safety before posting. This supports
+                        the user need for a gentle, low-pressure onboarding.
+                    </li>
+                    <li>
+                        <strong>API pattern continued from WP3:</strong> as in WP3’s API
+                        exercises, WP4 uses one GET to surface current community voices and one
+                        POST (“Join the Community”) so any hobby fan can contribute without a
+                        complex signup.
+                    </li>
+                    <li>
+                        <strong>Login consistent with WP3 forms:</strong> the login page reuses
+                        the WP3 form styling (bold labels, rounded card, blue primary button)
+                        so the new feature does not break the visual system you established
+                        earlier.
+                    </li>
+                    <li>
+                        <strong>CCI alignment:</strong> content is organised around interest
+                        groups, has low-barrier input fields, and keeps clear labels, which
+                        matches CCI’s goal of helping people join or form communities quickly.
+                    </li>
+                </ul>
+            </section>
+
+            <!-- 2. Accessibility & Ethics -->
+            <section class="impl-block" id="accessibility-ethics">
+                <h2 class="impl-heading">2. Accessibility and Ethical Considerations</h2>
+                <p>
+                    WP4 reuses the accessibility decisions from WP2/WP3 (semantic headings,
+                    keyboard navigation, inclusive language) and applies them to the new
+                    API-driven pages.
+                </p>
+                <ul>
+                    <li>
+                        <strong>Keyboard &amp; focus:</strong> filter chips in
+                        <code>hubs.html</code> use <code>aria-pressed</code> and can be
+                        activated with Enter/Space, so keyboard-only users can switch
+                        communities.
+                    </li>
+                    <li>
+                        <strong>Plain / ESL-friendly labels:</strong> forms use short field
+                        labels (“Email”, “Password”, “Message (optional)”) and helper text,
+                        following the WP3 style guide.
+                    </li>
+                    <li>
+                        <strong>Minimal data collection:</strong> the community form only sends
+                        what the DECO7140 API requires (name, email, category, message,
+                        optional image), matching your WP2 ethics position of collecting only
+                        necessary data.
+                    </li>
+                    <li>
+                        <strong>Consistent colour and contrast:</strong> the login card,
+                        Learning Studio tiles, and implementation pages reuse the same blues
+                        and rounded cards from WP3 to reduce cognitive load.
+                    </li>
+                    <li>
+                        <strong>Support for newcomers:</strong> Learning Studio is an ethical
+                        gesture towards new users – it lowers the knowledge barrier so no group
+                        is excluded just because they are “new to cosplay/anime”.
+                    </li>
+                </ul>
+            </section>
+
+            <!-- 3. Variations -->
+            <section class="impl-block" id="variations">
+                <h2 class="impl-heading">3. Variations from A3 Design Proposal</h2>
+                <p>
+                    A few changes were made while connecting the real API and finalising WP4,
+                    but they stay within the original concept.
+                </p>
+                <ul>
+                    <li>
+                        <strong>Inline replies:</strong> the API does not support threaded
+                        replies, so a local inline-reply UI was added to each card. This keeps
+                        the “community conversation” feeling from A3 without breaking the
+                        endpoint.
+                    </li>
+                    <li>
+                        <strong>Hashtag category prefix:</strong> messages posted through the
+                        form are prefixed with <code>#cosplay</code>, <code>#knitting</code>,
+                        etc. so the client-side filter can reliably group posts.
+                    </li>
+                    <li>
+                        <strong>Optimised images:</strong> hub/support cards use tighter image
+                        sizing than the A3 mockups to improve UQCloud load time.
+                    </li>
+                    <li>
+                        <strong>Extra nav item (“Login”):</strong> the nav now includes
+                        <code>login.html</code> so the form demo is discoverable from every
+                        page.
+                    </li>
+                </ul>
+                <p class="impl-note">
+                    All variations were made for feasibility, performance, or API-integration
+                    reasons and keep the WP3 visual language.
+                </p>
+            </section>
+
+            <!-- 4. Challenges -->
+            <section class="impl-block" id="challenges">
+                <h2 class="impl-heading">4. Challenges and Strategies</h2>
+                <ul>
+                    <li>
+                        <strong>Single API list → multiple views:</strong> the endpoint returns
+                        one flat list; the page adds client-side sorting and filtering so users
+                        can browse by community without extra API calls.
+                    </li>
+                    <li>
+                        <strong>Keeping nav consistent:</strong> all WP4 pages reuse the same
+                        header markup and JS toggle so updates (like the Login link) only need
+                        to be made once.
+                    </li>
+                    <li>
+                        <strong>Form UX:</strong> to avoid confusing new hobby users, form
+                        fields were kept short, with optional fields marked, and success
+                        messages added after POST.
+                    </li>
+                    <li>
+                        <strong>Matching WP3 typography:</strong> headings and card spacing
+                        were aligned with the WP3 Style Guide so WP4 pages still “look like”
+                        the project, even though they are API-driven.
+                    </li>
+                </ul>
+            </section>
+
+            <!-- 5. Accessibility audit -->
+            <section class="impl-block" id="accessibility-audit">
+                <h2 class="impl-heading">5. Accessibility Audit</h2>
+                <p>
+                    The pages were checked with the IBM Equal Access Accessibility Checker.
+                    Insert the screenshot here in the final submission.
+                </p>
+                <ul>
+                    <li>
+                        Most results were informational/warnings about landmark repetition.
+                    </li>
+                    <li>
+                        Form labels and button text already met the tool’s recommendations, so
+                        no structural changes were needed.
+                    </li>
+                    <li>
+                        Minor contrast notes were reviewed against the existing WP palette
+                        before deciding to keep the current blue.
+                    </li>
+                </ul>
+            </section>
+
+            <!-- 6. GitHub -->
+            <section class="impl-block" id="github">
+                <h2 class="impl-heading">6. GitHub Repository</h2>
+                <p>Source code is maintained in GitHub for versioning and traceability:</p>
+                <p>
+                    <a
+                        href="https://github.com/LUO404-tech/deco7140_development"
+                        target="_blank"
+                        >https://github.com/LUO404-tech/deco7140_development</a
+                    >
+                </p>
+                <p class="impl-note">
+                    Repository contains WP1–WP4 folders, shared navigation markup, API helper
+                    modules, and this implementation rationale page.
+                </p>
+            </section>
+
+            <p class="to-top"><a href="#main">Back to top ↑</a></p>
+        </main>
+
+        <script src="js/main.js" defer></script>
+    </body>
+</html>
