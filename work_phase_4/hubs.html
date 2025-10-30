@@ -5,24 +5,19 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Community Hubs — Hobbies & Subcultures</title>
 
-        <!-- Global CSS (keep this order) -->
         <link rel="stylesheet" href="css/reset.css" />
         <link rel="stylesheet" href="css/base.css" />
         <link rel="stylesheet" href="css/layout.css" />
         <link rel="stylesheet" href="css/components.css" />
 
-        <!-- Page CSS (optional); 如果你已把样式并入全局，可移除此行 -->
-        <link rel="stylesheet" href="page_css/hubs.css?v=2" />
+        <link rel="stylesheet" href="page_css/hubs.css?v=3" />
     </head>
     <body>
-        <!-- Skip link -->
         <a class="skip-link" href="#main">Skip to content</a>
 
-        <!-- Shared header -->
         <header class="site-header">
             <nav class="nav container" aria-label="Main">
                 <a class="brand" href="index.html">Hobbies &amp; Subcultures</a>
-
                 <button
                     class="nav-toggle"
                     type="button"
@@ -32,7 +27,6 @@
                 >
                     ☰
                 </button>
-
                 <div id="primary-nav" class="navlist">
                     <a href="homepage.html">Home</a>
                     <a href="introduction.html">Introduction</a>
@@ -45,27 +39,34 @@
         </header>
 
         <main id="main" class="container stack">
-            <!-- Intro + three entry cards -->
+            <!-- Hero / feature cards -->
             <section class="section stack" aria-labelledby="hubs-title">
                 <h1 id="hubs-title">Community Hubs</h1>
                 <p class="lead">
                     Browse communities, share experience, and access useful resources.
                 </p>
 
-                <div class="grid grid-3">
-                    <article class="card">
+                <div class="grid grid-3 hub-intro-grid">
+                    <article class="card hub-card">
+                        <img src="images/browsing.png" alt="" class="hub-card__icon" />
                         <h3>Browse Communities</h3>
                         <p class="hint">Filter by interest, location, or level.</p>
                         <a class="button" href="#browse" data-scroll-to="#browse">Explore</a>
                     </article>
 
-                    <article class="card">
+                    <article class="card hub-card">
+                        <img
+                            src="images/knowledge-transfer.png"
+                            alt=""
+                            class="hub-card__icon"
+                        />
                         <h3>Hub Feed</h3>
                         <p class="hint">Recent posts &amp; knowledge sharing.</p>
                         <a class="button" href="#feed" data-scroll-to="#feed">Open feed</a>
                     </article>
 
-                    <article class="card">
+                    <article class="card hub-card">
+                        <img src="images/share.png" alt="" class="hub-card__icon" />
                         <h3>Share Experience</h3>
                         <p class="hint">Post your story or tips.</p>
                         <a class="button" href="#share" data-scroll-to="#share">Share</a>
@@ -73,15 +74,20 @@
                 </div>
             </section>
 
-            <!-- A) Browse (directory chips + 延伸链接) -->
+            <!-- Browse (top chips) -->
             <section id="browse" class="section stack" aria-labelledby="browse-heading">
                 <h2 id="browse-heading">Browse Communities</h2>
 
-                <div class="grid grid-4">
-                    <button class="chip" data-filter="cosplay">Cosplay</button>
-                    <button class="chip" data-filter="knitting">Knitting</button>
-                    <button class="chip" data-filter="anime">Anime</button>
-                    <button class="chip" data-filter="dance">Dance</button>
+                <!-- Clicking these should jump to voices and filter -->
+                <div class="grid grid-4 browse-chip-row">
+                    <button class="chip browse-to-voices" data-filter="cosplay">
+                        Cosplay
+                    </button>
+                    <button class="chip browse-to-voices" data-filter="knitting">
+                        Knitting
+                    </button>
+                    <button class="chip browse-to-voices" data-filter="anime">Anime</button>
+                    <button class="chip browse-to-voices" data-filter="dance">Dance</button>
                 </div>
 
                 <p class="text-muted">
@@ -91,13 +97,20 @@
                 </p>
             </section>
 
-            <!-- B) API (GET): Our Community Voices -->
+            <!-- Voices (GET + replies) -->
             <section id="feed" class="section stack" aria-labelledby="voices-heading">
                 <h2 id="voices-heading">Our Community Voices</h2>
+                <p class="text-muted small">
+                    Filter by community below. You can also reply to an individual post.
+                </p>
 
-                <!-- Filter chips (feed toolbar) -->
                 <div class="filters" role="toolbar" aria-label="Filter voices">
-                    <button class="chip is-active" data-filter="all" aria-pressed="true">
+                    <button
+                        class="chip is-active"
+                        data-filter="all"
+                        aria-pressed="true"
+                        id="voices-filter-all"
+                    >
                         All
                     </button>
                     <button class="chip" data-filter="cosplay" aria-pressed="false">
@@ -114,20 +127,18 @@
                     </button>
                 </div>
 
-                <!-- Live status -->
                 <p id="community-status" class="muted" role="status" aria-live="polite"></p>
 
-                <!-- Cards rendered by JS -->
-                <div id="community-list" class="card-grid"></div>
+                <div id="community-list" class="voices-grid"></div>
 
                 <noscript>
                     <p class="text-muted">
-                        JavaScript is required to load the community feed.
+                        JavaScript is required to load and reply to community posts.
                     </p>
                 </noscript>
             </section>
 
-            <!-- C) API (POST): Join the Community -->
+            <!-- Join / create post (POST) -->
             <section id="share" class="section stack" aria-labelledby="join-heading">
                 <h2 id="join-heading">Join the Community</h2>
 
@@ -140,6 +151,17 @@
                     <label>
                         Email
                         <input type="email" name="email" required autocomplete="email" />
+                    </label>
+
+                    <label>
+                        Category
+                        <select name="category" id="community-category">
+                            <option value="">General</option>
+                            <option value="cosplay">Cosplay</option>
+                            <option value="knitting">Knitting</option>
+                            <option value="anime">Anime</option>
+                            <option value="dance">Dance</option>
+                        </select>
                     </label>
 
                     <label>
@@ -167,9 +189,6 @@
             <p>© WP4 — API integration • accessible UI • responsive layout.</p>
         </footer>
 
-        <!-- Scripts:
-         - community.js: GET (render voices) + POST (submit form) + smooth-scroll & browse→feed bridge
-         - main.js: your shared nav toggle -->
         <script type="module" src="js/community.js"></script>
         <script src="js/main.js" defer></script>
     </body>

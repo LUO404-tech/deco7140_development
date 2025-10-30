@@ -5,14 +5,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Learning Studio · Hobbies & Subcultures</title>
 
-        <!-- Global CSS (order matters) -->
         <link rel="stylesheet" href="css/reset.css" />
         <link rel="stylesheet" href="css/base.css" />
         <link rel="stylesheet" href="css/layout.css" />
         <link rel="stylesheet" href="css/components.css" />
-
-        <!-- Page CSS -->
-        <link rel="stylesheet" href="page_css/learning.css" />
+        <link rel="stylesheet" href="css/page_css/learning.css" />
     </head>
     <body>
         <a class="skip-link" href="#main">Skip to content</a>
@@ -43,24 +40,41 @@
         <main id="main" class="container section">
             <section class="section stack" aria-labelledby="studio-title">
                 <h1 id="studio-title">Learning Studio</h1>
-                <p class="lead">
-                    Structured resources: beginner guides, tutorials, and Q&amp;A.
+                <p class="lead" style="max-width: 54rem">
+                    Pick a format that fits how you learn. Start with short beginner guides to
+                    get the basics, move to step-by-step video tutorials when you’re ready, and
+                    use Q&amp;A if your situation is different from the examples.
                 </p>
 
-                <div class="grid grid-3">
+                <div class="grid grid-3 learning-cards">
                     <article class="card">
+                        <img
+                            src="images/promotion.png"
+                            alt="Beginner guides icon"
+                            class="learning-card__icon"
+                        />
                         <h3>Beginner Guides</h3>
                         <p>Start here to get the basics.</p>
                         <button id="open-guides" class="button" type="button">View</button>
                     </article>
 
                     <article class="card">
+                        <img
+                            src="images/video-tutorial.png"
+                            alt="Video tutorial icon"
+                            class="learning-card__icon"
+                        />
                         <h3>Video Tutorials</h3>
                         <p>Step-by-step learning.</p>
                         <button id="open-videos" class="button" type="button">Watch</button>
                     </article>
 
                     <article class="card">
+                        <img
+                            src="images/qa.png"
+                            alt="Q and A icon"
+                            class="learning-card__icon"
+                        />
                         <h3>Q &amp; A</h3>
                         <p>Ask questions and get help.</p>
                         <button id="open-qa" class="button" type="button">Open</button>
@@ -68,7 +82,6 @@
                 </div>
             </section>
 
-            <!-- Beginner Guides -->
             <dialog id="guides-dialog" class="modal">
                 <button class="modal__close" id="close-guides" aria-label="Close">✕</button>
                 <header class="modal__header">
@@ -77,26 +90,24 @@
                 <div class="modal__content">
                     <ul class="guide-list">
                         <li>
-                            <strong>Cosplay safety basics</strong> — picking comfortable
-                            materials, heat-safe tools.
+                            <strong>Cosplay safety basics</strong> — comfortable materials,
+                            tools.
                         </li>
                         <li>
-                            <strong>Knitting starter kit</strong> — needles, acrylic yarn,
-                            tension practice.
+                            <strong>Knitting starter kit</strong> — needles, yarn, tension
+                            practice.
                         </li>
                         <li>
                             <strong>Anime drawing</strong> — warm-ups, references, line
                             control.
                         </li>
                         <li>
-                            <strong>Dance practice</strong> — short sessions, mirror feedback,
-                            record progress.
+                            <strong>Dance practice</strong> — short sessions, mirror feedback.
                         </li>
                     </ul>
                 </div>
             </dialog>
 
-            <!-- Video Tutorials -->
             <dialog id="videos-dialog" class="modal">
                 <button class="modal__close" id="close-videos" aria-label="Close">✕</button>
                 <header class="modal__header">
@@ -123,10 +134,11 @@
                 <p class="text-muted small">Links open on YouTube in a new tab.</p>
             </dialog>
 
-            <!-- Q & A (left FAQ + right email button) -->
             <dialog id="qa-dialog" class="modal">
                 <button class="modal__close" id="close-qa" aria-label="Close">✕</button>
-                <header class="modal__header"><h3 class="modal__title">Q &amp; A</h3></header>
+                <header class="modal__header">
+                    <h3 class="modal__title">Q &amp; A</h3>
+                </header>
 
                 <div class="modal__controls">
                     <label for="qa-filter" class="visually-hidden">Filter by category</label>
@@ -161,9 +173,9 @@
                 </div>
             </dialog>
 
-            <noscript
-                ><p class="text-muted">JavaScript is required to view the modals.</p></noscript
-            >
+            <noscript>
+                <p class="text-muted">JavaScript is required to view the modals.</p>
+            </noscript>
         </main>
 
         <footer class="container" style="padding: var(--space-5) 0; color: var(--color-muted)">

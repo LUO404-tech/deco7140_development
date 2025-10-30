@@ -4,25 +4,32 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Community Support — Hobbies & Subcultures</title>
+
+        <!-- Global CSS -->
         <link rel="stylesheet" href="css/reset.css" />
         <link rel="stylesheet" href="css/base.css" />
         <link rel="stylesheet" href="css/layout.css" />
         <link rel="stylesheet" href="css/components.css" />
-        <!-- Accordion behavior (ARIA-compliant) -->
-        <script src="js/ui/accordion.js" defer></script>
+        <!-- Page CSS -->
+        <link rel="stylesheet" href="css/page_css/support.css" />
     </head>
     <body>
         <a href="#main" class="skip-link">Skip to content</a>
 
         <header class="site-header">
             <nav class="nav container" aria-label="Main">
-                <a class="brand" href="index.html">Hobbies & Subcultures</a>
-                <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false">
+                <a class="brand" href="index.html">Hobbies &amp; Subcultures</a>
+                <button
+                    class="nav-toggle"
+                    aria-controls="primary-nav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
                     ☰
                 </button>
                 <div id="primary-nav" class="navlist">
                     <a href="homepage.html">Home</a>
-                    <a href="introduction.html" aria-current="page">Introduction</a>
+                    <a href="introduction.html">Introduction</a>
                     <a href="news.html">News</a>
                     <a href="hubs.html">Community Hubs</a>
                     <a href="learning.html">Learning Studio</a>
@@ -31,39 +38,253 @@
             </nav>
         </header>
 
-        <main id="main" class="container stack">
-            <section class="section stack">
+        <main id="main" class="container section stack">
+            <!-- Hero -->
+            <section class="stack">
                 <h1>Community Support</h1>
-                <p class="lead">Guidelines, rules, and a way to report a problem.</p>
+                <p class="lead">Guidelines, safety, and quick contact via email.</p>
 
-                <!-- Accessible accordion -->
-                <div class="accordion" id="support-acc">
+                <!-- flip cards -->
+                <div class="support-quick flip-grid">
+                    <!-- card 1 -->
+                    <article class="flip-card">
+                        <div class="flip-card__inner">
+                            <div class="flip-card__face flip-card__face--front">
+                                <!-- 把 label 放到图片上方 -->
+                                <span class="eyebrow">Start here</span>
+                                <img
+                                    src="images/book.png"
+                                    alt="Guidelines icon"
+                                    class="flip-card__icon"
+                                />
+                                <h3>Guidelines &amp; Rules</h3>
+                            </div>
+                            <div class="flip-card__face flip-card__face--back">
+                                <p>
+                                    Read our inclusive rules based on user stories — focus on
+                                    beginners, international students, and respectful tone.
+                                </p>
+                                <a class="button button--secondary" href="#guidelines">
+                                    Read guidelines
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- card 2 -->
+                    <article class="flip-card">
+                        <div class="flip-card__inner">
+                            <div class="flip-card__face flip-card__face--front">
+                                <span class="eyebrow">Action</span>
+                                <img
+                                    src="images/reporting.png"
+                                    alt="Report icon"
+                                    class="flip-card__icon"
+                                />
+                                <h3>Report a Problem</h3>
+                            </div>
+                            <div class="flip-card__face flip-card__face--back">
+                                <p>
+                                    Tell us what happened, when, and where you saw it. We will
+                                    review and apply the moderation ladder.
+                                </p>
+                                <a class="button" href="#report">Email</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- card 3 -->
+                    <article class="flip-card">
+                        <div class="flip-card__inner">
+                            <div class="flip-card__face flip-card__face--front">
+                                <span class="eyebrow">Feedback</span>
+                                <img
+                                    src="images/suggestion.png"
+                                    alt="Suggestion icon"
+                                    class="flip-card__icon"
+                                />
+                                <h3>Suggestions</h3>
+                            </div>
+                            <div class="flip-card__face flip-card__face--back">
+                                <p>
+                                    Share an idea for hubs, APIs, or more inclusive wording so
+                                    it can be added to the WP4 content.
+                                </p>
+                                <a class="button button--secondary" href="#suggest">
+                                    Share an idea
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Guidelines -->
+            <section class="stack" id="guidelines" aria-labelledby="gl-title">
+                <h2 id="gl-title">Guidelines &amp; Safety</h2>
+                <p class="text-muted small" style="max-width: 56rem">
+                    This space is for students and hobbyists to share, learn, and support each
+                    other. The guidelines below are based on needs from cosplay, anime,
+                    knitting, indie music, dance, and collector communities.
+                </p>
+
+                <div class="accordion soft" id="support-acc">
+                    <!-- 1. Community Values -->
                     <div class="item">
-                        <button class="header" aria-expanded="false" aria-controls="g1">
-                            Community Guidelines &amp; Rules
+                        <button class="header" aria-expanded="false" aria-controls="s-values">
+                            Community Values
                         </button>
-                        <div id="g1" class="content" hidden>
-                            <ul>
-                                <li>Be respectful and inclusive; use welcoming language.</li>
-                                <li>Share verifiable information; credit sources.</li>
-                                <li>No harassment or hate speech.</li>
+                        <div id="s-values" class="content" hidden>
+                            <p>
+                                Our community should feel beginner-friendly and
+                                non-judgemental.
+                            </p>
+                            <ul class="emoji-list">
+                                <li>🤝 <strong>Inclusive:</strong> everyone is welcome.</li>
+                                <li>🗣️ <strong>Kind:</strong> talk to people, not at them.</li>
+                                <li>🧩 <strong>Help first:</strong> give one next step.</li>
+                                <li>
+                                    🪪 <strong>Credit creators:</strong> sources, art, photos.
+                                </li>
+                                <li>🛟 <strong>Safe vibe:</strong> no bullying/gatekeeping.</li>
                             </ul>
                         </div>
                     </div>
+
+                    <!-- 2. Behaviour Rules -->
                     <div class="item">
-                        <button class="header" aria-expanded="false" aria-controls="g2">
-                            Report a Problem
+                        <button
+                            class="header"
+                            aria-expanded="false"
+                            aria-controls="s-behaviour"
+                        >
+                            Behaviour Rules
                         </button>
-                        <div id="g2" class="content" hidden>
-                            <form>
-                                <div class="field">
-                                    <label for="issue">Describe the issue</label>
-                                    <input id="issue" required />
-                                </div>
-                                <button class="btn" type="submit">Submit</button>
-                            </form>
+                        <div id="s-behaviour" class="content" hidden>
+                            <p>Keep the space calm and campus-safe.</p>
+                            <ul class="emoji-list">
+                                <li>✅ Use respectful language.</li>
+                                <li>✅ Mark sensitive content or spoilers.</li>
+                                <li>✅ Assume good intent, many post in a second language.</li>
+                                <li>❌ No harassment, hate speech, personal attacks.</li>
+                                <li>❌ No doxxing or posting private info.</li>
+                            </ul>
                         </div>
                     </div>
+
+                    <!-- 3. Posting Standards -->
+                    <div class="item">
+                        <button class="header" aria-expanded="false" aria-controls="s-posting">
+                            Posting Standards (Tutorials / Shares / Q&amp;A)
+                        </button>
+                        <div id="s-posting" class="content" hidden>
+                            <p>Make posts clearer than what you found online.</p>
+                            <ul class="emoji-list">
+                                <li>🧰 Tutorials: tools, steps, time, cost, safety notes.</li>
+                                <li>📣 Show &amp; tell: describe process + add learnings.</li>
+                                <li>❓ Q&amp;A: one question, what you tried, mark solved.</li>
+                                <li>♿ Accessibility: add alt text.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- 4. Events -->
+                    <div class="item">
+                        <button class="header" aria-expanded="false" aria-controls="s-events">
+                            Events (Battles, Clubs, Workshops)
+                        </button>
+                        <div id="s-events" class="content" hidden>
+                            <p>Give people what they need to decide quickly.</p>
+                            <ul class="emoji-list">
+                                <li>🗓️ Name, date/time, location.</li>
+                                <li>💰 Say if it’s free or ticketed.</li>
+                                <li>♿ Add accessibility info.</li>
+                                <li>📞 Add a contact or link.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- 5. Trading -->
+                    <div class="item">
+                        <button class="header" aria-expanded="false" aria-controls="s-trading">
+                            Trading &amp; Collecting
+                        </button>
+                        <div id="s-trading" class="content" hidden>
+                            <p>Keep trades transparent and safe.</p>
+                            <ul class="emoji-list">
+                                <li>🧾 No counterfeits/bootlegs.</li>
+                                <li>
+                                    📸 Listing must include price (AUD), condition, timestamped
+                                    photo, location, shipping/meet-up.
+                                </li>
+                                <li>🏙️ Meet in public/on campus.</li>
+                                <li>
+                                    🚩 Report scams:
+                                    <a href="mailto:s4979768@student.uq.edu.au"
+                                        >s4979768@student.uq.edu.au</a
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Report -->
+            <section class="stack" id="report" aria-labelledby="report-title">
+                <h2 id="report-title">Report a Problem</h2>
+                <div class="card contact-card">
+                    <p class="text-muted small">
+                        Email goes to:
+                        <code id="report-email">s4979768@student.uq.edu.au</code>
+                    </p>
+                    <div class="actions">
+                        <a
+                            class="button"
+                            href="mailto:s4979768@student.uq.edu.au?subject=%5BReport%5D%20Hobbies%20%26%20Subcultures&body=Hello,%0A%0AI'd%20like%20to%20report%20an%20issue.%0A%0ACategory:%0ASeverity:%0ADetails:%0ALinks/Usernames:%0ATimestamp:%0A"
+                        >
+                            Email now
+                        </a>
+                        <button
+                            class="button button--secondary"
+                            type="button"
+                            data-copy="#report-email"
+                        >
+                            Copy address
+                        </button>
+                    </div>
+                    <p id="copy-status-report" class="small text-muted" aria-live="polite"></p>
+                </div>
+            </section>
+
+            <!-- Suggestions -->
+            <section class="stack" id="suggest" aria-labelledby="suggest-title">
+                <h2 id="suggest-title">Suggestions &amp; Feedback</h2>
+                <div class="card contact-card">
+                    <p class="text-muted small">
+                        Email goes to:
+                        <code id="suggest-email">s4979768@student.uq.edu.au</code>
+                    </p>
+                    <div class="actions">
+                        <a
+                            class="button"
+                            href="mailto:s4979768@student.uq.edu.au?subject=%5BSuggestion%5D%20Hobbies%20%26%20Subcultures&body=Hello,%0A%0AI%20have%20a%20suggestion%20for%20the%20site.%0A%0ATopic:%0AIdea:%0AWhy%20it%20helps:%0A"
+                        >
+                            Email now
+                        </a>
+                        <button
+                            class="button button--secondary"
+                            type="button"
+                            data-copy="#suggest-email"
+                        >
+                            Copy address
+                        </button>
+                    </div>
+                    <p
+                        id="copy-status-suggest"
+                        class="small text-muted"
+                        aria-live="polite"
+                    ></p>
                 </div>
             </section>
         </main>
@@ -71,6 +292,8 @@
         <footer class="container" style="padding: var(--space-5) 0; color: var(--color-muted)">
             <p>© WP4 — consistent structure • responsive design • accessible UI.</p>
         </footer>
-        <script src="js/ui/nav.js" defer></script>
+
+        <script src="js/menu.js" defer></script>
+        <script src="js/support.js" defer></script>
     </body>
 </html>
