@@ -12,53 +12,14 @@
         <link rel="stylesheet" href="css/components.css" />
 
         <!-- page-scoped styles (same blue card look as Implementation Rationale) -->
-        <link rel="stylesheet" href="css/page_css/genai_mt_acknowledgement.css?v=1" />
-
-        <!-- page-local helpers for highlight + small titles -->
-        <style>
-            /* “eyebrow” style for mini titles inside a card */
-            .impl-line {
-                margin-bottom: 0.4rem;
-            }
-
-            .impl-tag {
-                display: inline-block;
-                font-weight: 700;
-                color: #121d33;
-                margin-right: 0.35rem;
-            }
-
-            /* highlighter style like your WP2 yellow marks */
-            .hl {
-                background: #fef3c7;
-                border-radius: 0.25rem;
-                padding: 0.08rem 0.45rem 0.18rem;
-            }
-
-            code.hl {
-                font-family: ui-monospace, SFMono-Regular, SFMono-Regular, SFMono-Regular,
-                    Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-                font-size: 0.85em;
-            }
-
-            /* tighten the list in reflection so it doesn’t look like bullets */
-            .impl-points p {
-                margin-bottom: 0.45rem;
-            }
-
-            /* keep the note at the bottom a bit lighter */
-            .impl-note {
-                font-size: 0.82rem;
-                color: rgba(7, 20, 35, 0.55);
-            }
-        </style>
+        <link rel="stylesheet" href="css/page_css/genai_mt_acknowledgement.css?v=2" />
     </head>
     <body>
         <a class="skip-link" href="#main">Skip to content</a>
 
         <header class="site-header">
             <nav class="nav container" aria-label="Primary">
-                <a class="brand" href="index.html">Hobbies &amp; Subcultures</a>
+                <a class="brand" href="index.html">Hobby &amp; Subculture Circles</a>
                 <button
                     class="nav-toggle"
                     type="button"
@@ -84,9 +45,9 @@
             <h1 class="impl-title">GenAI / MT Acknowledgement (WP4)</h1>
             <p class="impl-lead">
                 This page documents how Generative AI (ChatGPT) and MT-style prompts were used
-                during
-                <code class="hl">work_phase_4</code>. All outputs were reviewed, adapted to the
-                WP3/WP4 style, and tested locally. The final website remains my own work.
+                during <code class="hl">work_phase_4</code>. All outputs were reviewed, adapted
+                to the WP3/WP4 style, and tested locally. The final website remains my own
+                work.
             </p>
 
             <!-- 1. Acknowledgement -->
@@ -173,8 +134,7 @@
                         <span class="impl-tag">Creativity &amp; problem-solving:</span>
                         it suggested different ways to attach a copy-to-clipboard action, to
                         embed YouTube resources on the Learning page, and to show success /
-                        error messages after a
-                        <code class="hl">POST</code>.
+                        error messages after a <code class="hl">POST</code>.
                     </p>
                     <p class="impl-line">
                         <span class="impl-tag">Technical proficiency:</span>
@@ -185,10 +145,9 @@
                         <span class="impl-tag">Critical evaluation:</span>
                         some AI code overwrote or removed parts of my existing pages (for
                         example, it restyled containers or replaced helper text). Because of
-                        that, I now
-                        <strong>always</strong> check the diff, keep my own version as the
-                        source of truth, and write more precise prompts so the AI does not
-                        touch layout or content that is already finished.
+                        that, I now <strong>always</strong> check the diff, keep my own version
+                        as the source of truth, and write more precise prompts so the AI does
+                        not touch layout or content that is already finished.
                     </p>
                     <p class="impl-line">
                         <span class="impl-tag">Future practice:</span>

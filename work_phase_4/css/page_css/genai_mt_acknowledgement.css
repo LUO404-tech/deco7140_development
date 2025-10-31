@@ -18,7 +18,7 @@
     color: rgba(22, 33, 53, 0.75);
 }
 
-/* same card style */
+/* blue panel */
 .impl-block {
     background: #eaf2ff;
     border-left: 5px solid #2f5ed8;
@@ -43,25 +43,50 @@
     font-size: 1rem;
 }
 
+/* paragraph group inside a card */
 .impl-points {
     display: grid;
     gap: 0.55rem;
 }
 
+/* every small line in that group */
+.impl-line {
+    margin-bottom: 0.4rem;
+}
+
+/* mini title inside a paragraph */
+.impl-tag {
+    display: inline-block;
+    font-weight: 700;
+    color: #121d33;
+    margin-right: 0.35rem;
+}
+
+/* highlighter (for GET / POST / work_phase_4) */
+.hl {
+    background: #fef3c7;
+    border-radius: 0.25rem;
+    padding: 0.08rem 0.45rem 0.18rem;
+}
+
+/* monospace highlighted code */
+code.hl {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+        "Courier New", monospace;
+    font-size: 0.85em;
+}
+
+/* text inside points */
 .impl-points p {
     margin: 0;
     line-height: 1.55;
     color: rgba(13, 22, 36, 0.9);
 }
 
-.impl-label {
-    font-weight: 600;
-    color: #0f172a;
-}
-
+/* note at bottom of a card */
 .impl-note {
-    font-size: 0.8rem;
-    color: rgba(13, 22, 36, 0.6);
+    font-size: 0.82rem;
+    color: rgba(7, 20, 35, 0.55);
 }
 
 .to-top {
